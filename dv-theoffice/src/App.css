@@ -59,3 +59,38 @@ body, html, .App {
   display: none;
 }
 
+.linebarchart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap: 20px;
+  padding: 10px;
+}
+
+.toggle-buttons {
+  display: flex;
+  flex-direction: row; 
+  gap: 10px; 
+}
+
+.toggle-buttons button {
+  padding: 15px 15px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center; 
+  width: 200px;
+}
+
+.toggle-buttons button.active {
+  background-color: #4BA8B2;
+  font-weight: bold;
+}
+
+.toggle-buttons button:hover {
+  background-color: #727980;
+} 
