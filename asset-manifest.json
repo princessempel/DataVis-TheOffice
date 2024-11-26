@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DataVis-TheOffice/static/css/main.44cef85e.css",
+    "main.js": "/DataVis-TheOffice/static/js/main.cfd4e45f.js",
+    "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
+    "index.html": "/DataVis-TheOffice/index.html",
+    "main.44cef85e.css.map": "/DataVis-TheOffice/static/css/main.44cef85e.css.map",
+    "main.cfd4e45f.js.map": "/DataVis-TheOffice/static/js/main.cfd4e45f.js.map",
+    "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44cef85e.css",
+    "static/js/main.cfd4e45f.js"
+  ]
+}
