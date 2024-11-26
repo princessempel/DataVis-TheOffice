@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 
-const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
+const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
   const svgRef = useRef();
   const [data, setData] = useState([]);
 
@@ -90,6 +90,15 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
     const line = d3.line()
       .x((d) => x(d.x_label))
       .y((d) => y(d[dataKey]));
+
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2)
+      .attr("y", -35) 
+      .attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      .style("fill", "white")
+      .text(yAxisLabel);
   
     svg.append("path")
       .datum(data)
@@ -103,7 +112,7 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
       .data(data)
       .enter()
       .append("rect")
-      .attr("class", "stacked-bar")
+      .attr("class", (d) => `highlight-${d.x_label}`)
       .attr("x", (d) => x(d.x_label) - 1.5)
       .attr("y", height)
       .attr("width", width / data.length - 0.5)
@@ -111,11 +120,18 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
       .attr("fill", (d) => color(d.season))
       .attr("opacity", 0.8)
       .on("mouseover", (event, d) => {
+        // Highlight both point and rectangle
+        svg.selectAll(`.highlight-${d.x_label}`)
+          .attr("stroke", "yellow")
+          .attr("stroke-width", 2);
+
+        // Show tooltip
         tooltip
           .style("display", "block")
           .html(`
             <strong>Season ${d.season}, Episode ${d.episode_number}</strong><br/>
-            ${d.episode_title}
+            ${d.episode_title} <br/><br/>
+            ${yAxisLabel}: ${d[dataKey]}<br/>
           `);
       })
       .on("mousemove", (event) => {
@@ -123,7 +139,12 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
           .style("left", `${event.pageX + 10}px`)
           .style("top", `${event.pageY - 20}px`);
       })
-      .on("mouseleave", () => {
+      .on("mouseleave", (event, d) => {
+        // Remove highlight from point and rectangle
+        svg.selectAll(`.highlight-${d.x_label}`)
+          .attr("stroke", "none");
+        
+        // Remove tooltip
         tooltip.style("display", "none");
       });
 
@@ -149,19 +170,22 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
       .data(data)
       .enter()
       .append("circle")
-      .attr("class", "point")
+      .attr("class", (d) => `highlight-${d.x_label}`)
       .attr("cx", (d) => x(d.x_label))
       .attr("cy", (d) => y(d[dataKey]))
-      .attr("r", 3)
+      .attr("r", 2.75)
       .attr("fill", "#4BA8B2")
       .on("mouseover", (event, d) => {
+        svg.selectAll(`.highlight-${d.x_label}`)
+          .attr("stroke", "yellow")
+          .attr("stroke-width", 2);
+
         tooltip
           .style("display", "block")
           .html(`
             <strong>Season ${d.season}, Episode ${d.episode_number}</strong><br/>
             ${d.episode_title} <br/><br/>
-            ${dataKey}: ${d[dataKey]}<br/>
-            Viewership: ${d.viewership_mil}M
+            ${yAxisLabel}: ${d[dataKey]}<br/>
           `);
       })
       .on("mousemove", (event) => {
@@ -169,14 +193,17 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey }) => {
           .style("left", `${event.pageX + 10}px`)
           .style("top", `${event.pageY - 20}px`);
       })
-      .on("mouseleave", () => {
+      .on("mouseleave", (event, d) => {
+        svg.selectAll(`.highlight-${d.x_label}`)
+          .attr("stroke", "none");
+
         tooltip.style("display", "none");
       });
   
     return () => {
       tooltip.remove();
     };
-  }, [data, dataKey]);
+  }, [data, dataKey, yAxisLabel]);
   
 
   return <svg ref={svgRef}></svg>;
