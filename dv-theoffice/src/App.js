@@ -1,7 +1,6 @@
 import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
 
-
 function App() {
   return (
     <div className="App">
@@ -10,7 +9,10 @@ function App() {
           (CS 6730) Data Vis Project: Return to <i>The Office</i>
         </p>
       </header>
-      <LineXStackedBarChart csvFilePath={"data/the_office_episodes_processed.csv"} dataKey={"scaled_ratings"}/>
+      <LineXStackedBarChart
+        csvFilePath={"data/the_office_episodes_processed.csv"}
+        dataKey={"scaled_ratings"}
+      />
     </div>
   );
 }

@@ -15,7 +15,7 @@ for column in ['ratings', 'scaled_ratings', 'viewership_mil']:
     data[column] = pd.to_numeric(data[column], errors='coerce').fillna(0)
 
 # Save only the necessary columns
-data[['x_label', 'season', 'episode_number', 'ratings', 'scaled_ratings', 'viewership_mil']].to_csv(output_file_path, index=False)
+data[['x_label', 'season', 'episode_number', 'episode_title', 'ratings', 'scaled_ratings', 'viewership_mil']].to_csv(output_file_path, index=False)
 
 # Verify the processed file
 processed_data = pd.read_csv('data/the_office_episodes_processed.csv')
