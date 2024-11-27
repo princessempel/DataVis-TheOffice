@@ -24,7 +24,7 @@ function App() {
           (CS 6730) Data Vis Project: Return to <i>The Office</i>
         </p>
       </header>
-      <p style={{color: "white"}}>Testing Deployment</p>
+      <p style={{color: "white"}}>Testing Deployment - Princess</p>
       <div className="linebarchart-container">
         <div className="toggle-buttons">
             <button
