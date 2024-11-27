@@ -1,0 +1,144 @@
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  /* Spacing between elements */
+  justify-content: center;
+  padding: 20px;
+  align-items: flex-start;
+  /* Align items properly when boxes grow */
+}
+
+.card-container {
+  width: 150px;
+  /* Initial width of the circle */
+  transition: all 0.5s ease-in-out;
+  /* Smooth transition for resizing */
+  display: flex;
+  flex-direction: column;
+  /* Ensure profile box grows vertically */
+  align-items: center;
+  /* Keep items centered within the card */
+}
+
+.card-front,
+.card-back {
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.8s, border-radius 0.8s, width 0.8s, height 0.8s;
+}
+
+.card-front {
+  border-radius: 50%;
+  /* Start as a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-back {
+  background: #f9f9f9;
+  transform: rotateY(180deg);
+  /* Initially hidden */
+  border-radius: 10px;
+  /* Turn into a rectangle */
+  padding: 20px;
+  /* Add padding inside the profile box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Shadow for profile box */
+}
+
+
+
+.card-front {
+  transform: rotateY(0deg);
+  /* Ensure the front is visible by default */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  /* Keep the back hidden initially */
+}
+
+.card-container.flipped .card-front {
+  transform: rotateY(180deg);
+  /* Flip the front out of view */
+
+}
+
+.card-container.flipped .card-back {
+  transform: rotateY(0deg);
+  /* Flip the back into view */
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* Keep the image circular */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.character-name {
+  margin-top: 10px;
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  /* Smooth fade-in effect */
+}
+
+.card-front:hover .character-name {
+  opacity: 1;
+  /* Show the name smoothly */
+}
+
+.character-name p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: lightblue;
+}
+
+.character-info-box {
+  position: relative;
+  text-align: center;
+  word-wrap: break-word;
+  /* Allow long names to wrap */
+}
+
+.character-info-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  /* Rectangular shape for the profile box */
+  margin-bottom: 10px;
+}
+
+.character-info-box p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: lightcoral;
+}

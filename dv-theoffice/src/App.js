@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
+import CharacterProfile from "./CharacterProfiles";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
@@ -26,33 +27,41 @@ function App() {
       </header>
       <div className="linebarchart-container">
         <div className="toggle-buttons">
-            <button
-              className={dataKey === "ratings" ? "active" : ""}
-              onClick={() => setDataKey("ratings")}
-            >
-              Ratings
-            </button>
-            <button
-              className={dataKey === "scaled_ratings" ? "active" : ""}
-              onClick={() => setDataKey("scaled_ratings")}
-            >
-              Scaled Ratings
-            </button>
-            <button
-              className={dataKey === "viewership_mil" ? "active" : ""}
-              onClick={() => setDataKey("viewership_mil")}
-            >
-              Viewership (in Millions)
-            </button>
-          </div>
-          <text style={{alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold"}}>per Episode in Each Season</text>
-          <LineXStackedBarChart
-            csvFilePath={"data/the_office_episodes_processed.csv"}
-            dataKey={dataKey}
-            yAxisLabel={getYAxisLabel()}
-          />
+          <button
+            className={dataKey === "ratings" ? "active" : ""}
+            onClick={() => setDataKey("ratings")}
+          >
+            Ratings
+          </button>
+          <button
+            className={dataKey === "scaled_ratings" ? "active" : ""}
+            onClick={() => setDataKey("scaled_ratings")}
+          >
+            Scaled Ratings
+          </button>
+          <button
+            className={dataKey === "viewership_mil" ? "active" : ""}
+            onClick={() => setDataKey("viewership_mil")}
+          >
+            Viewership (in Millions)
+          </button>
+        </div>
+        <text style={{ alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold" }}>per Episode in Each Season</text>
+        <LineXStackedBarChart
+          csvFilePath={"data/the_office_episodes_processed.csv"}
+          dataKey={dataKey}
+          yAxisLabel={getYAxisLabel()}
+        />
       </div>
-      
+      <div className="CharacterProfile">
+        <header className="Profile-header">
+          <p>
+            <i>The Office</i> Character Profiles
+          </p>
+        </header>
+        <CharacterProfile />
+      </div>
+
     </div>
   );
 }

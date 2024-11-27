@@ -1,8 +1,12 @@
-body, html, .App {
+body,
+html,
+.App {
   margin: 0;
   padding: 0;
-  height: 100%; /* Full viewport height */
-  width: 100%; /* Full viewport width */
+  height: 100%;
+  /* Full viewport height */
+  width: 100%;
+  /* Full viewport width */
 }
 
 .App {
@@ -42,6 +46,7 @@ body, html, .App {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -49,7 +54,7 @@ body, html, .App {
 
 .tooltip {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8); 
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 8px;
   border-radius: 4px;
@@ -63,15 +68,15 @@ body, html, .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   gap: 20px;
   padding: 10px;
 }
 
 .toggle-buttons {
   display: flex;
-  flex-direction: row; 
-  gap: 10px; 
+  flex-direction: row;
+  gap: 10px;
 }
 
 .toggle-buttons button {
@@ -82,7 +87,7 @@ body, html, .App {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  text-align: center; 
+  text-align: center;
   width: 200px;
 }
 
@@ -93,4 +98,9 @@ body, html, .App {
 
 .toggle-buttons button:hover {
   background-color: #727980;
-} 
+}
+
+.Profile-header {
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
