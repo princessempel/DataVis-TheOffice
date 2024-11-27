@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import React, { useState } from "react";
 import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
+import CharacterProfile from "./CharacterProfiles";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
