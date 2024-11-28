@@ -59,7 +59,9 @@ function App() {
             <i>The Office</i> Character Profiles
           </p>
         </header>
-        <CharacterProfile />
+        <CharacterProfile
+          csvFilePath={"data/combined_dataset.csv"}
+        />
       </div>
 
     </div>
