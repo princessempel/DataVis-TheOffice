@@ -10,7 +10,7 @@ const LollipopChart = ({ data }) => {
         d3.select(chartRef.current).select("svg").remove();
 
         // Set dimensions
-        const margin = { top: 50, right: 30, bottom: 50, left: 50 };
+        const margin = { top: 50, right: 30, bottom: 100, left: 50 };
         const width = 1000 - margin.left - margin.right;
         const height = 600 - margin.top - margin.bottom;
 
@@ -137,7 +137,7 @@ const LollipopChart = ({ data }) => {
             .append("text")
             .attr("class", "x-axis-label")
             .attr("x", width / 2)
-            .attr("y", height + margin.bottom - 5)
+            .attr("y", height + margin.bottom - 40)
             .attr("text-anchor", "middle")
             .text("Episodes");
 
@@ -149,6 +149,15 @@ const LollipopChart = ({ data }) => {
             .attr("text-anchor", "middle")
             .attr("transform", "rotate(-90)")
             .text("Number of Lines");
+
+        // Add label/note
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height + margin.bottom - 20) // Space for the first note
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("font-style", "italic")
+            .text("Chronologically grouped by seasons");
     }, [data]);
 
     return <div ref={chartRef}></div>;

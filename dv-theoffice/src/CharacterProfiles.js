@@ -3,6 +3,8 @@ import * as d3 from "d3";
 import "./CharacterProfiles.css"; // For styling
 import LollipopChart from "./LollipopChart";
 
+import GroupedScatterPlot from "./GroupedScatterPlot";
+
 const characters = [
     { name: "Michael Scott", image: require("./profileImages/MichaelScott.png") },
     { name: "Dwight Schrute", image: require("./profileImages/DwightSchrute.png") },
@@ -34,6 +36,7 @@ const CharacterProfile = ({ csvFilePath }) => {
                     season: +d.season,
                     episode: d.episode_number === "" ? null : +d.episode_number,
                     title: d.episode_title,
+                    scaled_ratings: +d.scaled_ratings,
                     lines: {
                         Michael: +d.Michael_lines,
                         Dwight: +d.Dwight_lines,
@@ -52,6 +55,24 @@ const CharacterProfile = ({ csvFilePath }) => {
                         Kevin: +d.Kevin_lines,
                         Creed: +d.Creed_lines,
                     },
+                    scenes: {
+                        Michael: +d.Michael_scenes,
+                        Dwight: +d.Dwight_scenes,
+                        Pam: +d.Pam_scenes,
+                        Jim: +d.Jim_scenes,
+                        Kelly: +d.Kelly_scenes,
+                        Phyllis: +d.Phyllis_scenes,
+                        Andy: +d.Andy_scenes,
+                        Darryl: +d.Darryl_scenes,
+                        Oscar: +d.Oscar_scenes,
+                        Angela: +d.Angela_scenes,
+                        Ryan: +d.Ryan_scenes,
+                        Erin: +d.Erin_scenes,
+                        Toby: +d.Toby_scenes,
+                        Stanley: +d.Stanley_scenes,
+                        Kevin: +d.Kevin_scenes,
+                        Creed: +d.Creed_scenes,
+                    }
                 }))
                 .filter((d) => d.episode !== null); // Exclude rows with null episodes
             setData(processedData);
@@ -117,6 +138,20 @@ const CharacterProfile = ({ csvFilePath }) => {
                                         title: episode.title,
                                     }))
                                     .filter((d) => d.episode != null)}
+                            />
+                        </div>
+                        <div className="grouped-scatterplot-container">
+                            <GroupedScatterPlot
+                                data={data
+                                    .map((episode) => ({
+                                        season: episode.season, // Bubble color based on seasons
+                                        episode: episode.episode, // X-axis: Episode number
+                                        scaled_ratings: episode.scaled_ratings, // Y-axis: Scaled ratings
+                                        scenes: episode.scenes[clickedCharacter.name.split(" ")[0]], // Bubble size based on scenes
+                                        title: episode.title,
+                                    }))
+                                    .filter((d) => d.scenes > 0)
+                                }
                             />
                         </div>
                     </div>
