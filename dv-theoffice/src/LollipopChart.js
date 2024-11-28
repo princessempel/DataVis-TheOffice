@@ -10,7 +10,7 @@ const LollipopChart = ({ data }) => {
         d3.select(chartRef.current).select("svg").remove();
 
         // Set dimensions
-        const margin = { top: 20, right: 30, bottom: 50, left: 100 };
+        const margin = { top: 50, right: 30, bottom: 50, left: 50 };
         const width = 1000 - margin.left - margin.right;
         const height = 600 - margin.top - margin.bottom;
 
@@ -22,6 +22,17 @@ const LollipopChart = ({ data }) => {
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
+        // Add title
+        svg
+            .append("text")
+            .attr("x", width / 2) // Center the title
+            .attr("y", -margin.top / 2) // Adjust to place it slightly below the top
+            .attr("text-anchor", "middle")
+            .style("font-size", "18px")
+            .style("font-weight", "bold")
+            .style("fill", "#000") // Ensure a visible color (black in this case)
+            .text("Number of Lines Spoken in Each Episode");
+
 
         // Scales
         const xScale = d3
