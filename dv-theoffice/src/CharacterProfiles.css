@@ -102,6 +102,91 @@
 
 
 
+
+.text-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow-y: auto;
+  align-items: center;
+  /* Handle overflow if text is too long */
+}
+
+.text-section img {
+  margin: 0 auto;
+  display: block;
+}
+
+.text-section h2 {
+  text-align: center;
+  margin-top: 10px;
+  color: #1a57a2;
+}
+
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text-section p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #666;
+}
+
+strong {
+  color: #1a57a2;
+  /* Example: vibrant orange */
+  font-weight: bold;
+}
+
+ul {
+  list-style: disc;
+  /* Ensures bullets are visible */
+  list-style-position: inside;
+  /* Keeps bullets aligned outside the text block */
+  margin: 5px 0;
+  /* Adjust spacing around list items */
+  padding-left: 20px;
+  /* Ensures bullets have some padding for clarity */
+}
+
+li {
+  margin: 0;
+  /* Ensures no extra space between bullet and text */
+  padding-left: 5px;
+  /* Adds slight spacing between bullet and text */
+  line-height: 1.6;
+  /* Improves readability for multi-line text */
+}
+
+
+
+
+.text-section li::marker {
+  font-size: 16px;
+  color: black;
+  /* Style the bullets */
+}
+
+
+
+
+.chart-section {
+  flex: 2;
+  min-width: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Space between the two charts */
+}
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -117,6 +202,7 @@
 .close-button:hover {
   color: red;
 }
+
 
 .modal-content img {
   width: 100px;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as d3 from "d3";
 import "./CharacterProfiles.css"; // For styling
 import LollipopChart from "./LollipopChart";
+// import characterData from "./data/character_data.json"
 
 import GroupedScatterPlot from "./GroupedScatterPlot";
 
@@ -24,10 +25,12 @@ const characters = [
     { name: "Creed Bratton", image: require("./profileImages/CreedBratton.png") },
 ];
 
-const CharacterProfile = ({ csvFilePath }) => {
+const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
     const [clickedCharacter, setClickedCharacter] = useState(null);
     const [hoveredCharacter, setHoveredCharacter] = useState(null);
     const [data, setData] = useState([]); // State to store the dataset
+    const [characterData, setCharacterData] = useState({}); // For JSON data
+
 
     useEffect(() => {
         d3.csv(csvFilePath).then((rawData) => {
@@ -78,6 +81,12 @@ const CharacterProfile = ({ csvFilePath }) => {
             setData(processedData);
         });
     }, [csvFilePath]);
+    // Load character-specific data
+    useEffect(() => {
+        d3.json(jsonFilePath).then((jsonData) => {
+            setCharacterData(jsonData);
+        });
+    }, [jsonFilePath]);
 
     const handleMouseEnter = (character) => {
         setHoveredCharacter(character);
@@ -126,33 +135,59 @@ const CharacterProfile = ({ csvFilePath }) => {
                         <button className="close-button" onClick={handleCloseModal}>
                             X
                         </button>
-                        <img src={clickedCharacter.image} alt={clickedCharacter.name} />
-                        <h2>{clickedCharacter.name}</h2>
-                        <div className="lollipop-chart-container">
-                            <LollipopChart
-                                data={data
-                                    .map((episode) => ({
-                                        season: episode.season,
-                                        episode: episode.episode,
-                                        lines: episode.lines[clickedCharacter.name.split(" ")[0]],
-                                        title: episode.title,
-                                    }))
-                                    .filter((d) => d.episode != null)}
-                            />
+
+                        <div className="text-section">
+                            <img src={clickedCharacter.image} alt={clickedCharacter.name} />
+                            <h2>{clickedCharacter.name}</h2>
+                            <p><strong>Role(s):</strong> {characterData[clickedCharacter.name.split(" ")[0]].Role}</p>
+
+                            <p><strong>Total Episodes:</strong> {characterData[clickedCharacter.name.split(" ")[0]].total_episodes_appeared}</p>
+                            <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
+                            <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
+                            <p><strong>Notable Quotes:</strong>
+                                <ul>
+                                    {characterData[clickedCharacter.name.split(" ")[0]].notable_quotes.map((quote, i) => (
+                                        <li key={i}>{quote}</li>
+                                    ))}
+                                </ul></p>
+                            <p><strong>Top 5 Episodes:</strong></p>
+                            <ul>
+                                {characterData[clickedCharacter.name.split(" ")[0]].top_episodes.map((episode, i) => (
+                                    <li key={i}>
+                                        {episode.episode}: {episode.episode_title}
+                                    </li>
+                                ))}
+                            </ul>
+
                         </div>
-                        <div className="grouped-scatterplot-container">
-                            <GroupedScatterPlot
-                                data={data
-                                    .map((episode) => ({
-                                        season: episode.season, // Bubble color based on seasons
-                                        episode: episode.episode, // X-axis: Episode number
-                                        scaled_ratings: episode.scaled_ratings, // Y-axis: Scaled ratings
-                                        scenes: episode.scenes[clickedCharacter.name.split(" ")[0]], // Bubble size based on scenes
-                                        title: episode.title,
-                                    }))
-                                    .filter((d) => d.scenes > 0)
-                                }
-                            />
+                        <div className="chart-section">
+                            <div className="lollipop-chart-container">
+                                <LollipopChart
+                                    data={data
+                                        .map((episode) => ({
+                                            season: episode.season,
+                                            episode: episode.episode,
+                                            lines: episode.lines[clickedCharacter.name.split(" ")[0]],
+                                            title: episode.title,
+                                        }))
+                                        .filter((d) => d.episode != null)}
+                                />
+                            </div>
+                            <div className="grouped-scatterplot-container">
+                                <GroupedScatterPlot
+                                    data={data
+                                        .map((episode) => ({
+                                            season: episode.season, // Bubble color based on seasons
+                                            episode: episode.episode, // X-axis: Episode number
+                                            scaled_ratings: episode.scaled_ratings, // Y-axis: Scaled ratings
+                                            scenes: episode.scenes[clickedCharacter.name.split(" ")[0]], // Bubble size based on scenes
+                                            title: episode.title,
+                                        }))
+                                        .filter((d) => d.scenes > 0)
+                                    }
+                                />
+
+                            </div>
                         </div>
                     </div>
                 </div>

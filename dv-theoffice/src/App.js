@@ -61,6 +61,7 @@ function App() {
         </header>
         <CharacterProfile
           csvFilePath={"data/combined_dataset.csv"}
+          jsonFilePath={"data/character_data.json"}
         />
       </div>
 
