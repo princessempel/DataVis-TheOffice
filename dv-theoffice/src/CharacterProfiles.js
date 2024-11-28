@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import './CharacterProfiles.css'; // For styling
+import LollipopChart from "./LollipopChart";
 
 const characters = [
     {
@@ -70,9 +71,44 @@ const characters = [
 ]
 
 
-const CharacterProfile = () => {
+const CharacterProfile = ({ csvFilePath }) => {
     const [clickedCharacter, setClickedCharacter] = useState(null);
     const [hoveredCharacter, setHoveredCharacter] = useState(null);
+    const [data, setData] = useState([]); // State to store the dataset
+
+    // Fetch and process the dataset
+    useEffect(() => {
+        d3.csv(csvFilePath).then((rawData) => {
+            console.log("rawData = ", rawData)
+            const processedData = rawData.map((d) => ({
+                season: +d.season,
+                episode: d.episode_number === "" ? null : +d.episode_number, // Replace // Ensure consistency with naming
+                ratings: +d.ratings,
+                title: d.episode_title,
+                scaled_ratings: +d.scaled_ratings,
+                viewership_mil: +d.viewership_mil,
+                Michael_lines: +d.Michael_lines,
+                Dwight_lines: +d.Dwight_lines,
+                Pam_lines: +d.Pam_lines,
+                Jim_lines: +d.Jim_lines,
+                Kelly_lines: +d.Kelly_lines,
+                Phyllis_lines: +d.Phyllis_lines,
+                Andy_lines: +d.Andy_lines,
+                Darryl_lines: +d.Darryl_lines,
+                Oscar_lines: +d.Oscar_lines,
+                Angela_lines: +d.Angela_lines,
+                Ryan_lines: +d.Ryan_lines,
+                Erin_lines: +d.Erin_lines,
+                Toby_lines: +d.Toby_lines,
+                Stanley_lines: +d.Stanley_lines,
+                Kevin_lines: +d.Kevin_lines,
+                Creed_lines: +d.Creed_lines,
+            }))
+                .filter((d) => d.episode != null);
+            console.log("processed data = ", processedData)
+            setData(processedData);
+        });
+    }, []); // Empty dependency array ensures this runs only once OR should this be csvFilePath
 
     const handleMouseEnter = (character) => {
         setHoveredCharacter(character);
@@ -90,8 +126,10 @@ const CharacterProfile = () => {
         setClickedCharacter(null);
     };
 
+
     return (
         <div className="character-container">
+            <div id="tooltip"></div> {/* Tooltip div */}
             {characters.map((character, index) => (
                 <div
                     key={index}
@@ -130,6 +168,36 @@ const CharacterProfile = () => {
                             >
                                 X
                             </button>
+                            {/* Render the lollipop chart */}
+                            {clickedCharacter === character && (
+                                // Debug the data being passed to the LollipopChart
+                                <>
+                                    {console.log(
+                                        data.map((episode) => ({
+                                            season: episode.season,
+                                            episode_number: episode.episode, // Ensure correct mapping
+                                            lines: episode[`${clickedCharacter.name.split(" ")[0]}_lines`],
+                                        }))
+                                            .filter((d) => d.lines > 0) // Only episodes where the character has lines
+                                    )}
+                                    <LollipopChart
+
+                                        data={data
+                                            // .filter((episode) => episode.episode === 0)
+                                            .map((episode) => ({
+                                                season: episode.season, // Season for coloring
+                                                episode: episode.episode, // Episode for X-axis
+                                                lines: episode[`${clickedCharacter.name.split(" ")[0]}_lines`], // Selected character's lines
+                                                title: episode.title, // Episode title for tooltip
+                                            }))
+                                            .filter((d) => d.episode !== null)
+                                            // .filter((d) => d.lines > 0)
+                                        } // Only include episodes where the character has lines
+                                    />
+                                </>
+
+
+                            )}
                         </div>
                     </div>
                 </div>

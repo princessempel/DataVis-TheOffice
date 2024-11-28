@@ -13,21 +13,19 @@ lines_agg = (
     .reset_index(name='lines_spoken')
 )
 
-# Step 2: Identify recurring speakers (appeared in more than 5 episodes)
-recurring_speakers = (
-    lines_agg.groupby('speaker')['episode']
-    .nunique()  # Count the number of unique episodes each speaker appears in
-    .reset_index(name='episode_count')
-    .query('episode_count > 5')  # Filter for speakers with more than 5 episodes
-)
+# Step 2: Filter for the 17 main characters
+main_characters = [
+    'Michael', 'Dwight', 'Pam', 'Jim', 
+    'Kelly', 'Phyllis', 'Andy', 'Darryl',
+    'Oscar', 'Angela', 'Ryan', 'Erin',
+    'Toby', 'Stanley', 'Meredith', 'Kevin',
+    'Creed'
+]
 
-# Get the list of recurring speakers
-recurring_speakers_list = recurring_speakers['speaker'].tolist()
+# Keep only rows where the speaker is in the main characters list
+lines_agg = lines_agg[lines_agg['speaker'].isin(main_characters)]
 
-# Step 3: Filter lines_agg for recurring speakers only
-lines_agg = lines_agg[lines_agg['speaker'].isin(recurring_speakers_list)]
-
-# Step 4: Pivot to create columns for line counts
+# Step 3: Pivot to create columns for line counts
 lines_pivot = lines_agg.pivot(
     index=['season', 'episode'], 
     columns='speaker', 
@@ -37,19 +35,19 @@ lines_pivot = lines_agg.pivot(
 # Rename columns to include "_lines"
 lines_pivot.columns = [f"{col}_lines" for col in lines_pivot.columns]
 
-# Step 5: Add 0-indexed 'id' column
+# Step 4: Add 0-indexed 'id' column
 lines_pivot = lines_pivot.reset_index()
 lines_pivot['id'] = lines_pivot.groupby('season').cumcount()  # Add a sequential ID per season
 
-# Step 6: Count scenes per speaker per episode
+# Step 5: Count scenes per speaker per episode
 scenes_agg = (
     lines.groupby(['season', 'episode', 'scene', 'speaker'])
     .size()
     .reset_index(name='scene_count')
 )
 
-# Filter scenes_agg for recurring speakers only
-scenes_agg = scenes_agg[scenes_agg['speaker'].isin(recurring_speakers_list)]
+# Filter scenes_agg for main characters only
+scenes_agg = scenes_agg[scenes_agg['speaker'].isin(main_characters)]
 
 # Count the number of scenes each speaker appears in per episode
 scenes_pivot = scenes_agg.pivot_table(
@@ -63,7 +61,7 @@ scenes_pivot = scenes_agg.pivot_table(
 # Rename columns to include "_scenes"
 scenes_pivot.columns = [f"{col}_scenes" for col in scenes_pivot.columns]
 
-# Step 7: Combine line and scene counts
+# Step 6: Combine line and scene counts
 combined_pivot = pd.merge(
     lines_pivot,
     scenes_pivot,
@@ -75,11 +73,11 @@ combined_pivot = pd.merge(
 combined_pivot.reset_index(drop=True, inplace=True)
 combined_pivot['index'] = combined_pivot.index
 
-# Step 8: Save the filtered dataset to a CSV file
+# Step 7: Save the filtered dataset to a CSV file
 combined_pivot.to_csv('filtered_lines_and_scenes_pivot.csv', index=False)
 
 # Optional: Save to an Excel file
 # combined_pivot.to_excel('filtered_lines_and_scenes_pivot.xlsx', index=False)
 
-# Step 9: Print a success message
-print("Filtered dataset with line and scene counts for recurring speakers saved successfully!")
+# Step 8: Print a success message
+print("Filtered dataset with line and scene counts for main characters saved successfully!")
