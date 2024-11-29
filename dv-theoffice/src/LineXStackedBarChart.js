@@ -7,7 +7,7 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
 
   useEffect(() => {
     d3.csv(csvFilePath).then((rawData) => {
-      console.log("Princess raw data = ", rawData)
+
       const processedData = rawData.map((d) => ({
         x_label: d.x_label,
         episode_title: d.episode_title,

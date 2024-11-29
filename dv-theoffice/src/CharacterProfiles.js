@@ -142,22 +142,23 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                             <p><strong>Role(s):</strong> {characterData[clickedCharacter.name.split(" ")[0]].Role}</p>
 
                             <p><strong>Total Episodes:</strong> {characterData[clickedCharacter.name.split(" ")[0]].total_episodes_appeared}</p>
-                            <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
-                            <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
+
                             <p><strong>Notable Quotes:</strong>
                                 <ul>
                                     {characterData[clickedCharacter.name.split(" ")[0]].notable_quotes.map((quote, i) => (
-                                        <li key={i}>{quote}</li>
+                                        <li key={i}>"{quote}"</li>
                                     ))}
                                 </ul></p>
                             <p><strong>Top 5 Episodes:</strong></p>
                             <ul>
                                 {characterData[clickedCharacter.name.split(" ")[0]].top_episodes.map((episode, i) => (
                                     <li key={i}>
-                                        {episode.episode}: {episode.episode_title}
+                                        {episode.episode}: <i>{episode.episode_title}</i>
                                     </li>
                                 ))}
                             </ul>
+                            <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
+                            <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
 
                         </div>
                         <div className="chart-section">

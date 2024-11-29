@@ -136,10 +136,10 @@
 .text-section p {
   margin: 10px 0;
   line-height: 1.6;
-  color: #666;
+  color: #373434;
 }
 
-strong {
+.text-section strong {
   color: #1a57a2;
   /* Example: vibrant orange */
   font-weight: bold;
@@ -163,6 +163,7 @@ li {
   /* Adds slight spacing between bullet and text */
   line-height: 1.6;
   /* Improves readability for multi-line text */
+  color: #373434;
 }
 
 
