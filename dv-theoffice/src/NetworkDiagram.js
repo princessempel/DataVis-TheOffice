@@ -67,6 +67,30 @@ const NetworkDiagram = () => {
                 .attr("stroke-opacity", 0.6)
                 .attr("stroke-width", d => Math.sqrt(d.mentions)); // Edge thickness by weight
 
+            const tooltip = d3.select("body").append("div")
+                .style("position", "absolute")
+                .style("background-color", "rgba(0, 0, 0, 0.8)")
+                .style("color", "white")
+                .style("padding", "8px")
+                .style("border-radius", "4px")
+                .style("pointer-events", "none")
+                .style("font-size", "12px")
+                .style("display", "none");
+            
+            link.on("mouseover", (event, d) => {
+                tooltip
+                    .style("display", "block")
+                    .html(`Source: ${d.source.id}<br>Target: ${d.target.id}<br>Mentions: ${d.mentions}`);
+            })
+            .on("mousemove", (event) => {
+                tooltip
+                    .style("left", `${event.pageX + 10}px`)
+                    .style("top", `${event.pageY + 10}px`);
+            })
+            .on("mouseout", () => {
+                tooltip.style("display", "none");
+            });
+            
             // Draw nodes
             const node = svg.append("g")
             .selectAll("circle")
