@@ -1,15 +1,31 @@
 {
   "files": {
-    "main.css": "/DataVis-TheOffice/static/css/main.44cef85e.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.a0ed745b.js",
+    "main.css": "/DataVis-TheOffice/static/css/main.165c05cf.css",
+    "main.js": "/DataVis-TheOffice/static/js/main.b30e27e1.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
+    "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
+    "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
+    "static/media/AngelaMartin.png": "/DataVis-TheOffice/static/media/AngelaMartin.7c47a0738c1e530c990d.png",
+    "static/media/JimHalpert.png": "/DataVis-TheOffice/static/media/JimHalpert.fdd3d7c433b670ac7f25.png",
+    "static/media/KellyKapoor.png": "/DataVis-TheOffice/static/media/KellyKapoor.d4c39ffe3d40546db201.png",
+    "static/media/DarrylPhilbin.png": "/DataVis-TheOffice/static/media/DarrylPhilbin.3181ae3f86ccf526f8a1.png",
+    "static/media/PamHalpert.png": "/DataVis-TheOffice/static/media/PamHalpert.e09ae0a628cae6df3868.png",
+    "static/media/OscarMartinez.png": "/DataVis-TheOffice/static/media/OscarMartinez.a1241d48058b35fa4092.png",
+    "static/media/RyanHoward.png": "/DataVis-TheOffice/static/media/RyanHoward.3f6c03eb0e97c5642d57.png",
+    "static/media/DwightSchrute.png": "/DataVis-TheOffice/static/media/DwightSchrute.6ba69e78c4ccbb7776f7.png",
+    "static/media/MichaelScott.png": "/DataVis-TheOffice/static/media/MichaelScott.e853831f13326d9987d7.png",
+    "static/media/TobyFlenderson.png": "/DataVis-TheOffice/static/media/TobyFlenderson.7b01abbef9927a56bda1.png",
+    "static/media/AndyBernard.png": "/DataVis-TheOffice/static/media/AndyBernard.cb923fdce4e850fc81bb.png",
+    "static/media/StanleyHudson.png": "/DataVis-TheOffice/static/media/StanleyHudson.09e9b06dd10d7657dc89.png",
+    "static/media/KevinMalone.png": "/DataVis-TheOffice/static/media/KevinMalone.7cb20b4a07e8712eda45.png",
+    "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
     "index.html": "/DataVis-TheOffice/index.html",
-    "main.44cef85e.css.map": "/DataVis-TheOffice/static/css/main.44cef85e.css.map",
-    "main.a0ed745b.js.map": "/DataVis-TheOffice/static/js/main.a0ed745b.js.map",
+    "main.165c05cf.css.map": "/DataVis-TheOffice/static/css/main.165c05cf.css.map",
+    "main.b30e27e1.js.map": "/DataVis-TheOffice/static/js/main.b30e27e1.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44cef85e.css",
-    "static/js/main.a0ed745b.js"
+    "static/css/main.165c05cf.css",
+    "static/js/main.b30e27e1.js"
   ]
 }
