@@ -49,7 +49,7 @@ function App() {
         </div>
         <text style={{ alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold" }}>per Episode in Each Season</text>
         <LineXStackedBarChart
-          csvFilePath={"DataVis-TheOffice/data/the_office_episodes_processed.csv"}
+          csvFilePath={"/data/the_office_episodes_processed.csv"}
           dataKey={dataKey}
           yAxisLabel={getYAxisLabel()}
         />
@@ -61,8 +61,8 @@ function App() {
           </p>
         </header>
         <CharacterProfile
-          csvFilePath={"DataVis-TheOffice/data/combined_dataset.csv"}
-          jsonFilePath={"DataVis-TheOffice/data/character_data.json"}
+          csvFilePath={"/data/combined_dataset.csv"}
+          jsonFilePath={"/data/character_data.json"}
         />
       </div>
 
