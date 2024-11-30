@@ -7,6 +7,7 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
 
   useEffect(() => {
     d3.csv(csvFilePath).then((rawData) => {
+
       const processedData = rawData.map((d) => ({
         x_label: d.x_label,
         episode_title: d.episode_title,
@@ -22,37 +23,37 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
 
   useEffect(() => {
     if (data.length === 0) return;
-  
+
     const margin = { top: 20, right: 30, bottom: 70, left: 50 };
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
-  
+
     // Clear SVG before re-rendering
     d3.select(svgRef.current).selectAll("*").remove();
 
     // Responsive SVG (scales based on window size)
     const svg = d3.select(svgRef.current)
-      .attr("width", "70%") 
+      .attr("width", "70%")
       .attr("height", "70%")
       .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-      .style("background-color", "#2A3C5F") 
+      .style("background-color", "#2A3C5F")
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
-  
+
     const x = d3.scalePoint()
       .domain(data.map((d) => d.x_label))
       .range([0, width])
       .padding(0.5);
-  
+
     const y = d3.scaleLinear()
       .domain([0, d3.max(data, (d) => d[dataKey])])
       .nice()
       .range([height, 0]);
-  
+
     const color = d3.scaleOrdinal()
       .domain([...new Set(data.map((d) => d.season))])
       .range(d3.schemeCategory10);
-  
+
     // Tooltip div
     const tooltip = d3.select("body")
       .append("div")
@@ -64,16 +65,16 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
       .style("pointer-events", "none")
       .style("font-size", "12px")
       .style("display", "none");
-  
+
     // X-Axis
     const xAxis = svg.append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(x));
 
-    xAxis.selectAll(".domain, .tick line") 
-      .attr("stroke", "white"); 
+    xAxis.selectAll(".domain, .tick line")
+      .attr("stroke", "white");
 
-    xAxis.selectAll(".tick text") 
+    xAxis.selectAll(".tick text")
       .remove();
 
     // Y-Axis
@@ -81,11 +82,11 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
       .call(d3.axisLeft(y));
 
     yAxis.selectAll(".domain, .tick line")
-      .attr("stroke", "white"); 
+      .attr("stroke", "white");
 
-    yAxis.selectAll(".tick text") 
+    yAxis.selectAll(".tick text")
       .attr("fill", "white");
-  
+
     // Line Chart
     const line = d3.line()
       .x((d) => x(d.x_label))
@@ -94,19 +95,19 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
     svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("x", -height / 2)
-      .attr("y", -35) 
+      .attr("y", -35)
       .attr("text-anchor", "middle")
       .style("font-size", "12px")
       .style("fill", "white")
       .text(yAxisLabel);
-  
+
     svg.append("path")
       .datum(data)
       .attr("fill", "none")
       .attr("stroke", "#4BA8B2")
       .attr("stroke-width", 2)
       .attr("d", line);
-  
+
     // Stacked Bar Chart
     svg.selectAll(".stacked-bar")
       .data(data)
@@ -143,7 +144,7 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
         // Remove highlight from point and rectangle
         svg.selectAll(`.highlight-${d.x_label}`)
           .attr("stroke", "none");
-        
+
         // Remove tooltip
         tooltip.style("display", "none");
       });
@@ -154,7 +155,7 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
       (episodes) => d3.mean(episodes.map((d) => x(d.x_label))),
       (d) => d.season
     );
-  
+
     seasonCenters.forEach((center, season) => {
       svg.append("text")
         .attr("x", center)
@@ -199,12 +200,12 @@ const LineXStackedBarChart = ({ csvFilePath, dataKey, yAxisLabel }) => {
 
         tooltip.style("display", "none");
       });
-  
+
     return () => {
       tooltip.remove();
     };
   }, [data, dataKey, yAxisLabel]);
-  
+
 
   return <svg ref={svgRef}></svg>;
 };
