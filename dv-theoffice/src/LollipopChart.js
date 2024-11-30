@@ -116,7 +116,6 @@ const LollipopChart = ({ data }) => {
                 tooltip.style("visibility", "hidden");
             });
 
-
         // Add X-axis
         svg
             .append("g")
@@ -127,10 +126,12 @@ const LollipopChart = ({ data }) => {
                         d3.range(0, d3.max(data, (d) => d.episode) + 1, 10) // Generate ticks every 10 episodes
                     )
                     .tickFormat((d) => `E${d}`) // Add "E" prefix to each tick
-            );
+            )
+            .attr("color", "black");
 
         // Add Y-axis
-        svg.append("g").call(d3.axisLeft(yScale).ticks(5));
+        svg.append("g").call(d3.axisLeft(yScale).ticks(5))
+            .attr("color", "black");
 
         // Add axis labels
         svg

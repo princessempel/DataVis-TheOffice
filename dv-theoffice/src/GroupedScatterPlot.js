@@ -102,10 +102,12 @@ const GroupedScatterplot = ({ data }) => {
                         d3.range(0, d3.max(data, (d) => d.episode) + 1, 10)
                     )
                     .tickFormat((d) => `E${d}`)
-            );
+            )
+            .attr("color", "black");
 
         // Add Y-axis
-        svg.append("g").call(d3.axisLeft(yScale));
+        svg.append("g").call(d3.axisLeft(yScale))
+            .attr("color", "black");
 
         // Axis labels
         // svg.append("text")
