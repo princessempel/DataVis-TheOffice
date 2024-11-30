@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
 import CharacterProfile from "./CharacterProfiles";
+import NetworkDiagram from "./NetworkDiagram";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
@@ -30,7 +31,6 @@ function App() {
           (CS 6730) Data Vis Project: Return to <i>The Office</i>
         </p>
       </header>
-      <p style={{ color: "white" }}>Testing Deployment - Princess</p>
       <div className="linebarchart-container">
         <div className="toggle-buttons">
           <button
