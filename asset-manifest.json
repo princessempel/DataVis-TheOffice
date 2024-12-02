@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DataVis-TheOffice/static/css/main.048bbae8.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.73b8db96.js",
+    "main.css": "/DataVis-TheOffice/static/css/main.67b11146.css",
+    "main.js": "/DataVis-TheOffice/static/js/main.aa194b7a.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
     "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
     "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
@@ -16,16 +16,17 @@
     "static/media/MichaelScott.png": "/DataVis-TheOffice/static/media/MichaelScott.e853831f13326d9987d7.png",
     "static/media/TobyFlenderson.png": "/DataVis-TheOffice/static/media/TobyFlenderson.7b01abbef9927a56bda1.png",
     "static/media/AndyBernard.png": "/DataVis-TheOffice/static/media/AndyBernard.cb923fdce4e850fc81bb.png",
+    "static/media/MeredithPalmer.png": "/DataVis-TheOffice/static/media/MeredithPalmer.7c36006b17566299b8e1.png",
     "static/media/StanleyHudson.png": "/DataVis-TheOffice/static/media/StanleyHudson.09e9b06dd10d7657dc89.png",
     "static/media/KevinMalone.png": "/DataVis-TheOffice/static/media/KevinMalone.7cb20b4a07e8712eda45.png",
     "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
     "index.html": "/DataVis-TheOffice/index.html",
-    "main.048bbae8.css.map": "/DataVis-TheOffice/static/css/main.048bbae8.css.map",
-    "main.73b8db96.js.map": "/DataVis-TheOffice/static/js/main.73b8db96.js.map",
+    "main.67b11146.css.map": "/DataVis-TheOffice/static/css/main.67b11146.css.map",
+    "main.aa194b7a.js.map": "/DataVis-TheOffice/static/js/main.aa194b7a.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.048bbae8.css",
-    "static/js/main.73b8db96.js"
+    "static/css/main.67b11146.css",
+    "static/js/main.aa194b7a.js"
   ]
 }
