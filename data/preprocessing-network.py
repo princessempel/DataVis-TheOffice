@@ -18,7 +18,7 @@ with open(alias_file, 'r') as file:
 # Define main characters
 main_character_names = [
     "Michael", "Jim", "Pam", "Dwight", "Kelly", "Andy", "Darryl",
-    "Oscar", "Angela", "Ryan", "Toby", "Stanley", "Kevin", "Creed"
+    "Oscar", "Angela", "Ryan", "Toby", "Stanley", "Kevin", "Creed", "Meredith"
 ]
 
 # Function to detect mentions using aliases
@@ -31,50 +31,52 @@ def detect_mentions_with_aliases(line, speaker, aliases):
             mentions.append(character)
     return mentions
 
-# Initialize edges dictionary
-edges = defaultdict(int)
+# Initialize edges dictionary for aggregation
+aggregated_edges = defaultdict(lambda: {
+    'total': 0,
+    'season': defaultdict(int),
+    'episode': defaultdict(int)
+})
 
 # Process each line of dialogue to detect mentions
 for _, row in df.iterrows():
     speaker = row['speaker']
     line = row['line_text']
-    
+    season = int(row['season'])
+    episode = int(row['episode'])
+
     # Detect mentions
     mentions = detect_mentions_with_aliases(line, speaker, aliases)
-    
-    # Create or update edges
+
+    # Aggregate mentions by season and episode
     for mention in mentions:
-        edges[(speaker, mention)] += 1
+        aggregated_edges[(speaker, mention)]['total'] += 1
+        aggregated_edges[(speaker, mention)]['season'][season] += 1
+        aggregated_edges[(speaker, mention)]['episode'][(season, episode)] += 1
 
-# Extract unique nodes
-nodes = set(df['speaker']).union(aliases.keys())
+# Convert aggregated edges to final list format
+final_edges_list = []
+for (source, target), data in aggregated_edges.items():
+    # Only include edges between main characters
+    if source in main_character_names and target in main_character_names:
+        final_edges_list.append({
+            'source': source,
+            'target': target,
+            'mentions': data['total'],  # Total mentions
+            'season_mentions': dict(data['season']),  # Mentions by season
+            'episode_mentions': {f"season-{s}-episode-{e}": count for (s, e), count in data['episode'].items()}  # Mentions by episode
+        })
 
-# Filter for main characters or characters with aliases
-allowed_characters = set(main_character_names).union(aliases.keys())
-
-# Filter nodes
-nodes_list = [{'id': node} for node in nodes if node in allowed_characters]
-
-# Filter edges
-edges_list = [
-    {'source': source, 'target': target, 'mentions': weight}
-    for (source, target), weight in edges.items()
-    if source in allowed_characters and target in allowed_characters
-]
-
-# Ensure all edge nodes are in nodes_list
-edge_nodes = {edge['source'] for edge in edges_list}.union({edge['target'] for edge in edges_list})
-for node in edge_nodes:
-    if node not in {n['id'] for n in nodes_list}:
-        nodes_list.append({'id': node})
+# Filter nodes to include only main characters
+nodes_list = [{'id': character} for character in main_character_names]
 
 # Save nodes and edges as JSON
 with open(node_output_file, 'w') as f:
     json.dump(nodes_list, f, indent=4)
 
 with open(edge_output_file, 'w') as f:
-    json.dump(edges_list, f, indent=4)
+    json.dump(final_edges_list, f, indent=4)
 
 # Display example results
 print("Nodes:", nodes_list[:5])
-print("Edges:", edges_list[:5])
+print("Edges:", final_edges_list[:5])

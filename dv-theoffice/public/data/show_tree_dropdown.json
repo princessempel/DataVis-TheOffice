@@ -1,0 +1,804 @@
+{
+    "label": "Entire Show",
+    "value": "all",
+    "children": [
+        {
+            "label": "Season 1",
+            "value": "season-1",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-1-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-1-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-1-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-1-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-1-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-1-episode-6"
+                }
+            ]
+        },
+        {
+            "label": "Season 2",
+            "value": "season-2",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-2-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-2-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-2-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-2-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-2-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-2-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-2-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-2-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-2-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-2-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-2-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-2-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-2-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-2-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-2-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-2-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-2-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-2-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-2-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-2-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-2-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-2-episode-22"
+                }
+            ]
+        },
+        {
+            "label": "Season 3",
+            "value": "season-3",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-3-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-3-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-3-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-3-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-3-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-3-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-3-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-3-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-3-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-3-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-3-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-3-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-3-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-3-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-3-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-3-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-3-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-3-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-3-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-3-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-3-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-3-episode-22"
+                },
+                {
+                    "label": "Episode 23",
+                    "value": "season-3-episode-23"
+                }
+            ]
+        },
+        {
+            "label": "Season 4",
+            "value": "season-4",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-4-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-4-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-4-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-4-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-4-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-4-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-4-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-4-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-4-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-4-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-4-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-4-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-4-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-4-episode-14"
+                }
+            ]
+        },
+        {
+            "label": "Season 5",
+            "value": "season-5",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-5-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-5-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-5-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-5-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-5-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-5-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-5-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-5-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-5-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-5-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-5-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-5-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-5-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-5-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-5-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-5-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-5-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-5-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-5-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-5-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-5-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-5-episode-22"
+                },
+                {
+                    "label": "Episode 23",
+                    "value": "season-5-episode-23"
+                },
+                {
+                    "label": "Episode 24",
+                    "value": "season-5-episode-24"
+                },
+                {
+                    "label": "Episode 25",
+                    "value": "season-5-episode-25"
+                },
+                {
+                    "label": "Episode 26",
+                    "value": "season-5-episode-26"
+                }
+            ]
+        },
+        {
+            "label": "Season 6",
+            "value": "season-6",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-6-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-6-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-6-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-6-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-6-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-6-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-6-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-6-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-6-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-6-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-6-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-6-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-6-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-6-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-6-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-6-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-6-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-6-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-6-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-6-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-6-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-6-episode-22"
+                },
+                {
+                    "label": "Episode 23",
+                    "value": "season-6-episode-23"
+                },
+                {
+                    "label": "Episode 24",
+                    "value": "season-6-episode-24"
+                }
+            ]
+        },
+        {
+            "label": "Season 7",
+            "value": "season-7",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-7-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-7-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-7-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-7-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-7-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-7-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-7-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-7-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-7-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-7-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-7-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-7-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-7-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-7-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-7-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-7-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-7-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-7-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-7-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-7-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-7-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-7-episode-22"
+                },
+                {
+                    "label": "Episode 23",
+                    "value": "season-7-episode-23"
+                },
+                {
+                    "label": "Episode 24",
+                    "value": "season-7-episode-24"
+                }
+            ]
+        },
+        {
+            "label": "Season 8",
+            "value": "season-8",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-8-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-8-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-8-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-8-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-8-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-8-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-8-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-8-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-8-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-8-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-8-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-8-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-8-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-8-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-8-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-8-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-8-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-8-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-8-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-8-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-8-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-8-episode-22"
+                },
+                {
+                    "label": "Episode 23",
+                    "value": "season-8-episode-23"
+                },
+                {
+                    "label": "Episode 24",
+                    "value": "season-8-episode-24"
+                }
+            ]
+        },
+        {
+            "label": "Season 9",
+            "value": "season-9",
+            "children": [
+                {
+                    "label": "Episode 1",
+                    "value": "season-9-episode-1"
+                },
+                {
+                    "label": "Episode 2",
+                    "value": "season-9-episode-2"
+                },
+                {
+                    "label": "Episode 3",
+                    "value": "season-9-episode-3"
+                },
+                {
+                    "label": "Episode 4",
+                    "value": "season-9-episode-4"
+                },
+                {
+                    "label": "Episode 5",
+                    "value": "season-9-episode-5"
+                },
+                {
+                    "label": "Episode 6",
+                    "value": "season-9-episode-6"
+                },
+                {
+                    "label": "Episode 7",
+                    "value": "season-9-episode-7"
+                },
+                {
+                    "label": "Episode 8",
+                    "value": "season-9-episode-8"
+                },
+                {
+                    "label": "Episode 9",
+                    "value": "season-9-episode-9"
+                },
+                {
+                    "label": "Episode 10",
+                    "value": "season-9-episode-10"
+                },
+                {
+                    "label": "Episode 11",
+                    "value": "season-9-episode-11"
+                },
+                {
+                    "label": "Episode 12",
+                    "value": "season-9-episode-12"
+                },
+                {
+                    "label": "Episode 13",
+                    "value": "season-9-episode-13"
+                },
+                {
+                    "label": "Episode 14",
+                    "value": "season-9-episode-14"
+                },
+                {
+                    "label": "Episode 15",
+                    "value": "season-9-episode-15"
+                },
+                {
+                    "label": "Episode 16",
+                    "value": "season-9-episode-16"
+                },
+                {
+                    "label": "Episode 17",
+                    "value": "season-9-episode-17"
+                },
+                {
+                    "label": "Episode 18",
+                    "value": "season-9-episode-18"
+                },
+                {
+                    "label": "Episode 19",
+                    "value": "season-9-episode-19"
+                },
+                {
+                    "label": "Episode 20",
+                    "value": "season-9-episode-20"
+                },
+                {
+                    "label": "Episode 21",
+                    "value": "season-9-episode-21"
+                },
+                {
+                    "label": "Episode 22",
+                    "value": "season-9-episode-22"
+                },
+                {
+                    "label": "Episode 23",
+                    "value": "season-9-episode-23"
+                }
+            ]
+        }
+    ]
+}

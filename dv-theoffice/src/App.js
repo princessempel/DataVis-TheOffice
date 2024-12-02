@@ -4,6 +4,7 @@ import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
 import CharacterProfile from "./CharacterProfiles";
 import NetworkDiagram from "./NetworkDiagram";
+import TreeDropdown from "./TreeDropdown";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
