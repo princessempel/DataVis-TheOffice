@@ -20,7 +20,7 @@ def count_syllables(word):
         return 1  # Approximation for unknown words
 
 # Read dataset
-file_path = "data/the-office_lines.csv"  # Replace with your actual file path
+file_path = "./the-office_lines.csv"  # Replace with your actual file path
 df = pd.read_csv(file_path)
 
 # List of main characters
@@ -59,6 +59,7 @@ def compute_metrics(lines):
         "Syllables per Word": syllables_per_word,
         "Average Sentence Length": avg_sentence_length,
         "Hapax Legomena": hapax_legomena
+
     }
 
 # Group by character and compute metrics
@@ -76,5 +77,5 @@ for character, metrics in character_metrics.items():
 
 # Save metrics to JSON
 import json
-with open("dv-theoffice/public/data/character_metrics.json", "w") as f:
+with open("dv-theoffice/public/data/character_metrics_pos.json", "w") as f:
     json.dump(character_metrics, f)

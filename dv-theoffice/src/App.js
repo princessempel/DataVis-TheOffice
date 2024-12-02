@@ -5,6 +5,7 @@ import CharacterProfile from "./CharacterProfiles";
 import NetworkDiagram from "./NetworkDiagram";
 import TreeDropdown from "./TreeDropdown";
 import TextAnalysis from "./TextAnalysis";
+import TextAnalysisHeatMap from "./TextAnalysisHeatMap";
 import CharacterMetrics from "./CharacterMetrics";
 
 function App() {
@@ -33,8 +34,11 @@ function App() {
           (CS 6730) Data Vis Project: Return to <i>The Office</i>
         </p>
       </header>
-      <div>
+      <div className="linebarchart-container" id="parallelCoordinates">
         <TextAnalysis />
+      </div>
+      <div className="linebarchart-container" id="heatmap">
+        <TextAnalysisHeatMap />
       </div>
       <div className="linebarchart-container">
         <div className="toggle-buttons">
