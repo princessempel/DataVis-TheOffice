@@ -102,6 +102,14 @@ html,
   background-color: #727980;
 }
 
+.network-filter {
+  display: flex;
+  flex: row;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* .section-header {
   font-size: calc(10px + 2vmin);
 } */

@@ -66,10 +66,8 @@ const TreeDropdown = ({ onSelect }) => {
     // };
 
     return (
-        <div
-            // aria-hidden={!expanded} // Dynamically apply aria-hidden
-            // role="combobox"
-            // aria-expanded={expanded}
+        <div 
+            className="network-filter"
         >
             <DropdownTreeSelect
                 data={treeData}
@@ -77,11 +75,7 @@ const TreeDropdown = ({ onSelect }) => {
                 texts={{ placeholder: "Filter by Season or Episode" }}
                 value={selectedValue ? [{ label: selectedValue, value: selectedValue }] : []}
                 keepOpenOnSelect={true}
-                // mode="radioSelect"
-                // onAction={(action, node) => {
-                //     if (action === "expand") handleToggle(true);
-                //     if (action === "collapse") handleToggle(false);
-                // }}
+                className="dropdown-tree-select-container" /* Add custom class */
             />
         </div>
     );
