@@ -3,9 +3,14 @@ import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
 import CharacterProfile from "./CharacterProfiles";
 import NetworkDiagram from "./NetworkDiagram";
+import TreeDropdown from "./TreeDropdown";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
+  const [filter, setFilter] = useState("all");
+
+  // console.log(filter);
+
   const getYAxisLabel = () => {
     switch (dataKey) {
       case "ratings":
@@ -59,10 +64,8 @@ function App() {
       <div className="network-diagram">
         <h1>Network Diagram</h1>
         <p>based on how many times the characters mention each others' character names/aliases (total between them)</p>
-        <NetworkDiagram />
-        <p>TO-DO: Show network diagram based on season and/or episode</p>
-        <p>TO-DO: Tooltip or another indicator on links/nodes to show the split (who mentioned who more)</p>
-        <p>another potential option could be based on scene/sequential dialogue (TBD)</p>
+        <TreeDropdown onSelect={setFilter} />
+        <NetworkDiagram filter={filter} /> 
       </div>
       <div className="CharacterProfile">
         <header className="section-header">
