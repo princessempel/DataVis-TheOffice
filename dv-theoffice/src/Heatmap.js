@@ -3,12 +3,16 @@ import * as d3 from 'd3';
 
 const Heatmap = ({ data }) => {
     useEffect(() => {// Dimensions and margins
-        const margin = { top: 30, right: 50, bottom: 30, left: 50 };
+        const margin = { top: 30, right: 50, bottom: 30, left: 150 };
         const width = 1000 - margin.left;
         const height = 500 - margin.top - margin.bottom;
+
         const characters = Object.keys(data);
-        const metrics = Object.keys(data[characters[0]]); // Nouns, Verbs, Adjectives
-        
+        const metrics = Object.keys(data[0]).filter(d => d !== 'Character');
+        const names = data.filter((d) => d.Character).map((d) => d.Character);
+
+        d3.select("#heatmap").selectAll("*").remove();
+
         // Create SVG canvas
         const svg = d3.select("#heatmap")
           .append("svg")
@@ -24,6 +28,11 @@ const Heatmap = ({ data }) => {
         // X and Y scales
         const xScale = d3.scaleBand()
           .domain(characters)
+          .range([0, width])
+          .padding(0.1);
+
+        const xNames = d3.scaleBand()
+          .domain(names)
           .range([0, width])
           .padding(0.1);
     
@@ -53,13 +62,14 @@ const Heatmap = ({ data }) => {
         // Add X axis labels (Characters)
         svg.append("g")
           .selectAll(".x-axis-label")
-          .data(characters)
+          .data(names)
           .enter()
           .append("text")
           .attr("class", "x-axis-label")
-          .attr("x", d => xScale(d) + xScale.bandwidth() / 2)
-          .attr("y", height + 20)
+          .attr("x", d => xNames(d) + xScale.bandwidth()/2)
+          .attr("y", height+margin.bottom/2)
           .attr("text-anchor", "middle")
+          .attr("fill","white")
           .text(d => d);
     
         // Add Y axis labels (POS metrics)
@@ -69,15 +79,13 @@ const Heatmap = ({ data }) => {
           .enter()
           .append("text")
           .attr("class", "y-axis-label")
-          .attr("x", -20)
-          .attr("y", d => yScale(d) + yScale.bandwidth() / 2)
-          .attr("text-anchor", "middle")
-          .attr("transform", "rotate(-90)")
+          .attr("x", -10)
+          .attr("y", d => yScale(d) + yScale.bandwidth()/2)
+          .attr("text-anchor", "end")
+          .attr("fill","white")
+        //   .attr("transform", "rotate(-90)")
           .text(d => d);
-        
       }, [data]);
-
-  
 
   return <div id="heatmap"></div>;
 };

@@ -81,7 +81,6 @@ const ParallelCoordinates = ({ data }) => {
             .attr("stroke-width", 2);
   
             if (d.Photo) {
-                console.log(d.Photo);  // Verify the path of the image
                 svg
                   .append("image")
                   .attr("href", d.Photo) // Use 'href' instead of 'xlink:href'

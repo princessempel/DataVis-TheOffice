@@ -156,6 +156,8 @@ const TextAnalysis = () => {
       <h1>Character Metrics Parallel Coordinates</h1>
       {data.length > 0 ? <ParallelCoordinates data={data} /> : <p>Loading...</p>}
     </div>
+    
+
   );
 };
 
