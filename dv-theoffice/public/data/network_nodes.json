@@ -1,71 +1,47 @@
 [
     {
-        "id": "Dwight"
-    },
-    {
-        "id": "Pete"
-    },
-    {
-        "id": "Oscar"
+        "id": "Michael"
     },
     {
         "id": "Jim"
     },
     {
-        "id": "Clark"
+        "id": "Pam"
     },
     {
-        "id": "Erin"
-    },
-    {
-        "id": "Phyllis"
-    },
-    {
-        "id": "Todd"
-    },
-    {
-        "id": "Darryl"
-    },
-    {
-        "id": "Meredith"
-    },
-    {
-        "id": "Creed"
-    },
-    {
-        "id": "Robert"
-    },
-    {
-        "id": "Michael"
-    },
-    {
-        "id": "Kevin"
-    },
-    {
-        "id": "Stanley"
-    },
-    {
-        "id": "Gabe"
-    },
-    {
-        "id": "Toby"
-    },
-    {
-        "id": "Jan"
-    },
-    {
-        "id": "Ryan"
-    },
-    {
-        "id": "Angela"
-    },
-    {
-        "id": "Andy"
+        "id": "Dwight"
     },
     {
         "id": "Kelly"
     },
     {
-        "id": "Pam"
+        "id": "Andy"
+    },
+    {
+        "id": "Darryl"
+    },
+    {
+        "id": "Oscar"
+    },
+    {
+        "id": "Angela"
+    },
+    {
+        "id": "Ryan"
+    },
+    {
+        "id": "Toby"
+    },
+    {
+        "id": "Stanley"
+    },
+    {
+        "id": "Kevin"
+    },
+    {
+        "id": "Creed"
+    },
+    {
+        "id": "Meredith"
     }
 ]
