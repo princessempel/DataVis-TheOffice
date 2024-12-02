@@ -1,0 +1,105 @@
+.profile-insights {
+    padding: 20px;
+    background-color: #2A3C5F;
+    /* Dark blue main background */
+    color: #EDEFE2;
+    /* Light text for contrast */
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #EDEFE2;
+    /* Light text to stand out on dark background */
+}
+
+.timeline-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #EDEFE2;
+    /* Light text for the section title */
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #4BA8B2;
+    /* Teal accent for the timeline line */
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 48%;
+    padding-right: 10%;
+    /* Add extra padding to the right end */
+}
+
+.timeline-content {
+    background: #EDEFE2;
+    /* Light background for timeline cards */
+    color: #2A3C5F;
+    /* Dark text for readability */
+    border-radius: 8px;
+    padding: 20px;
+    /* General padding for all cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 90%;
+    left: 10%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    width: 80%;
+    /* Narrower width for the right-aligned cards */
+
+    padding-left: 40px;
+    /* Add extra padding for better spacing */
+}
+
+.timeline-content p {
+    margin: 0;
+    line-height: 1.6;
+    color: #373434;
+    text-align: left;
+    /* Subtle grey for body text */
+}
+
+@media (max-width: 768px) {
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        left: 0;
+    }
+
+    .timeline::before {
+        left: 10px;
+        /* Adjust timeline line position */
+    }
+
+    .timeline-content {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+}
