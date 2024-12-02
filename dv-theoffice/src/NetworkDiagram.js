@@ -130,14 +130,17 @@ const NetworkDiagram = ({ filter }) => {
                         Total Mentions: ${d.total_mentions}<br><br>
                         <strong>Breakdown:</strong><br>${breakdownHtml}
                     `);
+
+                d3.select(event.target).attr("stroke", "#FFF").attr("stroke-opacity", 1);
             })
             .on("mousemove", (event) => {
                 tooltip
                     .style("left", `${event.pageX + 10}px`)
                     .style("top", `${event.pageY + 10}px`);
             })
-            .on("mouseout", () => {
+            .on("mouseout", (event) => {
                 tooltip.style("display", "none");
+                d3.select(event.target).attr("stroke", "#999").attr("stroke-opacity", 0.6);
             });
 
             // Draw nodes
