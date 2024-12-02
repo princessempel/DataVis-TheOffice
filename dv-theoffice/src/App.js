@@ -66,9 +66,6 @@ function App() {
         <p>based on how many times the characters mention each others' character names/aliases (total between them)</p>
         <TreeDropdown onSelect={setFilter} />
         <NetworkDiagram filter={filter} /> 
-        <p>TO-DO: Show network diagram based on season and/or episode</p>
-        <p>TO-DO: Tooltip or another indicator on links/nodes to show the split (who mentioned who more)</p>
-        <p>another potential option could be based on scene/sequential dialogue (TBD)</p>
       </div>
       <div className="CharacterProfile">
         <header className="section-header">
