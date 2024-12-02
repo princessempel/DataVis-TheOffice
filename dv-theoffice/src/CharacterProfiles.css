@@ -92,7 +92,7 @@
   max-width: 1000px;
   /* Increase max-width */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: auto;
   /* Ensure scrolling for smaller screens */
@@ -110,19 +110,35 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   overflow-y: auto;
-  align-items: center;
+  align-items: left;
+
   /* Handle overflow if text is too long */
 }
 
 .text-section img {
   margin: 0 auto;
   display: block;
+  float: left;
+  margin-right: 15px;
+  width: 150px;
+
 }
 
-.text-section h2 {
-  text-align: center;
+.text-section h2,
+.text-section h3 {
+  text-align: left;
   margin-top: 10px;
   color: #1a57a2;
+
+}
+
+.text-section h3 span {
+  color: #373434;
+  /* Greyish color for the text */
+  font-weight: normal;
+  /* Make the text weight normal */
+  margin-left: 3px;
+  /* Add some spacing between "Role(s):" and the role text */
 }
 
 .chart-section {
@@ -133,10 +149,15 @@
 }
 
 
-.text-section p {
+
+
+.text-section p,
+.text-section ul {
   margin: 10px 0;
   line-height: 1.6;
   color: #373434;
+  clear: left;
+  /* Ensures text does not overlap with floated image */
 }
 
 .text-section strong {
