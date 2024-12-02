@@ -23,6 +23,7 @@ const characters = [
     { name: "Stanley Hudson", image: require("./profileImages/StanleyHudson.png") },
     { name: "Kevin Malone", image: require("./profileImages/KevinMalone.png") },
     { name: "Creed Bratton", image: require("./profileImages/CreedBratton.png") },
+    { name: "Meredith Palmer", image: require("./profileImages/MeredithPalmer.png") },
 ];
 
 const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
@@ -57,6 +58,7 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                         Stanley: +d.Stanley_lines,
                         Kevin: +d.Kevin_lines,
                         Creed: +d.Creed_lines,
+                        Meredith: +d.Meredith_lines,
                     },
                     scenes: {
                         Michael: +d.Michael_scenes,
@@ -75,6 +77,7 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                         Stanley: +d.Stanley_scenes,
                         Kevin: +d.Kevin_scenes,
                         Creed: +d.Creed_scenes,
+                        Meredith: +d.Meredith_scenes,
                     }
                 }))
                 .filter((d) => d.episode !== null); // Exclude rows with null episodes
