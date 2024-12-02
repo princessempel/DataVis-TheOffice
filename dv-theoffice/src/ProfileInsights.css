@@ -14,7 +14,8 @@
     /* Light text to stand out on dark background */
 }
 
-.timeline-section h2 {
+.timeline-section h2,
+.insights-grid-section header h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #EDEFE2;
@@ -102,4 +103,64 @@
         width: calc(100% - 30px);
         left: 30px;
     }
+}
+
+/* For GRIDS */
+.profile-insights {
+    padding: 20px;
+    background-color: #2A3C5F;
+    /* Dark blue background */
+    color: #EDEFE2;
+}
+
+.insights-stacked-section {
+    margin-top: 20px;
+}
+
+.insight-item {
+    background-color: #EDEFE2;
+    /* Greenish teal background */
+    border-radius: 8px;
+    padding: 15px 20px;
+    /* Reduce padding to make boxes smaller */
+    margin: 20px auto;
+    /* Center the green boxes */
+    width: 90%;
+    /* Reduce width to show more dark blue background */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.insight-item h3 {
+    margin-top: 0;
+    color: #373434;
+    /* Text matches design */
+}
+
+.insight-item p {
+    margin: 10px 0 20px;
+    line-height: 1.6;
+    text-align: left;
+    color: #373434;
+}
+
+.graph-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center the graphs */
+    gap: 15px;
+    /* Add spacing between graphs */
+    margin: 20px auto;
+    /* Center align graph grid */
+
+}
+
+.graph-grid img {
+    width: 100%;
+    max-width: 45%;
+    /* Adjust based on available screen size */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }

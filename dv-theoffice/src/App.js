@@ -82,10 +82,10 @@ function App() {
         <div className="insights">
           <ProfileInsights />
         </div>
-        <CharacterProfile
+        {/* <CharacterProfile
           csvFilePath={"/DataVis-TheOffice/data/combined_dataset.csv"}
           jsonFilePath={"/DataVis-TheOffice/data/character_data.json"}
-        />
+        /> */}
       </div>
       <div className="insights">
         <header>
@@ -94,8 +94,8 @@ function App() {
         <p>
           - After Michael's departure in Season 7, Episode 22, "Goodbye, Michael", we see that Dwight becomes the dialogue leader in Seasons
           8 and 9, followed by some other characters like Andy, Oscar, and Kevin. <br />
-          - Jim and Pam has more steady presence in the series with relatively consistent dialogue counts. Ocassionaly spikes in the lines numbers
-          for characters like Merdith in Season 5, Episode 11, "Moroccan Christmas", Oscar in Season 5, Episode 8, "Business Trip", and Toby
+          - Jim and Pam has more steady presence in the series with relatively consistent dialogue and scene counts. Ocassionaly spikes in the lines numbers
+           and scene numbers for characters like Merdith in Season 5, Episode 11, "Moroccan Christmas", Oscar in Season 5, Episode 8, "Business Trip", and Toby
           in Season 4, Episode 18/19, "Goodbye Toby" correlates with plotlines that focuses more on those characters. <br />
           - Despite of everyone's contribution to Season 6, Episode 14, "The Banker" that episode has one of the worst ratings, as the fans sees it
           as a "lazy" episode because majority of the episodes replays clips from other previous episode. And then Season 8, Episode 19, "Get the Girl" has a scaled rating of 0,
