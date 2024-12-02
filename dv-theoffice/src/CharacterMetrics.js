@@ -1,8 +1,10 @@
+import React, { useEffect, useState } from "react";
+
 const CharacterMetrics = () => {
     const [metrics, setMetrics] = useState(null);
 
     useEffect(() => {
-        fetch('/character_metrics.json')
+        fetch('DataVis-TheOffice/data/character_metrics.json')
             .then((response) => response.json())
             .then((data) => setMetrics(data));
     }, []);

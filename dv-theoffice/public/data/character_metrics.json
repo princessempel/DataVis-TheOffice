@@ -1,1 +1,105 @@
-{"Michael": {"Average Word Length": 3.754555234697922, "Syllables per Word": 1.2698884547873845, "Average Sentence Length": 6.334194103722832, "Hapax Legomena": 4539}, "Dwight": {"Average Word Length": 3.8953793359707984, "Syllables per Word": 1.303053485169723, "Average Sentence Length": 6.174224021592442, "Hapax Legomena": 4242}, "Pam": {"Average Word Length": 3.716094383155282, "Syllables per Word": 1.264381410318553, "Average Sentence Length": 6.144507981891827, "Hapax Legomena": 2174}, "Jim": {"Average Word Length": 3.726961000735835, "Syllables per Word": 1.2586754966887417, "Average Sentence Length": 6.121621621621622, "Hapax Legomena": 2648}, "Kelly": {"Average Word Length": 3.668770004572474, "Syllables per Word": 1.2584362139917695, "Average Sentence Length": 6.934051997463539, "Hapax Legomena": 1028}, "Phyllis": {"Average Word Length": 3.6850621517359623, "Syllables per Word": 1.2491427346763824, "Average Sentence Length": 6.237967914438503, "Hapax Legomena": 1043}, "Andy": {"Average Word Length": 3.8183002976132583, "Syllables per Word": 1.2860005057480208, "Average Sentence Length": 6.501707347919565, "Hapax Legomena": 2972}, "Darryl": {"Average Word Length": 3.698626930878452, "Syllables per Word": 1.240209080979872, "Average Sentence Length": 6.015016424213984, "Hapax Legomena": 1208}, "Oscar": {"Average Word Length": 3.8499469402193136, "Syllables per Word": 1.3169437566324727, "Average Sentence Length": 6.140312771503041, "Hapax Legomena": 1451}, "Angela": {"Average Word Length": 3.781303707341026, "Syllables per Word": 1.2768229806039775, "Average Sentence Length": 5.894356005788712, "Hapax Legomena": 1450}, "Ryan": {"Average Word Length": 3.7536262498239683, "Syllables per Word": 1.281509646528658, "Average Sentence Length": 6.599442379182156, "Hapax Legomena": 1271}, "Erin": {"Average Word Length": 3.7054557777024737, "Syllables per Word": 1.258285327007794, "Average Sentence Length": 5.811343048444269, "Hapax Legomena": 1309}, "Toby": {"Average Word Length": 3.765551703038956, "Syllables per Word": 1.288190903528452, "Average Sentence Length": 6.776779543883897, "Hapax Legomena": 1024}, "Stanley": {"Average Word Length": 3.7096638655462186, "Syllables per Word": 1.2600840336134453, "Average Sentence Length": 6.461538461538462, "Hapax Legomena": 871}, "Meredith": {"Average Word Length": 3.7124742974640164, "Syllables per Word": 1.2452021932830706, "Average Sentence Length": 5.398704902867715, "Hapax Legomena": 836}, "Kevin": {"Average Word Length": 3.7323307300071, "Syllables per Word": 1.2596011101787905, "Average Sentence Length": 5.772354694485842, "Hapax Legomena": 1323}, "Creed": {"Average Word Length": 3.7682186234817814, "Syllables per Word": 1.2672064777327936, "Average Sentence Length": 6.136645962732919, "Hapax Legomena": 825}}
+{
+    "Michael": {
+      "Average Word Length": 3.754555234697922,
+      "Syllables per Word": 1.2698884547873845,
+      "Average Sentence Length": 6.334194103722832,
+      "Hapax Legomena": 4539
+    },
+    "Dwight": {
+      "Average Word Length": 3.8953793359707984,
+      "Syllables per Word": 1.303053485169723,
+      "Average Sentence Length": 6.174224021592442,
+      "Hapax Legomena": 4242
+    },
+    "Pam": {
+      "Average Word Length": 3.716094383155282,
+      "Syllables per Word": 1.264381410318553,
+      "Average Sentence Length": 6.144507981891827,
+      "Hapax Legomena": 2174
+    },
+    "Jim": {
+      "Average Word Length": 3.726961000735835,
+      "Syllables per Word": 1.2586754966887417,
+      "Average Sentence Length": 6.121621621621622,
+      "Hapax Legomena": 2648
+    },
+    "Kelly": {
+      "Average Word Length": 3.668770004572474,
+      "Syllables per Word": 1.2584362139917695,
+      "Average Sentence Length": 6.934051997463539,
+      "Hapax Legomena": 1028
+    },
+    "Phyllis": {
+      "Average Word Length": 3.6850621517359623,
+      "Syllables per Word": 1.2491427346763824,
+      "Average Sentence Length": 6.237967914438503,
+      "Hapax Legomena": 1043
+    },
+    "Andy": {
+      "Average Word Length": 3.8183002976132583,
+      "Syllables per Word": 1.2860005057480208,
+      "Average Sentence Length": 6.501707347919565,
+      "Hapax Legomena": 2972
+    },
+    "Darryl": {
+      "Average Word Length": 3.698626930878452,
+      "Syllables per Word": 1.240209080979872,
+      "Average Sentence Length": 6.015016424213984,
+      "Hapax Legomena": 1208
+    },
+    "Oscar": {
+      "Average Word Length": 3.8499469402193136,
+      "Syllables per Word": 1.3169437566324727,
+      "Average Sentence Length": 6.140312771503041,
+      "Hapax Legomena": 1451
+    },
+    "Angela": {
+      "Average Word Length": 3.781303707341026,
+      "Syllables per Word": 1.2768229806039775,
+      "Average Sentence Length": 5.894356005788712,
+      "Hapax Legomena": 1450
+    },
+    "Ryan": {
+      "Average Word Length": 3.7536262498239683,
+      "Syllables per Word": 1.281509646528658,
+      "Average Sentence Length": 6.599442379182156,
+      "Hapax Legomena": 1271
+    },
+    "Erin": {
+      "Average Word Length": 3.7054557777024737,
+      "Syllables per Word": 1.258285327007794,
+      "Average Sentence Length": 5.811343048444269,
+      "Hapax Legomena": 1309
+    },
+    "Toby": {
+      "Average Word Length": 3.765551703038956,
+      "Syllables per Word": 1.288190903528452,
+      "Average Sentence Length": 6.776779543883897,
+      "Hapax Legomena": 1024
+    },
+    "Stanley": {
+      "Average Word Length": 3.7096638655462186,
+      "Syllables per Word": 1.2600840336134453,
+      "Average Sentence Length": 6.461538461538462,
+      "Hapax Legomena": 871
+    },
+    "Meredith": {
+      "Average Word Length": 3.7124742974640164,
+      "Syllables per Word": 1.2452021932830706,
+      "Average Sentence Length": 5.398704902867715,
+      "Hapax Legomena": 836
+    },
+    "Kevin": {
+      "Average Word Length": 3.7323307300071,
+      "Syllables per Word": 1.2596011101787905,
+      "Average Sentence Length": 5.772354694485842,
+      "Hapax Legomena": 1323
+    },
+    "Creed": {
+      "Average Word Length": 3.7682186234817814,
+      "Syllables per Word": 1.2672064777327936,
+      "Average Sentence Length": 6.136645962732919,
+      "Hapax Legomena": 825
+    }
+}
+  

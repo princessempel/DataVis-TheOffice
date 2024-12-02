@@ -6,7 +6,7 @@ const TextAnalysis = () => {
 
     useEffect(() => {
         // Load character_metrics.json
-        fetch('/character_metrics.json')
+        fetch('DataVis-TheOffice/data/character_metrics.json')
             .then((response) => response.json())
             .then((data) => createBubblePlot(data));
     }, []);
