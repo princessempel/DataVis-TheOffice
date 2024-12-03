@@ -79,7 +79,7 @@ function App() {
             onClick={() => setDataKey("viewership_mil")}
           >
             <span>Viewership</span><br></br>
-            <span> (in Millions)</span>
+            <span>(in Millions)</span>
           </button>
         </div>
         {/* <span style={{ alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold" }}>per Episode in Each Season</span> */}

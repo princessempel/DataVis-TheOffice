@@ -129,7 +129,7 @@ const ParallelCoordinates = ({ data }) => {
             );
 
             d3.selectAll(`.line-${d.Character}`)
-            .style("stroke", "#f2b325")
+            .style("stroke", "orange")  // Highlight lines in orange
             .style("stroke-width", 5);
               })
               .on("mousemove", event => {
@@ -141,7 +141,7 @@ const ParallelCoordinates = ({ data }) => {
                 tooltip.style("visibility", "hidden");
 
                 d3.selectAll(`.line-${d.Character}`)
-                .style("stroke", "steelblue")
+                .style("stroke", "steelblue")  // Reset the line color
                 .style("stroke-width", 1);
             })
               .attr("clip-path", `url(#clip-${d.Character}-${dim}-${counter})`); // Use clip-path defined in 'defs'
