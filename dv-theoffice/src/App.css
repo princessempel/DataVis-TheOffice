@@ -256,6 +256,8 @@ html,
 
 .text-analysis-insight {
   padding: 0%;
+  margin-right: -10px;
+  display: block;
   /* flex: 1; */
 }
 
@@ -264,4 +266,16 @@ html,
   color: #373434;
   justify-content: left;
   padding-left: 2px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.heading {
+  margin-left: 40px;
+  margin-bottom: -20px;
 }
