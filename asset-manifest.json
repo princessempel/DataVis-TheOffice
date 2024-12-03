@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DataVis-TheOffice/static/css/main.aa049882.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.2402d84e.js",
+    "main.js": "/DataVis-TheOffice/static/js/main.4f4540f4.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
     "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
     "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
@@ -11,6 +11,7 @@
     "static/media/DarrylPhilbin.png": "/DataVis-TheOffice/static/media/DarrylPhilbin.3181ae3f86ccf526f8a1.png",
     "static/media/PamHalpert.png": "/DataVis-TheOffice/static/media/PamHalpert.e09ae0a628cae6df3868.png",
     "static/media/OscarMartinez.png": "/DataVis-TheOffice/static/media/OscarMartinez.a1241d48058b35fa4092.png",
+    "static/media/declinedRatings.png": "/DataVis-TheOffice/static/media/declinedRatings.60bca4027e53838057bb.png",
     "static/media/RyanHoward.png": "/DataVis-TheOffice/static/media/RyanHoward.3f6c03eb0e97c5642d57.png",
     "static/media/DwightSchrute.png": "/DataVis-TheOffice/static/media/DwightSchrute.6ba69e78c4ccbb7776f7.png",
     "static/media/MichaelScott.png": "/DataVis-TheOffice/static/media/MichaelScott.e853831f13326d9987d7.png",
@@ -35,15 +36,14 @@
     "static/media/dwightLines.png": "/DataVis-TheOffice/static/media/dwightLines.0eb813af6efce184c643.png",
     "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
     "static/media/andyLines.png": "/DataVis-TheOffice/static/media/andyLines.c58602de0aed3d0aa3b3.png",
-    "static/media/declinedRatings.png": "/DataVis-TheOffice/static/media/declinedRatings.3c53d6fc3520f8226b81.png",
     "static/media/goodbyeMichael.jpg": "/DataVis-TheOffice/static/media/goodbyeMichael.66b01132836482cc016f.jpg",
     "index.html": "/DataVis-TheOffice/index.html",
     "main.aa049882.css.map": "/DataVis-TheOffice/static/css/main.aa049882.css.map",
-    "main.2402d84e.js.map": "/DataVis-TheOffice/static/js/main.2402d84e.js.map",
+    "main.4f4540f4.js.map": "/DataVis-TheOffice/static/js/main.4f4540f4.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa049882.css",
-    "static/js/main.2402d84e.js"
+    "static/js/main.4f4540f4.js"
   ]
 }
