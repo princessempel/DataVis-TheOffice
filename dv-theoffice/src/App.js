@@ -4,9 +4,10 @@ import LineXStackedBarChart from './LineXStackedBarChart';
 import CharacterProfile from "./CharacterProfiles";
 import NetworkDiagram from "./NetworkDiagram";
 import TreeDropdown from "./TreeDropdown";
-import TextAnalysis from "./TextAnalysis";
 import CharacterMetrics from "./CharacterMetrics";
 import ProfileInsights from "./ProfileInsights";
+import TextAnalysis from "./TextAnalysis";
+import TextAnalysisHeatMap from "./TextAnalysisHeatMap";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
@@ -34,8 +35,11 @@ function App() {
           (CS 6730) Data Vis Project: Return to <i>The Office</i>
         </p>
       </header>
-      <div>
+      <div className="linebarchart-container">
         <TextAnalysis />
+      </div>
+      <div className="linebarchart-container">
+        <TextAnalysisHeatMap />
       </div>
       <div className="linebarchart-container">
         <div className="toggle-buttons">
