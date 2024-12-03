@@ -54,41 +54,55 @@ html,
 }
 
 .hero-content {
-  position: relative; 
+  position: relative;
   z-index: 2;
   color: white;
 }
 
 .container {
   display: flex;
-  align-items: center; /* Aligns items vertically */
-  justify-content: space-between; /* Adds space between text and image */
-  gap: 40px; /* Adds spacing between text and image */
+  align-items: center;
+  /* Aligns items vertically */
+  justify-content: space-between;
+  /* Adds space between text and image */
+  gap: 40px;
+  /* Adds spacing between text and image */
   padding: 40px;
 }
 
 .text {
-  flex: 1; /* Allows text to take up available space */
-  max-width: 50%; /* Ensures text doesn't take up too much space */
+  flex: 1;
+  /* Allows text to take up available space */
+  max-width: 50%;
+  /* Ensures text doesn't take up too much space */
 }
 
 .text p {
-  font-size: 1.2rem; /* Adjust font size */
-  line-height: 1.5; /* Improves readability */
+  font-size: 1.2rem;
+  /* Adjust font size */
+  line-height: 1.5;
+  /* Improves readability */
   text-align: left;
 }
 
 .image {
-  flex: 1; /* Ensures image takes up equal space as text */
-  max-width: 50%; /* Ensures image doesn't exceed half the container width */
-  text-align: center; /* Centers the image inside its div */
+  flex: 1;
+  /* Ensures image takes up equal space as text */
+  max-width: 50%;
+  /* Ensures image doesn't exceed half the container width */
+  text-align: center;
+  /* Centers the image inside its div */
 }
 
 .image img {
-  max-width: 100%; /* Ensures the image scales properly */
-  height: auto; /* Maintains aspect ratio */
-  border-radius: 10px; /* Optional: Adds rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+  max-width: 100%;
+  /* Ensures the image scales properly */
+  height: auto;
+  /* Maintains aspect ratio */
+  border-radius: 10px;
+  /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Optional: Adds a shadow */
 }
 
 
@@ -165,7 +179,7 @@ html,
 
 /* For the network options */
 /* .view-options { */
-  /* display: flex;
+/* display: flex;
   gap: 10px;
   margin-bottom: 20px 0;
   align-items: center;
@@ -193,6 +207,47 @@ html,
 .view-options button:hover {
   background-color: #4ba8b2;
   color: #ffffff;
+}
+
+/* FOR INSIGHTS */
+.insight-item {
+  background-color: #EDEFE2;
+  /* Greenish teal background */
+  border-radius: 8px;
+  padding: 15px 20px;
+  /* Reduce padding to make boxes smaller */
+  margin: 20px auto;
+  /* Center the green boxes */
+  width: 90%;
+  /* Reduce width to show more dark blue background */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.content-container {
+  display: flex;
+  align-items: flex-start;
+  /* Align items to the top */
+  gap: 40px;
+  /* Add space between the image and text */
+}
+
+.content-container img {
+  flex-shrink: 0;
+  /* Prevent the image from shrinking */
+  border-radius: 8px;
+  /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* padding-right: 20px; */
+  /* Optional: Add shadow for aesthetics */
+}
+
+.text-content {
+  flex: 1;
+  /* Allow the text to take up remaining space */
+  color: #2a3c5f;
+  /* Match the text color to your theme */
 }
 
 /* .section-header {

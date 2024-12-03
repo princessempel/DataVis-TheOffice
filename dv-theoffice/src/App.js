@@ -11,6 +11,7 @@ import TextAnalysisHeatMap from "./TextAnalysisHeatMap";
 import CharacterDropdown from "./CharacterDropdown";
 import CharacterNetworkDiagram from "./CharacterNetworkDiagram";
 import introImage from './assets/hero-image.jpeg';
+import pamMichael from './InsightsImages/pamMichael.png';
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
@@ -43,13 +44,13 @@ function App() {
             <p>Group 17: Sanjana Date, Princess Empel, Aditi Patel, Arya Tadepalli</p>
           </div>
       </div>
-      <br/><br/>
+      <br /><br />
       <div class="container">
-      <div class="text">
-        <p>
-          (Placeholder Text)
-          Dive into the data behind Dunder Mifflin! Discover fun insights and visualizations from the hit show *The Office*. 
-        </p>
+        <div class="text">
+          <p>
+            (Placeholder Text)
+            Dive into the data behind Dunder Mifflin! Discover fun insights and visualizations from the hit show *The Office*.
+          </p>
         </div>
         <div class="image">
           <img src={introImage} alt="The Office" />
@@ -58,7 +59,7 @@ function App() {
       {/* <div className="linebarchart-container"> */}
       <TextAnalysis />
       {/* <div className="linebarchart-container"> */}
-        <TextAnalysisHeatMap />
+      <TextAnalysisHeatMap />
       {/* </div> */}
       {/* <div className="linebarchart-container"> */}
       <div className="container">
@@ -88,10 +89,10 @@ function App() {
               <span> (in Millions)</span>
             </button>
           </div>
-          <br/><br/>
+          <br /><br />
         </div>
-        
-        
+
+
         {/* <span style={{ alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold" }}>per Episode in Each Season</span> */}
         <LineXStackedBarChart
           csvFilePath={"/DataVis-TheOffice/data/the_office_episodes_processed.csv"}
@@ -99,15 +100,19 @@ function App() {
           yAxisLabel={getYAxisLabel()}
         />
       </div>
-      <h2 style={{paddingLeft: "40px"}}>Chart Insights</h2>
-      <div className="container" style={{paddingTop: "0px", paddingBottom: "0px"}}>
-        <div className="insight-item" style={{height: "200px"}}>
+      <h2 style={{ paddingLeft: "40px" }}>Chart Insights</h2>
+      <div className="container" style={{ paddingTop: "0px", paddingBottom: "0px" }}>
+        <div className="insight-item" >
           <h3>Stress Relief (Season 5, Episode 77)</h3>
           <p>
-            Has the highest viewership with 22.91 million and is generally one of the highly rated episodes of the entire show...
+            Has the highest viewership with 22.91 million and is generally one of the highly rated episodes of the entire show.
+            A standout due to its humor, emotional beats, and memorable cold open (the fire drill).  The episode is considered a favorite by many fans of the series.
+            Many commentators particularly praised the chaotic cold open scene, in which Dwight panics his co-workers with a simulated fire as part of a twisted safety demonstration.
+            It allows us to see key qualities of each character. This episode significantly spiked in viewership and ratings, demonstrating the show's ability to balance comedy with heartfelt moments.
+            IMDb reports this as “genuinely one of the greatest episodes of the entire series with undoubtedly the best cold open in the history of television.”
           </p>
         </div>
-        <div className="insight-item" style={{height: "200px"}}>
+        <div className="insight-item" >
           <h3>Goodbye, Michael (Season 7, Episode 137)</h3>
           <p>
             Aside from the series finale, this episode has the highest ratings with a 9.8. For many fans, his farewell was not just the end of his character’s journey but also the end of the show’s original essence. It marked a significant turning point for <i>The Office</i> as Michael was the heart of the show, bringing a unique mix of humor, awkwardness, and heartfelt moments. His exit left a void that no subsequent character or storyline fully filled, fundamentally changing the dynamic of the series.
@@ -138,13 +143,13 @@ function App() {
         </div>
         {/* Conditional Rendering */}
         {viewOption === "seasons" && (
-          <div style={{flex: 1.25}}>
+          <div style={{ flex: 1.25 }}>
             <TreeDropdown onSelect={setFilter} />
             <NetworkDiagram filter={filter} />
           </div>
         )}
         {viewOption === "characters" && (
-          <div style={{flex: 1.25,}}>
+          <div style={{ flex: 1.25, }}>
             <CharacterDropdown onSelect={setSelectedCharacter} />
             {selectedCharacter ? (
               <CharacterNetworkDiagram selectedCharacter={selectedCharacter} />
@@ -154,28 +159,52 @@ function App() {
           </div>
         )}
       </div>
-      <h2 style={{paddingLeft: "40px"}}>Network Insights</h2>
-      <div className="container" style={{paddingTop: "0px", paddingBottom: "0px"}}>
-        <div className="insight-item" style={{height: "200px"}}>
+      <h2 style={{ paddingLeft: "40px" }}>Network Insights</h2>
+      <div className="container" style={{ paddingTop: "0px", paddingBottom: "0px" }}>
+        <div className="insight-item" style={{ height: "150px" }}>
           <h3>Michael Scott</h3>
           <p>
-            Michael’s high interaction mentions with characters like Pam, Jim, and Dwight reflect his narrative dominance. His connections to minor characters, like Todd Packer, while fewer, often introduce chaos or comedy, showing his role as a disruptor. 
+            Michael’s high interaction mentions with characters like Pam, Jim, and Dwight reflect his narrative dominance. His connections to minor characters, like Todd Packer, while fewer, often introduce chaos or comedy, showing his role as a disruptor.
           </p>
         </div>
-        <div className="insight-item" style={{height: "200px"}}>
+        <div className="insight-item" style={{ height: "150px" }}>
           <h3>Dwight Schrute</h3>
           <p>
-            For Dwight, initial seasons highlight interactions mostly with Michael and Jim. His thickest edge with Michael indicates Michael’s complex mentorship of Dwight, oscillating between ridicule and affection. However, later seasons show growing mentions with Angela and Andy, reflecting his expanded leadership and personal storylines. 
+            For Dwight, initial seasons highlight interactions mostly with Michael and Jim. His thickest edge with Michael indicates Michael’s complex mentorship of Dwight, oscillating between ridicule and affection. However, later seasons show growing mentions with Angela and Andy, reflecting his expanded leadership and personal storylines.
           </p>
         </div>
       </div>
       <div className="insight-item">
         <h3>Michael and Pam</h3>
-        <p>
-          Michael Scott and Pam Beesly share one of the most nuanced and underappreciated relationships in <i>The Office</i>, which is reflected in the network. It evolves significantly over the series, offering moments of unexpected emotional depth and mutual respect. Early interactions reveal Michael’s immaturity and inability to recognize Pam as more than just “the receptionist.” Pam, in turn, shows patience, hinting at the seeds of their later bond. As Michael matures, Pam becomes a surprising source of emotional support. Their relationship evolves into one of quiet mutual respect.
-        </p>
+        <div className="content-container" >
+          <img
+            src={pamMichael}
+            alt="network"
+            style={{ height: "400px", width: "400px", borderRadius: "5px" }}
+          />
+          <div className="text-content">
+            <p>
+              Michael Scott and Pam Beesly share one of the most nuanced and
+              underappreciated relationships in <i>The Office</i>, which is reflected
+              in the network. It evolves significantly over the series, offering
+              moments of unexpected emotional depth and mutual respect. Early
+              interactions reveal Michael’s immaturity and inability to recognize Pam
+              as more than just “the receptionist.” Pam, in turn, shows patience,
+              hinting at the seeds of their later bond. As Michael matures, Pam
+              becomes a surprising source of emotional support. Their relationship
+              evolves into one of quiet mutual respect. In some episodes, we see
+              different ways they support each other: In "Business School" (Season 3,
+              Episode 17), Michael shows up for Pam’s art exhibit after others
+              dismiss it. His heartfelt support during a vulnerable moment cements
+              their bond, with Michael’s line, “You did this?! How much?... for the
+              painting” reflecting genuine pride. In "Local Ad" (Season 4, Episode
+              9), Pam helps Michael realize his creative vision for a commercial,
+              affirming her growing understanding of his need for validation.
+            </p>
+          </div>
+        </div>
       </div>
-      <br/><br/>
+      <br /><br />
       <div className="CharacterProfile">
         {/* <header className="section-header">
           <h1>
@@ -191,7 +220,7 @@ function App() {
         /> */}
       </div>
 
-    </div>
+    </div >
   );
 }
 
