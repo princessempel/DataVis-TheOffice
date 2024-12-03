@@ -50,7 +50,14 @@ function App() {
       <br /><br />
       <div class="container">
         <div class="text">
-          <p>The TV show The Office has gained widespread popularity, and many characters from the show have become cultural icons. The show which aired from 2005 to 2013 still holds an important place in pop culture history. Considering this, there hasn’t been an extensive quantitative analysis that explores the correlation between a character's on-screen presence, their contribution to the show's success, and the corresponding impact on their compensation. Understanding this dynamic could provide insights into how character development, memorable lines, and screen time contribute to the overall popularity of the show and drive viewership trends. Additionally, it could reveal patterns in how actor compensation reflects their growing or shrinking importance within the series. This project will operate at the intersection of entertainment analytics and cultural data visualization. 
+          <p>The TV show The Office has gained widespread popularity, and many characters from the show have become cultural icons. 
+            The show which aired from 2005 to 2013 still holds an important place in pop culture history. 
+            Considering this, there hasn’t been an extensive quantitative analysis that explores the correlation between a 
+            character's on-screen presence and their contribution to the show's success. 
+            Understanding this dynamic could provide insights into how character development, memorable lines, and screen time 
+            contribute to the overall popularity of the show and drive viewership trends. Additionally, it could reveal patterns 
+            in a character's growing or shrinking importance within the series. This project will operate 
+            at the intersection of entertainment analytics and cultural data visualization. 
           </p>
         </div>
         <div class="image">
