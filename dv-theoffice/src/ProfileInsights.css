@@ -1,0 +1,166 @@
+.profile-insights {
+    padding: 20px;
+    background-color: #2A3C5F;
+    /* Dark blue main background */
+    color: #EDEFE2;
+    /* Light text for contrast */
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #EDEFE2;
+    /* Light text to stand out on dark background */
+}
+
+.timeline-section h2,
+.insights-grid-section header h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #EDEFE2;
+    /* Light text for the section title */
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #4BA8B2;
+    /* Teal accent for the timeline line */
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 48%;
+    padding-right: 10%;
+    /* Add extra padding to the right end */
+}
+
+.timeline-content {
+    background: #EDEFE2;
+    /* Light background for timeline cards */
+    color: #2A3C5F;
+    /* Dark text for readability */
+    border-radius: 8px;
+    padding: 20px;
+    /* General padding for all cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 90%;
+    left: 10%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    width: 80%;
+    /* Narrower width for the right-aligned cards */
+
+    padding-left: 40px;
+    /* Add extra padding for better spacing */
+}
+
+.timeline-content p {
+    margin: 0;
+    line-height: 1.6;
+    color: #373434;
+    text-align: left;
+    /* Subtle grey for body text */
+}
+
+@media (max-width: 768px) {
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        left: 0;
+    }
+
+    .timeline::before {
+        left: 10px;
+        /* Adjust timeline line position */
+    }
+
+    .timeline-content {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+}
+
+/* For GRIDS */
+.profile-insights {
+    padding: 20px;
+    background-color: #2A3C5F;
+    /* Dark blue background */
+    color: #EDEFE2;
+}
+
+.insights-stacked-section {
+    margin-top: 20px;
+}
+
+.insight-item {
+    background-color: #EDEFE2;
+    /* Greenish teal background */
+    border-radius: 8px;
+    padding: 15px 20px;
+    /* Reduce padding to make boxes smaller */
+    margin: 20px auto;
+    /* Center the green boxes */
+    width: 90%;
+    /* Reduce width to show more dark blue background */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.insight-item h3 {
+    margin-top: 0;
+    color: #373434;
+    /* Text matches design */
+}
+
+.insight-item p {
+    margin: 10px 0 20px;
+    line-height: 1.6;
+    text-align: left;
+    color: #373434;
+}
+
+.graph-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center the graphs */
+    gap: 15px;
+    /* Add spacing between graphs */
+    margin: 20px auto;
+    /* Center align graph grid */
+
+}
+
+.graph-grid img {
+    width: 100%;
+    max-width: 45%;
+    /* Adjust based on available screen size */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}

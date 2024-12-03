@@ -148,7 +148,7 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                         <div className="text-section">
                             <img src={clickedCharacter.image} alt={clickedCharacter.name} />
                             <h2>{clickedCharacter.name}</h2>
-                            <p><strong>Role(s):</strong> {characterData[clickedCharacter.name.split(" ")[0]].Role}</p>
+                            <h3><strong>Role(s):</strong> <span>{characterData[clickedCharacter.name.split(" ")[0]].Role}</span></h3>
 
                             <p><strong>Total Episodes:</strong> {characterData[clickedCharacter.name.split(" ")[0]].total_episodes_appeared}</p>
 
@@ -158,18 +158,11 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                                         <li key={i}>"{quote}"</li>
                                     ))}
                                 </ul></p>
-                            <p><strong>Top 5 Episodes:</strong></p>
-                            <ul>
-                                {characterData[clickedCharacter.name.split(" ")[0]].top_episodes.map((episode, i) => (
-                                    <li key={i}>
-                                        {episode.episode}: <i>{episode.episode_title}</i>
-                                    </li>
-                                ))}
-                            </ul>
-                            <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
-                            <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
-
                         </div>
+
+
+
+
                         <div className="chart-section">
                             <div className="lollipop-chart-container">
                                 <LollipopChart
@@ -183,6 +176,20 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                                         .filter((d) => d.episode != null)}
                                 />
                             </div>
+                        </div>
+                        <div className="text-section">
+                            <p><strong>Top 5 Episodes:</strong></p>
+                            <ul>
+                                {characterData[clickedCharacter.name.split(" ")[0]].top_episodes.map((episode, i) => (
+                                    <li key={i}>
+                                        {episode.episode}: <i>{episode.episode_title}</i>
+                                    </li>
+                                ))}
+                            </ul>
+                            <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
+                            <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
+                        </div>
+                        <div className="chart-section">
                             <div className="grouped-scatterplot-container">
                                 <GroupedScatterPlot
                                     data={data
@@ -201,8 +208,9 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                         </div>
                     </div>
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 };
 
