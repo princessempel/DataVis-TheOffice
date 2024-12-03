@@ -85,12 +85,12 @@ const DonutChart = ({ emotions, size, profileImage }) => {
 // for donut legend:
 const Legend = () => {
     const emotionColors = {
-        joy: "#bcbd22",      // orange
-        sadness: "#1f77b4",  // green
-        anger: "#d62728",    // purple
-        love: "#e377c2",     // red
-        fear: "#2ca02c",     // brown
-        surprise: "#ff7f0e"  // pink
+        joy: "#bcbd22",      // yellow
+        anger: "#d62728",    // red
+        love: "#e377c2",     // pink
+        sadness: "#1f77b4",  // blue
+        fear: "#2ca02c",     // green
+        surprise: "#ff7f0e"  // orange
     };
 
     return (
