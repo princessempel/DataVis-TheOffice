@@ -40,6 +40,7 @@ function App() {
             <h1>Analyzing the Antics</h1>
             <h2>Data Insights from <i>The Office</i></h2>
             <p>(CS 6730) Data Visualization Project</p>
+            <p>Group 17: Sanjana Date, Princess Empel, Aditi Patel, Arya Tadepalli</p>
           </div>
       </div>
       <br/><br/>
