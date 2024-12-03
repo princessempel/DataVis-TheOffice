@@ -182,9 +182,9 @@ function App() {
           </p>
         </div>
       </div>
-      <div className="insight-item">
+      <div className="insight-item adjust-margin">
         <h3>Michael and Pam</h3>
-        <div className="content-container" >
+        <div className="content-container " >
           <img
             src={pamMichael}
             alt="network"

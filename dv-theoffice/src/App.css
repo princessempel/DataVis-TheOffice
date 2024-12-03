@@ -279,3 +279,8 @@ html,
   margin-left: 40px;
   margin-bottom: -20px;
 }
+
+.adjust-margin {
+  margin-left: -20px;
+  margin-right: -20px;
+}
