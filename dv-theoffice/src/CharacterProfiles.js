@@ -31,7 +31,7 @@ const DonutChart = ({ emotions, size, profileImage }) => {
 
         const svg = d3.select(chartRef.current)
             .attr("width", width)
-            .attr("height", height)
+            .attr("height", height) // Add extra height for the legend)
             .append("g")
             .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
@@ -80,6 +80,31 @@ const DonutChart = ({ emotions, size, profileImage }) => {
                 />
             </foreignObject>
         </svg>
+    );
+};
+// for donut legend:
+const Legend = () => {
+    const emotionColors = {
+        joy: "#bcbd22",      // orange
+        sadness: "#1f77b4",  // green
+        anger: "#d62728",    // purple
+        love: "#e377c2",     // red
+        fear: "#2ca02c",     // brown
+        surprise: "#ff7f0e"  // pink
+    };
+
+    return (
+        <div className="legend">
+            {Object.entries(emotionColors).map(([emotion, color]) => (
+                <div key={emotion} className="legend-item">
+                    <div
+                        className="legend-color"
+                        style={{ backgroundColor: color }}
+                    ></div>
+                    <span className="legend-text">{emotion}</span>
+                </div>
+            ))}
+        </div>
     );
 };
 
@@ -185,107 +210,112 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
     };
 
     return (
-        <div className="character-container">
-            <div id="tooltip"></div> {/* Tooltip for the lollipop chart */}
-            {characters.map((character, index) => (
-                <div
-                    key={index}
-                    className="card-front">
+        <div >
+            <div className="legend-container">
+                <Legend /> {/* Add the legend here */}
+            </div>
+            <div className="character-container">
+                <div id="tooltip"></div> {/* Tooltip for the lollipop chart */}
+                {characters.map((character, index) => (
                     <div
-                        className="circle"
-                        onMouseEnter={() => handleMouseEnter(character)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => handleClick(character)}
-                    >
-                        <DonutChart
-                            emotions={character.emotions}
-                            size={150}
-                            profileImage={character.image}
-                        />
-                    </div>
-
-
-                    {hoveredCharacter === character && (
-                        <div className="character-name">
-                            <p>{character.name}</p>
+                        key={index}
+                        className="card-front">
+                        <div
+                            className="circle"
+                            onMouseEnter={() => handleMouseEnter(character)}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={() => handleClick(character)}
+                        >
+                            <DonutChart
+                                emotions={character.emotions}
+                                size={150}
+                                profileImage={character.image}
+                            />
                         </div>
-                    )}
-                </div>
-            ))}
 
-            {clickedCharacter && (
-                <div className="modal-overlay">
-                    <div className="modal-content">
-                        <button className="close-button" onClick={handleCloseModal}>
-                            X
-                        </button>
 
-                        <div className="text-section">
-                            <img src={clickedCharacter.image} alt={clickedCharacter.name} />
-                            <h2>{clickedCharacter.name}</h2>
-                            <h3><strong>Role(s):</strong> <span>{characterData[clickedCharacter.name.split(" ")[0]].Role}</span></h3>
+                        {hoveredCharacter === character && (
+                            <div className="character-name">
+                                <p>{character.name}</p>
+                            </div>
+                        )}
+                    </div>
+                ))}
 
-                            <p><strong>Total Episodes:</strong> {characterData[clickedCharacter.name.split(" ")[0]].total_episodes_appeared}</p>
+                {clickedCharacter && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <button className="close-button" onClick={handleCloseModal}>
+                                X
+                            </button>
 
-                            <p><strong>Notable Quotes:</strong>
+                            <div className="text-section">
+                                <img src={clickedCharacter.image} alt={clickedCharacter.name} />
+                                <h2>{clickedCharacter.name}</h2>
+                                <h3><strong>Role(s):</strong> <span>{characterData[clickedCharacter.name.split(" ")[0]].Role}</span></h3>
+
+                                <p><strong>Total Episodes:</strong> {characterData[clickedCharacter.name.split(" ")[0]].total_episodes_appeared}</p>
+
+                                <p><strong>Notable Quotes:</strong>
+                                    <ul>
+                                        {characterData[clickedCharacter.name.split(" ")[0]].notable_quotes.map((quote, i) => (
+                                            <li key={i}>"{quote}"</li>
+                                        ))}
+                                    </ul></p>
+                            </div>
+
+
+
+
+                            <div className="chart-section">
+                                <div className="lollipop-chart-container">
+                                    <LollipopChart
+                                        data={data
+                                            .map((episode) => ({
+                                                season: episode.season,
+                                                episode: episode.episode,
+                                                lines: episode.lines[clickedCharacter.name.split(" ")[0]],
+                                                title: episode.title,
+                                            }))
+                                            .filter((d) => d.episode != null)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="text-section">
+                                <p><strong>Top 5 Episodes:</strong></p>
                                 <ul>
-                                    {characterData[clickedCharacter.name.split(" ")[0]].notable_quotes.map((quote, i) => (
-                                        <li key={i}>"{quote}"</li>
+                                    {characterData[clickedCharacter.name.split(" ")[0]].top_episodes.map((episode, i) => (
+                                        <li key={i}>
+                                            {episode.episode}: <i>{episode.episode_title}</i>
+                                        </li>
                                     ))}
-                                </ul></p>
-                        </div>
-
-
-
-
-                        <div className="chart-section">
-                            <div className="lollipop-chart-container">
-                                <LollipopChart
-                                    data={data
-                                        .map((episode) => ({
-                                            season: episode.season,
-                                            episode: episode.episode,
-                                            lines: episode.lines[clickedCharacter.name.split(" ")[0]],
-                                            title: episode.title,
-                                        }))
-                                        .filter((d) => d.episode != null)}
-                                />
+                                </ul>
+                                <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
+                                <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
                             </div>
-                        </div>
-                        <div className="text-section">
-                            <p><strong>Top 5 Episodes:</strong></p>
-                            <ul>
-                                {characterData[clickedCharacter.name.split(" ")[0]].top_episodes.map((episode, i) => (
-                                    <li key={i}>
-                                        {episode.episode}: <i>{episode.episode_title}</i>
-                                    </li>
-                                ))}
-                            </ul>
-                            <p><strong>First Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].first_line}</p>
-                            <p><strong>Last Line:</strong> {characterData[clickedCharacter.name.split(" ")[0]].last_line}</p>
-                        </div>
-                        <div className="chart-section">
-                            <div className="grouped-scatterplot-container">
-                                <GroupedScatterPlot
-                                    data={data
-                                        .map((episode) => ({
-                                            season: episode.season, // Bubble color based on seasons
-                                            episode: episode.episode, // X-axis: Episode number
-                                            scaled_ratings: episode.scaled_ratings, // Y-axis: Scaled ratings
-                                            scenes: episode.scenes[clickedCharacter.name.split(" ")[0]], // Bubble size based on scenes
-                                            title: episode.title,
-                                        }))
-                                        .filter((d) => d.scenes > 0)
-                                    }
-                                />
+                            <div className="chart-section">
+                                <div className="grouped-scatterplot-container">
+                                    <GroupedScatterPlot
+                                        data={data
+                                            .map((episode) => ({
+                                                season: episode.season, // Bubble color based on seasons
+                                                episode: episode.episode, // X-axis: Episode number
+                                                scaled_ratings: episode.scaled_ratings, // Y-axis: Scaled ratings
+                                                scenes: episode.scenes[clickedCharacter.name.split(" ")[0]], // Bubble size based on scenes
+                                                title: episode.title,
+                                            }))
+                                            .filter((d) => d.scenes > 0)
+                                        }
+                                    />
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )
-            }
-        </div >
+                )
+                }
+            </div >
+        </div>
     );
 };
 

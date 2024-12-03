@@ -250,6 +250,9 @@ html,
   /* Match the text color to your theme */
 }
 
-/* .section-header {
-  font-size: calc(10px + 2vmin);
-} */
+.insight-item h4 {
+  text-align: left;
+  color: #373434;
+  justify-content: left;
+  padding-left: 2px;
+}

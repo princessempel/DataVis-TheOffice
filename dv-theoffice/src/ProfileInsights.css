@@ -152,6 +152,12 @@
 
 }
 
+h4 {
+    text-align: center;
+    padding-left: 20px;
+    justify-content: center;
+}
+
 .graph-grid img {
     width: 100%;
     max-width: 45%;

@@ -37,12 +37,12 @@ function App() {
       {/* <header className="App-header">
       </header> */}
       <div className="hero">
-          <div className="hero-content">
-            <h1>Analyzing the Antics</h1>
-            <h2>Data Insights from <i>The Office</i></h2>
-            <p>(CS 6730) Data Visualization Project</p>
-            <p>Group 17: Sanjana Date, Princess Empel, Aditi Patel, Arya Tadepalli</p>
-          </div>
+        <div className="hero-content">
+          <h1>Analyzing the Antics</h1>
+          <h2>Data Insights from <i>The Office</i></h2>
+          <p>(CS 6730) Data Visualization Project</p>
+          <p>Group 17: Sanjana Date, Princess Empel, Aditi Patel, Arya Tadepalli</p>
+        </div>
       </div>
       <br /><br />
       <div class="container">
@@ -103,7 +103,8 @@ function App() {
       <h2 style={{ paddingLeft: "40px" }}>Chart Insights</h2>
       <div className="container" style={{ paddingTop: "0px", paddingBottom: "0px" }}>
         <div className="insight-item" >
-          <h3>Stress Relief (Season 5, Episode 77)</h3>
+          <h3>Peak in Viewship</h3>
+          <h4>Stress Relief (Season 5, Episode 77)</h4>
           <p>
             Has the highest viewership with 22.91 million and is generally one of the highly rated episodes of the entire show.
             A standout due to its humor, emotional beats, and memorable cold open (the fire drill).  The episode is considered a favorite by many fans of the series.

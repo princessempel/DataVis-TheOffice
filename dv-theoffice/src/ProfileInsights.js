@@ -104,6 +104,9 @@ const ProfileInsights = () => {
                     <h1>
                         <i>The Office</i> Character Profiles
                     </h1>
+                    <h4>The donut chart shows sentiment analysis for each character, hover on different colors to see the values.
+                        Click on the characters' images to see their profile information.
+                    </h4>
                 </header>
                 <CharacterProfile
                     csvFilePath={"/DataVis-TheOffice/data/combined_dataset.csv"}
