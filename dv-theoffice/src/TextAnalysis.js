@@ -17,8 +17,11 @@ const TextAnalysis = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Character Metrics Parallel Coordinates</h1>
+    <div className="container">
+      <div className="text">
+        <h1 style={{flex: 1}}>Character Metrics Parallel Coordinates</h1>
+        <p>Description blurb?</p>
+      </div>
       {data.length > 0 ? <ParallelCoordinates data={data} /> : <p>Loading...</p>}
     </div>
   );

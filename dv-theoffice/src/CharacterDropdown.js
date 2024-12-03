@@ -24,7 +24,7 @@ const CharacterDropdown = ({ onSelect }) => {
     };
 
     return (
-        <div className="dropdown">
+        <div>
             <label htmlFor="character-select">Select a Character: </label>
             <select id="character-select" onChange={handleSelect} defaultValue="">
                 <option value="" disabled>
