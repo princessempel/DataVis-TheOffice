@@ -98,6 +98,21 @@ function App() {
           yAxisLabel={getYAxisLabel()}
         />
       </div>
+      <h2 style={{paddingLeft: "40px"}}>Chart Insights</h2>
+      <div className="container" style={{paddingTop: "0px", paddingBottom: "0px"}}>
+        <div className="insight-item" style={{height: "200px"}}>
+          <h3>Stress Relief (Season 5, Episode 77)</h3>
+          <p>
+            Has the highest viewership with 22.91 million and is generally one of the highly rated episodes of the entire show...
+          </p>
+        </div>
+        <div className="insight-item" style={{height: "200px"}}>
+          <h3>Goodbye, Michael (Season 7, Episode 137)</h3>
+          <p>
+            Aside from the series finale, this episode has the highest ratings with a 9.8. For many fans, his farewell was not just the end of his character’s journey but also the end of the show’s original essence. It marked a significant turning point for <i>The Office</i> as Michael was the heart of the show, bringing a unique mix of humor, awkwardness, and heartfelt moments. His exit left a void that no subsequent character or storyline fully filled, fundamentally changing the dynamic of the series.
+          </p>
+        </div>
+      </div>
       <div className="container">
         <div className="text">
           <h1>Network Diagram</h1>
@@ -138,6 +153,28 @@ function App() {
           </div>
         )}
       </div>
+      <h2 style={{paddingLeft: "40px"}}>Network Insights</h2>
+      <div className="container" style={{paddingTop: "0px", paddingBottom: "0px"}}>
+        <div className="insight-item" style={{height: "200px"}}>
+          <h3>Michael Scott</h3>
+          <p>
+            Michael’s high interaction mentions with characters like Pam, Jim, and Dwight reflect his narrative dominance. His connections to minor characters, like Todd Packer, while fewer, often introduce chaos or comedy, showing his role as a disruptor. 
+          </p>
+        </div>
+        <div className="insight-item" style={{height: "200px"}}>
+          <h3>Dwight Schrute</h3>
+          <p>
+            For Dwight, initial seasons highlight interactions mostly with Michael and Jim. His thickest edge with Michael indicates Michael’s complex mentorship of Dwight, oscillating between ridicule and affection. However, later seasons show growing mentions with Angela and Andy, reflecting his expanded leadership and personal storylines. 
+          </p>
+        </div>
+      </div>
+      <div className="insight-item">
+        <h3>Michael and Pam</h3>
+        <p>
+          Michael Scott and Pam Beesly share one of the most nuanced and underappreciated relationships in <i>The Office</i>, which is reflected in the network. It evolves significantly over the series, offering moments of unexpected emotional depth and mutual respect. Early interactions reveal Michael’s immaturity and inability to recognize Pam as more than just “the receptionist.” Pam, in turn, shows patience, hinting at the seeds of their later bond. As Michael matures, Pam becomes a surprising source of emotional support. Their relationship evolves into one of quiet mutual respect.
+        </p>
+      </div>
+      <br/><br/>
       <div className="CharacterProfile">
         <header className="section-header">
           <h1>
