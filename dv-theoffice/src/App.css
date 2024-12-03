@@ -258,3 +258,10 @@ html,
   padding: 0%;
   /* flex: 1; */
 }
+
+.insight-item h4 {
+  text-align: left;
+  color: #373434;
+  justify-content: left;
+  padding-left: 2px;
+}
