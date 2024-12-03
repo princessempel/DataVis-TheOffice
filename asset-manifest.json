@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DataVis-TheOffice/static/css/main.a469d3ce.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.22f6d181.js",
+    "main.css": "/DataVis-TheOffice/static/css/main.4f4fd148.css",
+    "main.js": "/DataVis-TheOffice/static/js/main.8a1b4022.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
     "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
     "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
@@ -34,12 +34,12 @@
     "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
     "static/media/andyLines.png": "/DataVis-TheOffice/static/media/andyLines.c58602de0aed3d0aa3b3.png",
     "index.html": "/DataVis-TheOffice/index.html",
-    "main.a469d3ce.css.map": "/DataVis-TheOffice/static/css/main.a469d3ce.css.map",
-    "main.22f6d181.js.map": "/DataVis-TheOffice/static/js/main.22f6d181.js.map",
+    "main.4f4fd148.css.map": "/DataVis-TheOffice/static/css/main.4f4fd148.css.map",
+    "main.8a1b4022.js.map": "/DataVis-TheOffice/static/js/main.8a1b4022.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a469d3ce.css",
-    "static/js/main.22f6d181.js"
+    "static/css/main.4f4fd148.css",
+    "static/js/main.8a1b4022.js"
   ]
 }
