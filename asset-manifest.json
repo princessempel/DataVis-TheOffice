@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DataVis-TheOffice/static/css/main.212bff64.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.6c42d679.js",
+    "main.css": "/DataVis-TheOffice/static/css/main.79465e79.css",
+    "main.js": "/DataVis-TheOffice/static/js/main.1a9714b8.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
     "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
     "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
@@ -27,6 +27,7 @@
     "static/media/MeredithPalmer.png": "/DataVis-TheOffice/static/media/MeredithPalmer.7c36006b17566299b8e1.png",
     "static/media/creedScenes.png": "/DataVis-TheOffice/static/media/creedScenes.4d01b52f8e8ab73a7c1c.png",
     "static/media/oscarLines.png": "/DataVis-TheOffice/static/media/oscarLines.48c21aafb339fed64fd8.png",
+    "static/media/DwightSchruteFaceMask.png": "/DataVis-TheOffice/static/media/DwightSchruteFaceMask.7b76c42caa2ae380ae32.png",
     "static/media/meredithLines.png": "/DataVis-TheOffice/static/media/meredithLines.16e02577168e637db4d0.png",
     "static/media/StanleyHudson.png": "/DataVis-TheOffice/static/media/StanleyHudson.09e9b06dd10d7657dc89.png",
     "static/media/KevinMalone.png": "/DataVis-TheOffice/static/media/KevinMalone.7cb20b4a07e8712eda45.png",
@@ -34,13 +35,15 @@
     "static/media/dwightLines.png": "/DataVis-TheOffice/static/media/dwightLines.0eb813af6efce184c643.png",
     "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
     "static/media/andyLines.png": "/DataVis-TheOffice/static/media/andyLines.c58602de0aed3d0aa3b3.png",
+    "static/media/declinedRatings.png": "/DataVis-TheOffice/static/media/declinedRatings.3c53d6fc3520f8226b81.png",
+    "static/media/goodbyeMichael.jpg": "/DataVis-TheOffice/static/media/goodbyeMichael.66b01132836482cc016f.jpg",
     "index.html": "/DataVis-TheOffice/index.html",
-    "main.212bff64.css.map": "/DataVis-TheOffice/static/css/main.212bff64.css.map",
-    "main.6c42d679.js.map": "/DataVis-TheOffice/static/js/main.6c42d679.js.map",
+    "main.79465e79.css.map": "/DataVis-TheOffice/static/css/main.79465e79.css.map",
+    "main.1a9714b8.js.map": "/DataVis-TheOffice/static/js/main.1a9714b8.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.212bff64.css",
-    "static/js/main.6c42d679.js"
+    "static/css/main.79465e79.css",
+    "static/js/main.1a9714b8.js"
   ]
 }
