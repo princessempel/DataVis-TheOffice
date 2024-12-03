@@ -2,7 +2,7 @@
     padding: 20px;
     background-color: #2A3C5F;
     /* Dark blue main background */
-    color: #EDEFE2;
+    color: white;
     /* Light text for contrast */
 }
 
@@ -10,15 +10,15 @@
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
-    color: #EDEFE2;
+    color: white;
     /* Light text to stand out on dark background */
 }
 
-.timeline-section h2,
+.timeline-section h1,
 .insights-grid-section header h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #EDEFE2;
+    color: white;
     /* Light text for the section title */
 }
 
@@ -106,12 +106,7 @@
 }
 
 /* For GRIDS */
-.profile-insights {
-    padding: 20px;
-    background-color: #2A3C5F;
-    /* Dark blue background */
-    color: #EDEFE2;
-}
+
 
 .insights-stacked-section {
     margin-top: 20px;

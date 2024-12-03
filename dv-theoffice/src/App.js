@@ -176,11 +176,11 @@ function App() {
       </div>
       <br/><br/>
       <div className="CharacterProfile">
-        <header className="section-header">
+        {/* <header className="section-header">
           <h1>
             <i>The Office</i> Character Profiles
           </h1>
-        </header>
+        </header> */}
         <div className="insights">
           <ProfileInsights />
         </div>
