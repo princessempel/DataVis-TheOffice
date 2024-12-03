@@ -18,8 +18,11 @@ const TextAnalysisHeatMap = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Character POS Heatmap</h1>
+    <div className='container'>
+      <div className='text'>
+        <h1>Character POS Heatmap</h1>
+        <p>Description/Insights</p>
+      </div>
       {data.length > 0 ? <Heatmap data={data} /> : <p>Loading...</p>}
     </div>
   );

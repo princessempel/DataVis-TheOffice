@@ -16,7 +16,7 @@ function App() {
   const [dataKey, setDataKey] = useState("ratings");
   const [filter, setFilter] = useState("all");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [viewOption, setViewOption] = useState("");
+  const [viewOption, setViewOption] = useState("seasons");
 
   const getYAxisLabel = () => {
     switch (dataKey) {
@@ -54,71 +54,81 @@ function App() {
           <img src={introImage} alt="The Office" />
         </div>
       </div>
-      <div className="linebarchart-container">
-        <TextAnalysis />
-      </div>
-      <div className="linebarchart-container">
+      {/* <div className="linebarchart-container"> */}
+      <TextAnalysis />
+      {/* <div className="linebarchart-container"> */}
         <TextAnalysisHeatMap />
-      </div>
-      <div className="linebarchart-container">
-        <div className="toggle-buttons">
-          <button
-            className={dataKey === "ratings" ? "active" : ""}
-            onClick={() => setDataKey("ratings")}
-          >
-            Ratings
-          </button>
-          <button
-            className={dataKey === "scaled_ratings" ? "active" : ""}
-            onClick={() => setDataKey("scaled_ratings")}
-          >
-            Scaled Ratings
-          </button>
-          <button
-            className={dataKey === "viewership_mil" ? "active" : ""}
-            onClick={() => setDataKey("viewership_mil")}
-          >
-            <span>Viewership</span><br></br>
-            <span>(in Millions)</span>
-          </button>
+      {/* </div> */}
+      {/* <div className="linebarchart-container"> */}
+      <div className="container">
+        <div className="text">
+          <h1>Line Chart with Stacked Bars</h1>
+          <h3>Best and Worst Episodes/Seasons</h3>
+          <p>Explore which episodes were the most loved or hated, either across all time or by season, and see which ones drew the highest viewership. Did some episodes live up to the hype, while others fell short? Were there any surprising fan favorites?</p>
+          <h3>View based on: </h3>
+          <div className="toggle-buttons">
+            <button
+              className={dataKey === "ratings" ? "active" : ""}
+              onClick={() => setDataKey("ratings")}
+            >
+              Ratings
+            </button>
+            <button
+              className={dataKey === "scaled_ratings" ? "active" : ""}
+              onClick={() => setDataKey("scaled_ratings")}
+            >
+              Scaled Ratings
+            </button>
+            <button
+              className={dataKey === "viewership_mil" ? "active" : ""}
+              onClick={() => setDataKey("viewership_mil")}
+            >
+              <span>Viewership</span><br></br>
+              <span> (in Millions)</span>
+            </button>
+          </div>
+          <br/><br/>
         </div>
+        
+        
         {/* <span style={{ alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold" }}>per Episode in Each Season</span> */}
-        <h1>per Episode in Each Season</h1>
         <LineXStackedBarChart
           csvFilePath={"/DataVis-TheOffice/data/the_office_episodes_processed.csv"}
           dataKey={dataKey}
           yAxisLabel={getYAxisLabel()}
         />
       </div>
-      <div>
-        <h1>Network Diagram</h1>
-        {/* <p>based on how many times the characters mention each others' character names/aliases (total between them)</p> */}
-        <h2>Do you want to see interaction by: </h2>
-        {/* Options for users to choose */}
-        <div className="view-options">
-          <button
-            className={viewOption === "seasons" ? "active" : ""}
-            onClick={() => setViewOption("seasons")}
-          >
-            Seasons/Episodes
-          </button>
-          <button
-            className={viewOption === "characters" ? "active" : ""}
-            onClick={() => setViewOption("characters")}
-          >
-            Characters
-          </button>
+      <div className="container">
+        <div className="text">
+          <h1>Network Diagram</h1>
+          <h3>Who interacted with whom?</h3>
+          <p>Discover how often different characters interacted throughout the show! Explore the network by timeline or focus on a specific character to dive deeper into their connections.</p>
+          <h3>See interactions based on: </h3>
+          {/* Options for users to choose */}
+          <div className="toggle-buttons">
+            <button
+              className={viewOption === "seasons" ? "active" : ""}
+              onClick={() => setViewOption("seasons")}
+            >
+              Seasons/Episodes
+            </button>
+            <button
+              className={viewOption === "characters" ? "active" : ""}
+              onClick={() => setViewOption("characters")}
+            >
+              Characters
+            </button>
+          </div>
         </div>
         {/* Conditional Rendering */}
         {viewOption === "seasons" && (
-          <div>
-            <p>based on how many times the characters mention each others' character names/aliases (total between them)</p>
+          <div style={{flex: 1.25}}>
             <TreeDropdown onSelect={setFilter} />
             <NetworkDiagram filter={filter} />
           </div>
         )}
         {viewOption === "characters" && (
-          <div>
+          <div style={{flex: 1.25,}}>
             <CharacterDropdown onSelect={setSelectedCharacter} />
             {selectedCharacter ? (
               <CharacterNetworkDiagram selectedCharacter={selectedCharacter} />
@@ -128,7 +138,7 @@ function App() {
           </div>
         )}
       </div>
-      <div className="CharacterProfile linebarchart-container">
+      <div className="CharacterProfile">
         <header className="section-header">
           <h1>
             <i>The Office</i> Character Profiles

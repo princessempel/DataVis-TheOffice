@@ -16,8 +16,8 @@ const CharacterNetworkDiagram = ({ selectedCharacter }) => {
 
         // Responsive SVG
         const svg = d3.select(svgRef.current)
-            .attr("width", "90%")
-            .attr("height", "90%")
+            .attr("width", "100%")
+            .attr("height", "100%")
             .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
             .style("background-color", "#2A3C5F")
             .append("g");
@@ -75,7 +75,7 @@ const CharacterNetworkDiagram = ({ selectedCharacter }) => {
 
             // Create the simulation
             const simulation = d3.forceSimulation(filteredNodes)
-                .force("link", d3.forceLink(consolidatedEdges).id(d => d.id).distance(200))
+                .force("link", d3.forceLink(consolidatedEdges).id(d => d.id).distance(150))
                 .force("charge", d3.forceManyBody().strength(-800))
                 .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -129,7 +129,7 @@ const CharacterNetworkDiagram = ({ selectedCharacter }) => {
                 .selectAll("circle")
                 .data(filteredNodes)
                 .enter().append("circle")
-                .attr("r", d => Math.sqrt(d.size) + 8) // Node size by mentions
+                .attr("r", d => Math.sqrt(d.size/2) + 8) // Node size by mentions
                 .attr("fill", d => (d.id === selectedCharacter ? "#4BA8B2" : "steelblue"))
                 .call(drag(simulation));
 
