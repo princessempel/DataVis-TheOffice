@@ -50,14 +50,14 @@ function App() {
       <br /><br />
       <div class="container">
         <div class="text">
-          <p>The TV show The Office has gained widespread popularity, and many characters from the show have become cultural icons. 
-            The show which aired from 2005 to 2013 still holds an important place in pop culture history. 
-            Considering this, there hasn’t been an extensive quantitative analysis that explores the correlation between a 
-            character's on-screen presence and their contribution to the show's success. 
-            Understanding this dynamic could provide insights into how character development, memorable lines, and screen time 
-            contribute to the overall popularity of the show and drive viewership trends. Additionally, it could reveal patterns 
-            in a character's growing or shrinking importance within the series. This project will operate 
-            at the intersection of entertainment analytics and cultural data visualization. 
+          <p>The TV show The Office has gained widespread popularity, and many characters from the show have become cultural icons.
+            The show which aired from 2005 to 2013 still holds an important place in pop culture history.
+            Considering this, there hasn’t been an extensive quantitative analysis that explores the correlation between a
+            character's on-screen presence and their contribution to the show's success.
+            Understanding this dynamic could provide insights into how character development, memorable lines, and screen time
+            contribute to the overall popularity of the show and drive viewership trends. Additionally, it could reveal patterns
+            in a character's growing or shrinking importance within the series. This project will operate
+            at the intersection of entertainment analytics and cultural data visualization.
           </p>
         </div>
         <div class="image">
@@ -123,12 +123,12 @@ function App() {
           <img src={stressRelief} style={{ display: "block", margin: "0 auto" }} alt="Stress Relief Episode"></img>
         </div>
         <div className="insight-item" >
-        <h3>Why did the ratings decline towards the end?</h3>
+          <h3>Why did the ratings decline towards the end?</h3>
           <h4>Goodbye, Michael (Season 7, Episode 137)</h4>
           <p>
             Aside from the series finale, this episode has the highest ratings with a 9.8. For many fans, his farewell was not just the end of his character’s journey but also the end of the show’s original essence. It marked a significant turning point for <i>The Office</i> as Michael was the heart of the show, bringing a unique mix of humor, awkwardness, and heartfelt moments. His exit left a void that no subsequent character or storyline fully filled, fundamentally changing the dynamic of the series.
           </p>
-          <img src={declinedRatings} alt="Declined Ratings" style={{ display: "block", margin: "0 auto", marginTop: "45px" ,marginBottom: "45px"}}></img>
+          <img src={declinedRatings} alt="Declined Ratings" style={{ display: "block", margin: "0 auto", marginTop: "45px", marginBottom: "45px", height: "350px", width: "600px" }}></img>
         </div>
       </div>
       <div className="container">
@@ -182,7 +182,7 @@ function App() {
         <div className="insight-item" style={{ height: "150px" }}>
           <h3>Dwight Schrute</h3>
           <p>
-           Initial seasons highlight interactions mostly with Michael and Jim. His thickest edge with Michael indicates Michael’s complex mentorship of Dwight, oscillating between ridicule and affection. However, later seasons show growing mentions with Angela and Andy, reflecting his expanded leadership and personal storylines.
+            Initial seasons highlight interactions mostly with Michael and Jim. His thickest edge with Michael indicates Michael’s complex mentorship of Dwight, oscillating between ridicule and affection. However, later seasons show growing mentions with Angela and Andy, reflecting his expanded leadership and personal storylines.
           </p>
         </div>
       </div>
