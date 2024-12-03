@@ -20,7 +20,7 @@ const TextAnalysisHeatMap = () => {
   return (
     <div className='container'>
       <div className='text-analysis-insight '>
-        {/* <h1>Parts of Speech: Dunder Mifflin Edition</h1> */}
+        <h1>Parts of Speech: Dunder Mifflin Edition</h1>
         <p>Here's an analysis of the parts of speech of each character's dialogues. It's a great tool that shows all kinds of insights about each character and their personality. Here's some insights we found:</p><br></br>
         <b>Erin's</b> bubbly and optimistic personality could lead her to use more descriptive language.<br></br>
          <b>Phyllis's</b> use of verbs might reflect her tendency to narrate or engage in activities subtly.<br></br>

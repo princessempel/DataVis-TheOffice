@@ -67,10 +67,7 @@ function App() {
       {/* <div className="linebarchart-container"> */}
       <TextAnalysis />
       {/* <div className="linebarchart-container"> */}
-      <div>
-        <h1 className="heading">Parts of Speech: Dunder Mifflin Edition</h1>
       <TextAnalysisHeatMap />
-      </div>
       {/* </div> */}
       {/* <div className="linebarchart-container"> */}
       <div className="container">
