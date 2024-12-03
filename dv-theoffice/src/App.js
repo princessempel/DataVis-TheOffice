@@ -34,10 +34,10 @@ function App() {
           (CS 6730) Data Vis Project: Return to <i>The Office</i>
         </p>
       </header>
-      <div className="linebarchart-container" id="parallelCoordinates">
+      <div className="linebarchart-container">
         <TextAnalysis />
       </div>
-      <div className="linebarchart-container" id="heatmap">
+      <div className="linebarchart-container">
         <TextAnalysisHeatMap />
       </div>
       <div className="linebarchart-container">

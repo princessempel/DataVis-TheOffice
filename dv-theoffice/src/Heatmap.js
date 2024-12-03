@@ -9,7 +9,7 @@ const Heatmap = ({ data }) => {
 
         const characters = Object.keys(data);
         const metrics = Object.keys(data[0]).filter(d => d !== 'Character');
-        const names = data.filter((d) => d.Character).map((d) => d.Character);
+        const names = data.filter((d) => d.Character).map((d) => d.Character);    
 
         d3.select("#heatmap").selectAll("*").remove();
 
@@ -20,16 +20,26 @@ const Heatmap = ({ data }) => {
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
           .attr("transform", `translate(${margin.left},${margin.top})`);
-    
-        // Color scale for heatmap
-        const colorScale = d3.scaleSequential(d3.interpolateYlGnBu)
-          .domain([0, 100]);
-    
+
+          const globalMax = {};
+          metrics.forEach((metric) => {
+            globalMax[metric] = d3.max(characters.map((character) => data[character][metric]));
+          });
+
+          const globalMin = {};
+          metrics.forEach((metric) => {
+            globalMin[metric] = d3.min(characters.map((character) => data[character][metric]));
+          });
+          // Create a color scale for each metric
+          const colorScales = {};
+          metrics.forEach((metric) => {
+            colorScales[metric] = d3.scaleLinear().domain([globalMin[metric], globalMax[metric]]).range(["#bda640", "#8c1c1c"]);
+          });
         // X and Y scales
         const xScale = d3.scaleBand()
           .domain(characters)
           .range([0, width])
-          .padding(0.1);
+          .padding(0.4);
 
         const xNames = d3.scaleBand()
           .domain(names)
@@ -41,14 +51,28 @@ const Heatmap = ({ data }) => {
           .range([0, height])
           .padding(0.1);
     
+        // Add a tooltip div
+        const tooltip = d3
+        .select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("background-color", "rgba(20,45, 84, 0.8)")
+        .style("box-shadow","0 1px 4px 0 rgba(0,0,0,0.2)")
+        .style("padding", "5px")
+        .style("border-radius", "5px")
+        .style("pointer-events", "none")
+        .style("visibility", "hidden");
+
         // Create the heatmap cells
         svg.selectAll("rect")
           .data(characters.flatMap(character => {
             return metrics.map(metric => ({
               character,
               metric,
-              value: data[character][metric]
-            }));
+              value: data[character][metric] 
+            })
+        );
+            
           }))
           .enter()
           .append("rect")
@@ -56,8 +80,24 @@ const Heatmap = ({ data }) => {
           .attr("y", d => yScale(d.metric))
           .attr("width", xScale.bandwidth())
           .attr("height", yScale.bandwidth())
-          .attr("fill", d => colorScale(d.value))
-          .attr("stroke", "#ddd");
+          .attr("fill", d => colorScales[d.metric](d.value))
+          .attr("stroke", "#ddd")
+        .on("mouseover", (event, d) => {
+            tooltip
+            .style("visibility", "visible")
+            .html(
+                `<strong>Character:</strong> ${names[d.character]}<br>
+                <strong>${d.metric} (%):</strong> ${d.value}`
+            );
+        })
+        .on("mousemove", event => {
+            tooltip
+            .style("top", `${event.pageY + 10}px`)
+            .style("left", `${event.pageX + 10}px`);
+        })
+        .on("mouseout", () => {
+            tooltip.style("visibility", "hidden");
+        });
     
         // Add X axis labels (Characters)
         svg.append("g")
@@ -66,10 +106,11 @@ const Heatmap = ({ data }) => {
           .enter()
           .append("text")
           .attr("class", "x-axis-label")
-          .attr("x", d => xNames(d) + xScale.bandwidth()/2)
+          .attr("x", d => xNames(d) + xNames.bandwidth()/2)
           .attr("y", height+margin.bottom/2)
           .attr("text-anchor", "middle")
           .attr("fill","white")
+          .style("font-size", "12px")
           .text(d => d);
     
         // Add Y axis labels (POS metrics)
@@ -79,12 +120,14 @@ const Heatmap = ({ data }) => {
           .enter()
           .append("text")
           .attr("class", "y-axis-label")
-          .attr("x", -10)
+          .attr("x", 0)
           .attr("y", d => yScale(d) + yScale.bandwidth()/2)
           .attr("text-anchor", "end")
           .attr("fill","white")
-        //   .attr("transform", "rotate(-90)")
           .text(d => d);
+
+
+
       }, [data]);
 
   return <div id="heatmap"></div>;
