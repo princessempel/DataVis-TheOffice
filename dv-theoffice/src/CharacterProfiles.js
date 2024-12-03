@@ -46,7 +46,7 @@ const DonutChart = ({ emotions, size, profileImage }) => {
                 const percentage = (d.data.value * 100).toFixed(2);
                 d3.select("#tooltip")
                     .style("visibility", "visible")
-                    .text(`${d.data.key}: ${percentage}%`);
+                    .text(`${d.data.emotion}: ${percentage}%`);
             })
             .on("mousemove", (e) => {
                 d3.select("#tooltip")
