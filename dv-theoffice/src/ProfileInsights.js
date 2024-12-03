@@ -21,7 +21,7 @@ const ProfileInsights = () => {
 
                 <div className="timeline-section">
                     <header>
-                        <h2>Major Character Arcs</h2>
+                        <h1>Major Character Arcs</h1>
                     </header>
                     <div className="timeline">
                         <div className="timeline-item">
@@ -100,6 +100,11 @@ const ProfileInsights = () => {
                 </div>
             </section>
             <section className="character-profile">
+                <header className="section-header">
+                    <h1>
+                        <i>The Office</i> Character Profiles
+                    </h1>
+                </header>
                 <CharacterProfile
                     csvFilePath={"/DataVis-TheOffice/data/combined_dataset.csv"}
                     jsonFilePath={"/DataVis-TheOffice/data/character_data.json"}
@@ -108,7 +113,7 @@ const ProfileInsights = () => {
             <section className="profile-insights">
                 <div className="insights-stacked-section">
                     <header>
-                        <h2>Insights from Profile Graphs</h2>
+                        <h2 style={{ paddingLeft: "40px" }}>Insights from Profile Graphs</h2>
                     </header>
 
                     {/* Insight 1 */}

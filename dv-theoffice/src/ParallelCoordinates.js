@@ -25,7 +25,7 @@ const ParallelCoordinates = ({ data }) => {
   useEffect(() => {
     // Dimensions and margins
     const margin = { top: 30, right: 50, bottom: 30, left: 50 };
-    const width = 1000 - margin.left;
+    const width = 800 - margin.left;
     const height = 500 - margin.top - margin.bottom;
 
     // Remove any existing SVG (for re-renders)
@@ -35,7 +35,7 @@ const ParallelCoordinates = ({ data }) => {
     const svg = d3
       .select("#parallel-coordinates")
       .append("svg")
-      .attr("width", width + margin.left + margin.right + margin.top)
+      .attr("width", width + margin.left + margin.top)
       .attr("height", height + margin.top + margin.bottom*2)
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);

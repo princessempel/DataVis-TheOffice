@@ -7,15 +7,15 @@ const NetworkDiagram = ({ filter }) => {
     useEffect(() => {
         const margin = { top: 0, right: 20, bottom: 0, left: 20 };
         const width = 1000 - margin.left - margin.right;
-        const height = 800 - margin.top - margin.bottom;
+        const height = 600 - margin.top - margin.bottom;
 
         // Clear SVG before re-rendering
         d3.select(svgRef.current).selectAll("*").remove();
 
         // Responsive SVG (scales based on window size)
         const svg = d3.select(svgRef.current)
-            .attr("width", "90%")
-            .attr("height", "90%")
+            .attr("width", "100%")
+            .attr("height", "100%")
             .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
             .style("background-color", "#2A3C5F")
             .append("g")
@@ -94,7 +94,7 @@ const NetworkDiagram = ({ filter }) => {
 
             // Create the simulation
             const simulation = d3.forceSimulation(filteredNodes)
-                .force("link", d3.forceLink(updatedEdges).id(d => d.id).distance(200))
+                .force("link", d3.forceLink(updatedEdges).id(d => d.id).distance(150))
                 .force("charge", d3.forceManyBody().strength(-800))
                 .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -148,7 +148,7 @@ const NetworkDiagram = ({ filter }) => {
             .selectAll("circle")
             .data(filteredNodes)
             .enter().append("circle")
-            .attr("r", d => Math.sqrt(d.size) + 8) // Node size by mentions
+            .attr("r", d => Math.sqrt(d.size/2) + 8) // Node size by mentions
             .attr("fill", "steelblue")
             .call(drag(simulation));
 
@@ -173,7 +173,7 @@ const NetworkDiagram = ({ filter }) => {
             .attr("text-anchor", "middle")
             .attr("alignment-baseline", "middle") 
             .text(d => d.id)
-            .style("font-size", d => `${Math.max(8, Math.sqrt(d.size)/4)}px`) // Adjust font size based on size (mentions)
+            .style("font-size", d => `${Math.max(12, Math.sqrt(d.size)/4)}px`) // Adjust font size based on size (mentions)
             .style("font-family", "Arial, sans-serif")
             .style("fill", "white");
 

@@ -67,12 +67,13 @@ const TreeDropdown = ({ onSelect }) => {
 
     return (
         <div 
-            className="network-filter"
+            style={{alignItems: "center",
+                justifyItems: "center"}}
         >
             <DropdownTreeSelect
                 data={treeData}
                 onChange={handleChange}
-                texts={{ placeholder: "Filter by Season or Episode" }}
+                texts={{ placeholder: "Select Season/Episode" }}
                 value={selectedValue ? [{ label: selectedValue, value: selectedValue }] : []}
                 keepOpenOnSelect={true}
                 className="dropdown-tree-select-container" /* Add custom class */
