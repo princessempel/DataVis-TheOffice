@@ -20,7 +20,7 @@ const TextAnalysisHeatMap = () => {
   return (
     <div className='container'>
       <div className='text'>
-        <h1>Character POS Heatmap</h1>
+        <h1>Parts of Speech: Dunder Mifflin Edition</h1>
         <ul>
                 <li style={{ color: "white" }}><b>Erin's</b> bubbly and optimistic personality could lead her to use more descriptive language</li>
                 <li style={{ color: "white" }}><b>Phyllis's</b> use of verbs might reflect her tendency to narrate or engage in activities subtly</li>

@@ -19,7 +19,7 @@ const TextAnalysis = () => {
   return (
     <div className="container">
       <div className="text">
-        <h1 style={{flex: 1}}>Character Metrics Parallel Coordinates</h1>
+        <h1 style={{flex: 1}}>Lines of Dialogue: A Parallel Breakdown</h1>
             <ul>
                 <li style={{ color: "white" }}><b>Kelly</b> likes to gossip and often has emotional outbursts, which don’t require a sophisticated vocabulary. Her sentences are usually long because she tends to ramble without thinking ahead</li>
                 <li style={{ color: "white" }}><b>Meredith's</b> dialogue is often short, to the point, and laced with humor or shock value, rather than linguistic complexity.</li>
