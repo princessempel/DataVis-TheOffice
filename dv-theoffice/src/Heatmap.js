@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 const Heatmap = ({ data }) => {
     useEffect(() => {// Dimensions and margins
         const margin = { top: 30, right: 50, bottom: 30, left: 150 };
-        const width = 900 - margin.left;
+        const width = 1000 - margin.left;
         const height = 500 - margin.top - margin.bottom;
 
         const characters = Object.keys(data);
@@ -19,7 +19,7 @@ const Heatmap = ({ data }) => {
           .attr("width", width + margin.left)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
-          .attr("transform", `translate(${margin.left},${margin.top})`);
+          .attr("transform", `translate(${margin.left-10},${margin.top})`);
 
           const globalMax = {};
           metrics.forEach((metric) => {
@@ -127,6 +127,55 @@ const Heatmap = ({ data }) => {
           .attr("fill","white")
           .text(d => d);
 
+          const gradientLineHeight = height - margin.top; // Same as the height of the heatmap
+const gradientLineWidth = 10; // Width of the gradient line
+
+// Add a group for the gradient line
+const gradientGroup = svg.append("g")
+  .attr("transform", `translate(${width-5}, 15)`); // Adjust position to the left of the heatmap
+
+// Define the gradient
+const defs = svg.append("defs");
+const verticalGradient = defs.append("linearGradient")
+  .attr("id", "vertical-gradient")
+  .attr("x1", "0%")
+  .attr("x2", "0%")
+  .attr("y1", "0%")
+  .attr("y2", "100%"); // Vertical gradient
+
+// Set gradient stops
+verticalGradient.append("stop")
+  .attr("offset", "0%")
+  .attr("stop-color", "#8c1c1c"); // Min color
+
+verticalGradient.append("stop")
+  .attr("offset", "100%")
+  .attr("stop-color", "#bda640"); // Max colorbda640
+
+// Add the gradient rectangle
+gradientGroup.append("rect")
+  .attr("x", 0)
+  .attr("y", 0)
+  .attr("width", gradientLineWidth)
+  .attr("height", gradientLineHeight)
+  .style("fill", "url(#vertical-gradient)");
+
+// Add labels
+gradientGroup.append("text")
+  .attr("x", 0) // Adjust position to the left of the gradient
+  .attr("y", -5) // Slight offset from the top
+  .attr("text-anchor", "middle")
+  .style("font-size", "8px")
+  .style("fill", "white") // Label color
+  .text("Max %");
+
+gradientGroup.append("text")
+  .attr("x", 0) // Adjust position to the left of the gradient
+  .attr("y", gradientLineHeight + 10) // Slight offset from the bottom
+  .attr("text-anchor", "middle")
+  .style("font-size", "8px")
+  .style("fill", "white") // Label color
+  .text("Min %");
 
 
       }, [data]);

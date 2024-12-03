@@ -253,3 +253,8 @@ html,
 /* .section-header {
   font-size: calc(10px + 2vmin);
 } */
+
+.text-analysis-insight {
+  padding: 0%;
+  /* flex: 1; */
+}
