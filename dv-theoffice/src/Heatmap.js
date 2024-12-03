@@ -87,7 +87,7 @@ const Heatmap = ({ data }) => {
             .style("visibility", "visible")
             .html(
                 `<strong>Character:</strong> ${names[d.character]}<br>
-                <strong>${d.metric} (%):</strong> ${d.value}`
+                <strong>${d.metric}:</strong> ${d.value}%`
             );
         })
         .on("mousemove", event => {
