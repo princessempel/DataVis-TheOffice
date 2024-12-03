@@ -21,12 +21,11 @@ const TextAnalysisHeatMap = () => {
     <div className='container'>
       <div className='text'>
         <h1>Parts of Speech: Dunder Mifflin Edition</h1>
-        <ul>
-                <li style={{ color: "white" }}><b>Erin's</b> bubbly and optimistic personality could lead her to use more descriptive language</li>
-                <li style={{ color: "white" }}><b>Phyllis's</b> use of verbs might reflect her tendency to narrate or engage in activities subtly</li>
-                <li style={{ color: "white" }}><b>Stanley</b> is known for his no-nonsense, practical, and often disinterested demeanor</li>
-                <li style={{ color: "white" }}><b>Meredith</b> is known for her straightforwardness while <b>Creed</b> often delivers cryptic one-liners or factual observations</li>
-            </ul>
+        <p>Here's an analysis of the parts of speech of each character's dialogues. It's a great tool that shows all kinds of insights about each character and their personality. Here's some insights we found:</p><br></br>
+        <b>Erin's</b> bubbly and optimistic personality could lead her to use more descriptive language.<br></br>
+         <b>Phyllis's</b> use of verbs might reflect her tendency to narrate or engage in activities subtly.<br></br>
+         <b>Stanley</b> is known for his no-nonsense, practical, and often disinterested demeanor.<br></br>
+        <b>Meredith</b> is known for her straightforwardness while <b>Creed</b> often delivers cryptic one-liners or factual observations.
       </div>
       {data.length > 0 ? <Heatmap data={data} /> : <p>Loading...</p>}
     </div>
