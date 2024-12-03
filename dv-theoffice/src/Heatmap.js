@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 const Heatmap = ({ data }) => {
     useEffect(() => {// Dimensions and margins
         const margin = { top: 30, right: 50, bottom: 30, left: 150 };
-        const width = 1000 - margin.left;
+        const width = 900 - margin.left;
         const height = 500 - margin.top - margin.bottom;
 
         const characters = Object.keys(data);
@@ -16,7 +16,7 @@ const Heatmap = ({ data }) => {
         // Create SVG canvas
         const svg = d3.select("#heatmap")
           .append("svg")
-          .attr("width", width + margin.left + margin.right)
+          .attr("width", width + margin.left)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
           .attr("transform", `translate(${margin.left},${margin.top})`);
