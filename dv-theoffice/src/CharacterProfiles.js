@@ -7,23 +7,23 @@ import LollipopChart from "./LollipopChart";
 import GroupedScatterPlot from "./GroupedScatterPlot";
 
 const characters = [
-    { name: "Michael Scott", image: require("./profileImages/MichaelScott.png") },
-    { name: "Dwight Schrute", image: require("./profileImages/DwightSchrute.png") },
-    { name: "Pam Beesly Halpert", image: require("./profileImages/PamHalpert.png") },
-    { name: "Jim Halpert", image: require("./profileImages/JimHalpert.png") },
-    { name: "Kelly Kapoor", image: require("./profileImages/KellyKapoor.png") },
-    { name: "Phyllis Vance", image: require("./profileImages/PhyllisVance.png") },
-    { name: "Andy Bernard", image: require("./profileImages/AndyBernard.png") },
-    { name: "Darryl Philbin", image: require("./profileImages/DarrylPhilbin.png") },
-    { name: "Oscar Martinez", image: require("./profileImages/OscarMartinez.png") },
-    { name: "Angela Martin", image: require("./profileImages/AngelaMartin.png") },
-    { name: "Ryan Howard", image: require("./profileImages/RyanHoward.png") },
-    { name: "Erin Hannon", image: require("./profileImages/ErinHannon.png") },
-    { name: "Toby Flenderson", image: require("./profileImages/TobyFlenderson.png") },
-    { name: "Stanley Hudson", image: require("./profileImages/StanleyHudson.png") },
-    { name: "Kevin Malone", image: require("./profileImages/KevinMalone.png") },
-    { name: "Creed Bratton", image: require("./profileImages/CreedBratton.png") },
-    { name: "Meredith Palmer", image: require("./profileImages/MeredithPalmer.png") },
+    { name: "Michael Scott", image: require("./profileImages/MichaelScott.png"), donutChart: require("./donutCharts/Michael_donut.png"), },
+    { name: "Dwight Schrute", image: require("./profileImages/DwightSchrute.png"), donutChart: require("./donutCharts/Dwight_donut_chart.png"),},
+    { name: "Pam Beesly Halpert", image: require("./profileImages/PamHalpert.png"), donutChart: require("./donutCharts/Pam_donut_chart.png")},
+    { name: "Jim Halpert", image: require("./profileImages/JimHalpert.png"), donutChart: require("./donutCharts/Jim_donut_chart.png")},
+    { name: "Kelly Kapoor", image: require("./profileImages/KellyKapoor.png"), donutChart: require("./donutCharts/Kelly_donut_chart.png") },
+    { name: "Phyllis Vance", image: require("./profileImages/PhyllisVance.png"), donutChart: require("./donutCharts/Phyllis_donut_chart.png") },
+    { name: "Andy Bernard", image: require("./profileImages/AndyBernard.png"), donutChart: require("./donutCharts/Andy_donut.png") },
+    { name: "Darryl Philbin", image: require("./profileImages/DarrylPhilbin.png"), donutChart: require("./donutCharts/Darryl_donut_chart.png") },
+    { name: "Oscar Martinez", image: require("./profileImages/OscarMartinez.png"), donutChart: require("./donutCharts/Oscar_donut_chart.png") },
+    { name: "Angela Martin", image: require("./profileImages/AngelaMartin.png"), donutChart: require("./donutCharts/Angela_donut_chart.png") },
+    { name: "Ryan Howard", image: require("./profileImages/RyanHoward.png"), donutChart: require("./donutCharts/Ryan_donut_chart.png") },
+    { name: "Erin Hannon", image: require("./profileImages/ErinHannon.png"), donutChart: require("./donutCharts/Erin_donut_chart.png") },
+    { name: "Toby Flenderson", image: require("./profileImages/TobyFlenderson.png"), donutChart: require("./donutCharts/Toby_donut_chart.png") },
+    { name: "Stanley Hudson", image: require("./profileImages/StanleyHudson.png"), donutChart: require("./donutCharts/Stanley_donut_chart.png") },
+    { name: "Kevin Malone", image: require("./profileImages/KevinMalone.png"), donutChart: require("./donutCharts/Kevin_donut_chart.png") },
+    { name: "Creed Bratton", image: require("./profileImages/CreedBratton.png"), donutChart: require("./donutCharts/Creed_donut_chart.png") },
+    { name: "Meredith Palmer", image: require("./profileImages/MeredithPalmer.png"), donutChart: require("./donutCharts/Meredith_donut.png") },
 ];
 
 const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
@@ -119,8 +119,14 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                         onMouseEnter={() => handleMouseEnter(character)}
                         onMouseLeave={handleMouseLeave}
                         onClick={() => handleClick(character)}
-                    > <img src={character.image} alt={character.name} />
+                    > 
+                    {/* Donut Chart as Background */}
+                    {character.donutChart && (
+                        <img src={character.donutChart} alt={'${character.name} Emotion Donut'} className="donut-chart" />
+                    )}
 
+                    {/*Profile Picture*/}
+                    <img src={character.image} alt={character.name} className="profile-picture" />
                     </div>
 
 
