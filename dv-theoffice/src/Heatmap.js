@@ -56,10 +56,11 @@ const Heatmap = ({ data }) => {
         .select("body")
         .append("div")
         .style("position", "absolute")
-        .style("background-color", "rgba(20,45, 84, 0.8)")
+        .style("background-color", "rgba(0,0, 0, 0.8)")
+        .style("color", "#61dafb")
         .style("box-shadow","0 1px 4px 0 rgba(0,0,0,0.2)")
-        .style("padding", "5px")
-        .style("border-radius", "5px")
+        .style("padding", "8px")
+        .style("border-radius", "4px")
         .style("pointer-events", "none")
         .style("visibility", "hidden");
 
