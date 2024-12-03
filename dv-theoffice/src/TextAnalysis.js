@@ -5,7 +5,7 @@ const TextAnalysis = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('DataVis-TheOffice/data/character_metrics.json')
+    fetch('/DataVis-TheOffice/data/character_metrics.json')
       .then(response => response.json())
       .then(data => {
         const formattedData = Object.keys(data).map(character => ({

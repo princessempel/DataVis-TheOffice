@@ -127,7 +127,7 @@ const ParallelCoordinates = ({ data }) => {
         svg
             .append("image")
             .attr("href", images[d.Character]) // Use 'href' instead of 'xlink:href'
-            .attr("x", xScale(dim) - 10) // Center the image in the circle
+            .attr("x", xScale(dim) - 15) // Center the image in the circle
             .attr("y", yScales[dim](d[dim]) - 15)
             .attr("width", 30)
             .attr("height", 30)
