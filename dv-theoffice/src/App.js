@@ -8,10 +8,13 @@ import CharacterMetrics from "./CharacterMetrics";
 import ProfileInsights from "./ProfileInsights";
 import TextAnalysis from "./TextAnalysis";
 import TextAnalysisHeatMap from "./TextAnalysisHeatMap";
+import CharacterDropdown from "./CharacterDropdown";
+import CharacterNetworkDiagram from "./CharacterNetworkDiagram";
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
   const [filter, setFilter] = useState("all");
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   // console.log(filter);
 
@@ -76,6 +79,14 @@ function App() {
         <p>based on how many times the characters mention each others' character names/aliases (total between them)</p>
         <TreeDropdown onSelect={setFilter} />
         <NetworkDiagram filter={filter} />
+      </div>
+      <div>
+        <CharacterDropdown onSelect={setSelectedCharacter} />
+        {selectedCharacter ? (
+            <CharacterNetworkDiagram selectedCharacter={selectedCharacter} />
+        ) : (
+            <p>Please select a character to view their interactions.</p>
+        )}
       </div>
       <div className="CharacterProfile">
         <header className="section-header">
