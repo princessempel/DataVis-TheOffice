@@ -60,19 +60,6 @@ const ParallelCoordinates = ({ data }) => {
 
     // Draw lines
     const line = d3.line();
-    // svg
-    //   .selectAll("path")
-    //   .data(data)
-    //   .enter()
-    //   .append("path")
-    //   .attr("d", d => 
-    //     line(dimensions.map(dim => [xScale(dim), yScales[dim](d[dim])]))
-    //   )
-    //   .attr("fill", "none")
-    //   .attr("stroke", "steelblue")
-    //   .attr("stroke-width", 1)
-    //   .attr("opacity", 0.7)
-    //   .attr("id", d => `line-${d.Character}`);
 
       svg.selectAll("path.line")
       .data(data)
@@ -106,10 +93,11 @@ const ParallelCoordinates = ({ data }) => {
         .select("body")
         .append("div")
         .style("position", "absolute")
-        .style("background-color", "rgba(20,45, 84, 0.8)")
+        .style("background-color", "rgba(0,0, 0, 0.8)")
+        .style("color", "#61dafb")
         .style("box-shadow","0 1px 4px 0 rgba(0,0,0,0.2)")
-        .style("padding", "5px")
-        .style("border-radius", "5px")
+        .style("padding", "8px")
+        .style("border-radius", "4px")
         .style("pointer-events", "none")
         .style("visibility", "hidden");
 
@@ -141,7 +129,7 @@ const ParallelCoordinates = ({ data }) => {
             );
 
             d3.selectAll(`.line-${d.Character}`)
-            .style("stroke", "orange")  // Highlight lines in orange
+            .style("stroke", "#f2b325")
             .style("stroke-width", 5);
               })
               .on("mousemove", event => {
@@ -153,7 +141,7 @@ const ParallelCoordinates = ({ data }) => {
                 tooltip.style("visibility", "hidden");
 
                 d3.selectAll(`.line-${d.Character}`)
-                .style("stroke", "steelblue")  // Reset the line color
+                .style("stroke", "steelblue")
                 .style("stroke-width", 1);
             })
               .attr("clip-path", `url(#clip-${d.Character}-${dim}-${counter})`); // Use clip-path defined in 'defs'
