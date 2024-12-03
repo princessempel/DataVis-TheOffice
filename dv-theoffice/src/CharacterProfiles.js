@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
 import "./CharacterProfiles.css"; // For styling
 import LollipopChart from "./LollipopChart";
@@ -6,24 +6,100 @@ import LollipopChart from "./LollipopChart";
 
 import GroupedScatterPlot from "./GroupedScatterPlot";
 
+const DonutChart = ({ emotions, size, profileImage }) => {
+    const chartRef = useRef(null);
+
+    useEffect(() => {
+        const width = size;
+        const height = size;
+        const innerRadius = size / 3;
+        const outerRadius = size / 2;
+
+        const emotionColors = {
+            joy: "#FFD700",      // Gold
+            sadness: "#1E90FF",  // Dodger Blue
+            anger: "#FF4500",    // Orange Red
+            love: "#FF69B4",     // Hot Pink
+            fear: "#8A2BE2",     // Blue Violet
+            surprise: "#32CD32"  // Lime Green
+        };
+        const color = d3.scaleOrdinal().domain(Object.keys(emotionColors)).range(Object.values(emotionColors));
+
+        const pie = d3.pie().value((d) => d.value);
+        const arc = d3.arc().innerRadius(innerRadius+15).outerRadius(outerRadius);
+
+        const svg = d3.select(chartRef.current)
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+        const data = pie(Object.entries(emotions).map(([key, value]) => ({ emotion: key, value: value })));
+
+        // Append arcs
+        svg.selectAll("path")
+            .data(data)
+            .join("path")
+            .attr("d", arc)
+            .attr("fill", (d) => color(d.data.emotion))
+            .on("mouseover", (e, d) => {
+                const percentage = (d.data.value * 100).toFixed(2);
+                d3.select("#tooltip")
+                    .style("visibility", "visible")
+                    .text(`${d.data.key}: ${percentage}%`);
+            })
+            .on("mousemove", (e) => {
+                d3.select("#tooltip")
+                    .style("top", `${e.pageY + 10}px`)
+                    .style("left", `${e.pageX + 10}px`);
+            })
+            .on("mouseout", () => {
+                d3.select("#tooltip").style("visibility", "hidden");
+            });
+
+        // Cleanup the SVG when the component unmounts
+        return () => svg.selectAll("*").remove();
+    }, [emotions, size]);
+
+    return (
+        <svg ref={chartRef}>
+            <foreignObject
+                x={0}
+                y={5}
+                width={size}
+                height={size}>
+                <img
+                    src={profileImage}
+                    alt="Character"
+                    style={{
+                        width: `${size}px`,
+                        height: `${size}px`,
+                        borderRadius: "50%",
+                    }}
+                />
+            </foreignObject>
+        </svg>
+    );
+};
+
 const characters = [
-    { name: "Michael Scott", image: require("./profileImages/MichaelScott.png"), donutChart: require("./donutCharts/Michael_donut.png"), },
-    { name: "Dwight Schrute", image: require("./profileImages/DwightSchrute.png"), donutChart: require("./donutCharts/Dwight_donut_chart.png"),},
-    { name: "Pam Beesly Halpert", image: require("./profileImages/PamHalpert.png"), donutChart: require("./donutCharts/Pam_donut_chart.png")},
-    { name: "Jim Halpert", image: require("./profileImages/JimHalpert.png"), donutChart: require("./donutCharts/Jim_donut_chart.png")},
-    { name: "Kelly Kapoor", image: require("./profileImages/KellyKapoor.png"), donutChart: require("./donutCharts/Kelly_donut_chart.png") },
-    { name: "Phyllis Vance", image: require("./profileImages/PhyllisVance.png"), donutChart: require("./donutCharts/Phyllis_donut_chart.png") },
-    { name: "Andy Bernard", image: require("./profileImages/AndyBernard.png"), donutChart: require("./donutCharts/Andy_donut.png") },
-    { name: "Darryl Philbin", image: require("./profileImages/DarrylPhilbin.png"), donutChart: require("./donutCharts/Darryl_donut_chart.png") },
-    { name: "Oscar Martinez", image: require("./profileImages/OscarMartinez.png"), donutChart: require("./donutCharts/Oscar_donut_chart.png") },
-    { name: "Angela Martin", image: require("./profileImages/AngelaMartin.png"), donutChart: require("./donutCharts/Angela_donut_chart.png") },
-    { name: "Ryan Howard", image: require("./profileImages/RyanHoward.png"), donutChart: require("./donutCharts/Ryan_donut_chart.png") },
-    { name: "Erin Hannon", image: require("./profileImages/ErinHannon.png"), donutChart: require("./donutCharts/Erin_donut_chart.png") },
-    { name: "Toby Flenderson", image: require("./profileImages/TobyFlenderson.png"), donutChart: require("./donutCharts/Toby_donut_chart.png") },
-    { name: "Stanley Hudson", image: require("./profileImages/StanleyHudson.png"), donutChart: require("./donutCharts/Stanley_donut_chart.png") },
-    { name: "Kevin Malone", image: require("./profileImages/KevinMalone.png"), donutChart: require("./donutCharts/Kevin_donut_chart.png") },
-    { name: "Creed Bratton", image: require("./profileImages/CreedBratton.png"), donutChart: require("./donutCharts/Creed_donut_chart.png") },
-    { name: "Meredith Palmer", image: require("./profileImages/MeredithPalmer.png"), donutChart: require("./donutCharts/Meredith_donut.png") },
+    { name: "Michael Scott", image: require("./profileImages/MichaelScott.png"), emotions: { joy: 0.466438434, sadness: 0.071970253, anger: 0.344800219, fear: 0.020199883, love: 0.0844876, surprise: 0.012103612 } },
+    { name: "Dwight Schrute", image: require("./profileImages/DwightSchrute.png"), emotions: { joy: 0.388667557, sadness: 0.069574263, anger: 0.411603025, fear: 0.014843683, love: 0.105114591, surprise: 0.01019688 } },
+    { name: "Pam Beesly Halpert", image: require("./profileImages/PamHalpert.png"), emotions: { joy: 0.450944175, sadness: 0.068251333, anger: 0.342503573, fear: 0.019304158, love: 0.103557375, surprise: 0.015439385 } },
+    { name: "Jim Halpert", image: require("./profileImages/JimHalpert.png"), emotions: { joy: 0.463036269, sadness: 0.062399299, anger: 0.346737312, fear: 0.016387919, love: 0.097088726, surprise: 0.014350475 } },
+    { name: "Kelly Kapoor", image: require("./profileImages/KellyKapoor.png"), emotions: { joy: 0.376939131, sadness: 0.080539149, anger: 0.396492866, fear: 0.041288186, love: 0.090963469, surprise: 0.013777198 } },
+    { name: "Phyllis Vance", image: require("./profileImages/PhyllisVance.png"), emotions: { joy: 0.402087055, sadness: 0.073935724, anger: 0.384863636, fear: 0.02094551, love: 0.107788617, surprise: 0.010379459 } },
+    { name: "Andy Bernard", image: require("./profileImages/AndyBernard.png"), emotions: { joy: 0.440588585, sadness: 0.066457121, anger: 0.367297228, fear: 0.023907462, love: 0.087705656, surprise: 0.014043946 }  },
+    { name: "Darryl Philbin", image: require("./profileImages/DarrylPhilbin.png"), emotions: { joy: 0.439199728, sadness: 0.064841982, anger: 0.388986438, fear: 0.016462343, love: 0.082595213, surprise: 0.007914294 }  },
+    { name: "Oscar Martinez", image: require("./profileImages/OscarMartinez.png"), emotions: { joy: 0.394584763, sadness: 0.060529998, anger: 0.412350691, fear: 0.015473564, love: 0.104672468, surprise: 0.012388512 }  },
+    { name: "Angela Martin", image: require("./profileImages/AngelaMartin.png"), emotions: { joy: 0.358031604, sadness: 0.074238793, anger: 0.441083352, fear: 0.015958458, love: 0.103606892, surprise: 0.007080901 } },
+    { name: "Ryan Howard", image: require("./profileImages/RyanHoward.png"), emotions: { joy: 0.447031588, sadness: 0.06399737, anger: 0.365699833, fear: 0.017386655, love: 0.091396884, surprise: 0.014487674 } },
+    { name: "Erin Hannon", image: require("./profileImages/ErinHannon.png"), emotions: { joy: 0.425117376, sadness: 0.081007628, anger: 0.353773224, fear: 0.023039392, love: 0.10359514, surprise: 0.013467239 } },
+    { name: "Toby Flenderson", image: require("./profileImages/TobyFlenderson.png"), emotions: { joy: 0.421236173, sadness: 0.071321745, anger: 0.37417206, fear: 0.015128668, love: 0.103307552, surprise: 0.014833803 } },
+    { name: "Stanley Hudson", image: require("./profileImages/StanleyHudson.png"), emotions: { joy: 0.34674345, sadness: 0.072927782, anger: 0.447728791, fear: 0.015825834, love: 0.107619549, surprise: 0.009154591 } },
+    { name: "Kevin Malone", image: require("./profileImages/KevinMalone.png"), emotions: { joy: 0.39365986, sadness: 0.065010759, anger: 0.40902604, fear: 0.022412631, love: 0.094109975, surprise: 0.015780734 } },
+    { name: "Creed Bratton", image: require("./profileImages/CreedBratton.png"), emotions: { joy: 0.423638023, sadness: 0.067134259, anger: 0.382926363, fear: 0.022616633, love: 0.093765561, surprise: 0.00991916 } },
+    { name: "Meredith Palmer", image: require("./profileImages/MeredithPalmer.png"), emotions: { joy: 0.334157035, sadness: 0.08497549, anger: 0.444194952, fear: 0.02579253, love: 0.085855605, surprise: 0.02502439 }  },
 ];
 
 const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
@@ -120,13 +196,11 @@ const CharacterProfile = ({ csvFilePath, jsonFilePath }) => {
                         onMouseLeave={handleMouseLeave}
                         onClick={() => handleClick(character)}
                     > 
-                    {/* Donut Chart as Background */}
-                    {character.donutChart && (
-                        <img src={character.donutChart} alt={'${character.name} Emotion Donut'} className="donut-chart" />
-                    )}
-
-                    {/*Profile Picture*/}
-                    <img src={character.image} alt={character.name} className="profile-picture" />
+                    <DonutChart
+                        emotions={character.emotions}
+                        size={150}
+                        profileImage={character.image}
+                    />
                     </div>
 
 

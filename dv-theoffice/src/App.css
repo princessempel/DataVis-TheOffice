@@ -135,25 +135,23 @@ html,
 
 .toggle-buttons button {
   padding: 15px 15px;
-  border: 1px solid #1a57a2;
-  background-color: #e8f0fe;
-  color: #1a57a2;
+  background-color: #fff;
+  color: black;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: calc(10px + 1vmin);
   text-align: center;
   width: 200px;
-  font-weight: bold;
 }
 
 .toggle-buttons button.active {
-  background-color: #1a57a2;
-  color: #ffffff;
+  background-color: #4BA8B2;
+  font-weight: bold;
 }
 
 .toggle-buttons button:hover {
-  background-color: #4ba8b2;
-  color: #ffffff;
+  background-color: #727980;
 }
 
 .network-filter {
