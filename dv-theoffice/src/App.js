@@ -124,7 +124,7 @@ function App() {
           <p>
             Aside from the series finale, this episode has the highest ratings with a 9.8. For many fans, his farewell was not just the end of his character’s journey but also the end of the show’s original essence. It marked a significant turning point for <i>The Office</i> as Michael was the heart of the show, bringing a unique mix of humor, awkwardness, and heartfelt moments. His exit left a void that no subsequent character or storyline fully filled, fundamentally changing the dynamic of the series.
           </p>
-          <img src={declinedRatings} alt="Declined Ratings" style={{ display: "block", margin: "0 auto", marginTop: "55px" ,marginBottom: "55px"}}></img>
+          <img src={declinedRatings} alt="Declined Ratings" style={{ display: "block", margin: "0 auto", marginTop: "50px" ,marginBottom: "50px"}}></img>
         </div>
       </div>
       <div className="container">
