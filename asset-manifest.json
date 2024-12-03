@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DataVis-TheOffice/static/css/main.ae9ea6ad.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.ec708faa.js",
+    "main.css": "/DataVis-TheOffice/static/css/main.fad1528d.css",
+    "main.js": "/DataVis-TheOffice/static/js/main.7e15d29a.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
     "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
     "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
@@ -16,17 +16,28 @@
     "static/media/MichaelScott.png": "/DataVis-TheOffice/static/media/MichaelScott.e853831f13326d9987d7.png",
     "static/media/TobyFlenderson.png": "/DataVis-TheOffice/static/media/TobyFlenderson.7b01abbef9927a56bda1.png",
     "static/media/AndyBernard.png": "/DataVis-TheOffice/static/media/AndyBernard.cb923fdce4e850fc81bb.png",
+    "static/media/dwightScenes1.png": "/DataVis-TheOffice/static/media/dwightScenes1.88494d92a489b3ead9bb.png",
+    "static/media/dwightScenes2.png": "/DataVis-TheOffice/static/media/dwightScenes2.5be0eb07c8f889952c0c.png",
+    "static/media/michaelScene.png": "/DataVis-TheOffice/static/media/michaelScene.db76e6e0c98826a46a45.png",
+    "static/media/jimScenes.png": "/DataVis-TheOffice/static/media/jimScenes.6394e0bf9c719db0f938.png",
+    "static/media/andyScenes.png": "/DataVis-TheOffice/static/media/andyScenes.b5266eec01a650daf0b0.png",
+    "static/media/stanleyScenes.png": "/DataVis-TheOffice/static/media/stanleyScenes.55b08c66bee27a5dbb8a.png",
     "static/media/MeredithPalmer.png": "/DataVis-TheOffice/static/media/MeredithPalmer.7c36006b17566299b8e1.png",
+    "static/media/creedScenes.png": "/DataVis-TheOffice/static/media/creedScenes.4d01b52f8e8ab73a7c1c.png",
+    "static/media/oscarLines.png": "/DataVis-TheOffice/static/media/oscarLines.48c21aafb339fed64fd8.png",
+    "static/media/meredithLines.png": "/DataVis-TheOffice/static/media/meredithLines.16e02577168e637db4d0.png",
     "static/media/StanleyHudson.png": "/DataVis-TheOffice/static/media/StanleyHudson.09e9b06dd10d7657dc89.png",
     "static/media/KevinMalone.png": "/DataVis-TheOffice/static/media/KevinMalone.7cb20b4a07e8712eda45.png",
+    "static/media/dwightLines.png": "/DataVis-TheOffice/static/media/dwightLines.0eb813af6efce184c643.png",
     "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
+    "static/media/andyLines.png": "/DataVis-TheOffice/static/media/andyLines.c58602de0aed3d0aa3b3.png",
     "index.html": "/DataVis-TheOffice/index.html",
-    "main.ae9ea6ad.css.map": "/DataVis-TheOffice/static/css/main.ae9ea6ad.css.map",
-    "main.ec708faa.js.map": "/DataVis-TheOffice/static/js/main.ec708faa.js.map",
+    "main.fad1528d.css.map": "/DataVis-TheOffice/static/css/main.fad1528d.css.map",
+    "main.7e15d29a.js.map": "/DataVis-TheOffice/static/js/main.7e15d29a.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae9ea6ad.css",
-    "static/js/main.ec708faa.js"
+    "static/css/main.fad1528d.css",
+    "static/js/main.7e15d29a.js"
   ]
 }

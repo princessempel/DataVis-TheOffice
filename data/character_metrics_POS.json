@@ -1,0 +1,87 @@
+{
+    "Michael": {
+        "Nouns": 22.13,
+        "Verbs": 23.96,
+        "Adjectives": 8.73
+    },
+    "Dwight": {
+        "Nouns": 24.04,
+        "Verbs": 23.46,
+        "Adjectives": 8.74
+    },
+    "Pam": {
+        "Nouns": 21.96,
+        "Verbs": 24.65,
+        "Adjectives": 9.15
+    },
+    "Jim": {
+        "Nouns": 21.50,
+        "Verbs": 24.11,
+        "Adjectives": 9.27
+    },
+    "Kelly": {
+        "Nouns": 21.48,
+        "Verbs": 24.96,
+        "Adjectives": 9.25
+    },
+    "Phyllis": {
+        "Nouns": 22.55,
+        "Verbs": 25.75,
+        "Adjectives": 8.70
+    },
+    "Andy": {
+        "Nouns": 23.58,
+        "Verbs": 23.26,
+        "Adjectives": 9.24
+    },
+    "Darryl": {
+        "Nouns": 23.15,
+        "Verbs": 24.41,
+        "Adjectives": 8.87
+    },
+    "Oscar": {
+        "Nouns": 22.73,
+        "Verbs": 24.018,
+        "Adjectives": 9.18
+    },
+    "Angela": {
+        "Nouns": 22.48,
+        "Verbs": 24.71,
+        "Adjectives": 8.69
+    },
+    "Ryan": {
+        "Nouns": 22.73,
+        "Verbs": 23.92,
+        "Adjectives": 8.74
+    },
+    "Erin": {
+        "Nouns": 22.81,
+        "Verbs": 24.27,
+        "Adjectives": 9.83
+    },
+    "Toby": {
+        "Nouns": 22.30,
+        "Verbs": 24.15,
+        "Adjectives": 9.43
+    },
+    "Stanley": {
+        "Nouns": 23.00,
+        "Verbs": 25.08,
+        "Adjectives": 7.96
+    },
+    "Meredith": {
+        "Nouns": 25.10,
+        "Verbs": 23.49,
+        "Adjectives": 8.76
+    },
+    "Kevin": {
+        "Nouns": 24.16,
+        "Verbs": 23.93,
+        "Adjectives": 9.22
+    },
+    "Creed": {
+        "Nouns": 24.94,
+        "Verbs": 23.46,
+        "Adjectives": 9.33
+    }
+}
