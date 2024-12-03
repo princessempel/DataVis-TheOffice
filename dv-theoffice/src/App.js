@@ -15,6 +15,7 @@ function App() {
   const [dataKey, setDataKey] = useState("ratings");
   const [filter, setFilter] = useState("all");
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [viewOption, setViewOption] = useState("");
 
   // console.log(filter);
 
@@ -76,17 +77,43 @@ function App() {
       </div>
       <div className="network-diagram">
         <h1>Network Diagram</h1>
-        <p>based on how many times the characters mention each others' character names/aliases (total between them)</p>
-        <TreeDropdown onSelect={setFilter} />
-        <NetworkDiagram filter={filter} />
-      </div>
-      <div>
-        <CharacterDropdown onSelect={setSelectedCharacter} />
-        {selectedCharacter ? (
-            <CharacterNetworkDiagram selectedCharacter={selectedCharacter} />
-        ) : (
-            <p>Please select a character to view their interactions.</p>
+        {/* <p>based on how many times the characters mention each others' character names/aliases (total between them)</p> */}
+        <h2>Do you want to see interaction by: </h2>
+        {/* Options for users to choose */}
+        <div className="view-options">
+          <button
+            className={viewOption === "seasons" ? "active" : ""}
+            onClick={() => setViewOption("seasons")}
+          >
+            Seasons/Episodes
+          </button>
+          <button
+            className={viewOption === "characters" ? "active" : ""}
+            onClick={() => setViewOption("characters")}
+          >
+            Characters
+          </button>
+        </div>
+        {/* Conditional Rendering */}
+        {viewOption === "seasons" && (
+          <div>
+            <p>based on how many times the characters mention each others' character names/aliases (total between them)</p>
+            <TreeDropdown onSelect={setFilter} />
+            <NetworkDiagram filter={filter} />
+          </div>
         )}
+
+        {viewOption === "characters" && (
+          <div>
+            <CharacterDropdown onSelect={setSelectedCharacter} />
+            {selectedCharacter ? (
+              <CharacterNetworkDiagram selectedCharacter={selectedCharacter} />
+            ) : (
+              <p>Please select a character to view their interactions.</p>
+            )}
+          </div>
+        )}
+
       </div>
       <div className="CharacterProfile">
         <header className="section-header">

@@ -134,8 +134,8 @@ const ProfileInsights = () => {
                             relatively consistent dialogue and scene counts. Occasionally,
                             spikes in the line and scene numbers for characters like Meredith
                             in Season 5, Episode 11, "Moroccan Christmas", Oscar in Season 5,
-                            Episode 8, "Business Trip", and Toby in Season 4, Episode 18/19,
-                            "Goodbye Toby" correlate with plotlines that focus more on those
+                            Episode 8, "Business Trip", and Creed in Season 3, Episode 21,
+                            "Product Recall" correlate with plotlines that focus more on those
                             characters.
                         </p>
                         <div className="graph-grid">

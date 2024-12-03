@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './CharacterDropdown.css'
 
 const CharacterDropdown = ({ onSelect }) => {
     const [characters, setCharacters] = useState([]);
@@ -23,11 +24,14 @@ const CharacterDropdown = ({ onSelect }) => {
     };
 
     return (
-        <div>
+        <div className="dropdown">
             <label htmlFor="character-select">Select a Character: </label>
             <select id="character-select" onChange={handleSelect} defaultValue="">
-                <option value="" disabled>Select</option>
-                {characters.map(character => (
+                <option value="" disabled>
+                    Select a character
+                </option>
+                <option value="clear">Clear</option> {/* Clear option */}
+                {characters.map((character) => (
                     <option key={character} value={character}>
                         {character}
                     </option>
