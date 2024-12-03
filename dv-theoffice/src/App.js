@@ -56,9 +56,23 @@ function App() {
       </div>
       <div className="linebarchart-container">
         <TextAnalysis />
+        <h2>Insights</h2>
+        1. Kelly: Lowest Average Word Length, Highest Average Sentence Length- She focuses on gossip, trends, and emotional outbursts, which don’t require sophisticated vocabulary. Kelly’s sentences are long because she tends to ramble, stringing together thoughts without pausing. 
+        2. Meredith: Consistently Low Across All Metrics- Her dialogue is often short, to the point, and laced with humor or shock value, rather than linguistic complexity.
+        3. Dwight: Highest Average Word Length- Dwight’s vocabulary often includes longer, more formal words because of his unique speech patterns.
+        4. Oscar: Highest Syllables Per Word- Oscar’s role as "the smart one" or "the office intellectual" means his speech often includes more sophisticated, multi-syllabic words.
+        5. Toby: Lowest Hapax Legomena- Toby’s dialogue is subdued and repetitiveand always speaks in a predictable language.
+      
       </div>
       <div className="linebarchart-container">
         <TextAnalysisHeatMap />
+        <h2>Insights</h2>
+        1. Phyllis Uses the most verbs- Phyllis is often portrayed as a character who is understated yet active within the office dynamics. Verbs, which denote actions or states, might reflect her tendency to narrate or engage in activities subtly. She often participates in gossip or office events, which might explain the higher usage of action words.
+        2. Erin uses the most adjectives- Erin's bubbly and optimistic personality could lead her to use more descriptive language. Adjectives, which modify nouns and add emotional or vivid detail, align with how she communicates her enthusiasm or quirks.
+        3. Meredith and Creed use the most nouns- Meredith is known for her straightforwardness while Creed, with his enigmatic and offbeat speech, often delivers cryptic one-liners or factual observations. His dialogue might include many nouns because of his habit of referencing people, places, or unusual objects in a direct, unadorned way.
+        4. Stanley Uses the Least Adjectives- Stanley is known for his no-nonsense, practical, and often disinterested demeanor.
+        5. Andy Uses the Least Verbs- Andy’s character is more about flamboyance, self-promotion, and emotion rather than action or process.
+        6. Kelly uses the least nouns-  Emotionally expressive and abstract, focuses less on concrete details.
       </div>
       <div className="linebarchart-container">
         <div className="toggle-buttons">
