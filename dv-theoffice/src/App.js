@@ -56,6 +56,7 @@ function App() {
             in a character's growing or shrinking importance within the series. This project will operate
             at the intersection of entertainment analytics and cultural data visualization.
           </p>
+          
         </div>
         <div class="image">
           <img src={introImage} alt="The Office" />
@@ -66,6 +67,16 @@ function App() {
         and an unforgettable cast of characters. It’s a show that has remained relevant years after it first aired, 
         capturing the intricacies of everyday office life while delivering a unique brand of comedy that appeals to 
         viewers of all ages. Whether you’re here as a long-time fan or a newcomer, there’s something for everyone to enjoy.</p>
+
+        <p>If you're new to the show, we suggest you start from the bottom of the website and work your way up, starting from the
+            character arcs, and profiles and their insights to get familiar with the main characters. 
+            Then proceed to the network diagram to understand the dynamics between the Dunder Mifflin employees.
+          </p>
+          <p>If you're a fan of the show like us, you can start with the dialog analysis to learn cool insights about your favorite characters (or Toby). 
+            Explore our network diagram, and find out how characters' relationships change over the course of the show. 
+            
+          </p>
+      
       </div>
       {/* <div className="linebarchart-container"> */}
       <TextAnalysis />

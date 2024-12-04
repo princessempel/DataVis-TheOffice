@@ -19,7 +19,7 @@ const TextAnalysis = () => {
   return (
     <div className="container">
       <div className="text-analysis-insight">
-        <h1 style={{ flex: 1 }}>Lines of Dialogue: A Parallel Breakdown</h1>
+        <h1 style={{ flex: 1 }}>Lines of Dialog: A Parallel Breakdown</h1>
         <p >Here's a visual representation that reveals unique patterns in the characters’ speech styles.
           Explore it to identify correlations, compare speech traits across characters, and uncover insights that align with their personalities and roles in the show.
           <i> Hapax Legomenon is a word or an expression that occurs only once within a context.</i></p><br></br>
