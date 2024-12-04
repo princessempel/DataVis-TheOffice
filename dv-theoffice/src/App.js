@@ -90,7 +90,7 @@ function App() {
       </div>
       <div className="container" style={{paddingBottom: "0px"}}>
         <div className="text">
-          <h1>Lining Up the Episodes: </h1>
+          <h1>Behind the Reams: Audience Trends Unfolded </h1>
           <h3>Best and Worst Episodes/Seasons</h3>
           <p>Explore which episodes were the most loved or hated, either across all time or by season, and see which ones drew the highest viewership. Did some episodes live up to the hype, while others fell short? Were there any surprising fan favorites?</p>
           <h3>View based on: </h3>
