@@ -61,6 +61,10 @@ function App() {
           <img src={introImage} alt="The Office" />
         </div>
       </div>
+      <div className="container">
+      <p>'The Office' isn't just a sitcom; it's a cultural phenomenon that perfectly balances humor, heartfelt moments, and an unforgettable cast of characters. It’s a show that has remained relevant years after it first aired, capturing the intricacies of everyday office life while delivering a unique brand of comedy that appeals to viewers of all ages.
+Whether you’re here as a long-time fan or a newcomer, there’s something for everyone to enjoy.</p>
+      </div>
       {/* <div className="linebarchart-container"> */}
       <TextAnalysis />
       {/* <div className="linebarchart-container"> */}
@@ -120,7 +124,7 @@ function App() {
           <img src={stressRelief} style={{ display: "block", margin: "0 auto" }} alt="Stress Relief Episode"></img>
         </div>
         <div className="insight-item" >
-          <h3>Why did the ratings decline towards the end?</h3>
+          <h3>Why did the viewership decline towards the end?</h3>
           <h4>Goodbye, Michael (Season 7, Episode 137)</h4>
           <p>
             Aside from the series finale, this episode has the highest ratings with a 9.8. For many fans, his farewell was not just the end of his character’s journey but also the end of the show’s original essence. It marked a significant turning point for <i>The Office</i> as Michael was the heart of the show, bringing a unique mix of humor, awkwardness, and heartfelt moments. His exit left a void that no subsequent character or storyline fully filled, fundamentally changing the dynamic of the series.
