@@ -91,7 +91,7 @@ const ParallelCoordinates = ({ data }) => {
         .enter()
         .append("tspan")
         .attr("x", xScale(dim)) // Align each line to the same x position
-        .attr("dy", (d, i) => i * 14) // Adjust spacing between lines
+        .attr("dy", (d, i) => i * 12) // Adjust spacing between lines
         .text(d => d);
     });
 
