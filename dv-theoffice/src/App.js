@@ -13,10 +13,11 @@ import pamMichael from './InsightsImages/pamMichael.png';
 import stressRelief from './InsightsImages/DwightSchruteFaceMask.png';
 import declinedRatings from './InsightsImages/declinedRatings.png';
 import meme1 from './assets/meme1.png';
-import meme2 from './assets/meme2.png';
 import meme3 from './assets/meme3.png';
 import meme4 from './assets/meme4.png';
 import meme5 from './assets/meme5.png';
+import gif from './assets/giphy.gif';
+import gif2 from './assets/giphy2.gif';
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
@@ -76,16 +77,16 @@ function App() {
             character arcs, and profiles and their insights to get familiar with the main characters. 
             Then proceed to the network diagram to understand the dynamics between the Dunder Mifflin employees.
           </p>
-          <p>If you're a fan of the show like us, you can start with the dialog analysis to learn cool insights about your favorite characters (or Toby). 
+          <p>If you're a fan of the show like us, you can start with the dialogue analysis to learn cool insights about your favorite characters (or Toby). 
            See how your favorite episode ranks with our line chart, and explore our network diagram to find out how characters' relationships change over the course of the show. 
            Finally, take a look at our sentiment analysis of each character and read their profiles that visualize their contribution to the show.
           </p>
           <p>We're so excited for you to explore our website! </p>
           <div className="container">
+          <img src={gif}></img>
           <img src={meme1}></img>
-          <img src={meme3}></img>
           <img src={meme4}></img>
-          <img src={meme5}></img>
+          <img src={gif2}></img>
           </div>
       </div>
       <div className="container" style={{paddingBottom: "0px"}}>
