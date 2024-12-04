@@ -62,8 +62,10 @@ function App() {
         </div>
       </div>
       <div className="container">
-      <p>'The Office' isn't just a sitcom; it's a cultural phenomenon that perfectly balances humor, heartfelt moments, and an unforgettable cast of characters. It’s a show that has remained relevant years after it first aired, capturing the intricacies of everyday office life while delivering a unique brand of comedy that appeals to viewers of all ages.
-Whether you’re here as a long-time fan or a newcomer, there’s something for everyone to enjoy.</p>
+      <p>'The Office' isn't just a sitcom; it's a cultural phenomenon that perfectly balances humor, heartfelt moments, 
+        and an unforgettable cast of characters. It’s a show that has remained relevant years after it first aired, 
+        capturing the intricacies of everyday office life while delivering a unique brand of comedy that appeals to 
+        viewers of all ages. Whether you’re here as a long-time fan or a newcomer, there’s something for everyone to enjoy.</p>
       </div>
       {/* <div className="linebarchart-container"> */}
       <TextAnalysis />
