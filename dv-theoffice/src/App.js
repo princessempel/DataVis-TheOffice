@@ -12,6 +12,11 @@ import introImage from './assets/hero-image.jpeg';
 import pamMichael from './InsightsImages/pamMichael.png';
 import stressRelief from './InsightsImages/DwightSchruteFaceMask.png';
 import declinedRatings from './InsightsImages/declinedRatings.png';
+import meme1 from './assets/meme1.png';
+import meme2 from './assets/meme2.png';
+import meme3 from './assets/meme3.png';
+import meme4 from './assets/meme4.png';
+import meme5 from './assets/meme5.png';
 
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
@@ -76,7 +81,13 @@ function App() {
            Finally, take a look at our sentiment analysis of each character and read their profiles that visualize their contribution to the show.
           </p>
           <p>We're so excited for you to explore our website! </p>
-          
+          <div className="container">
+          <img src={meme1}></img>
+          <img src={meme3}></img>
+          <img src={meme4}></img>
+          <img src={meme5}></img>
+
+          </div>
       </div>
 
      
