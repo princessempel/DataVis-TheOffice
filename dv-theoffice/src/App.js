@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import './App.css';
 import LineXStackedBarChart from './LineXStackedBarChart';
-// import CharacterProfile from "./CharacterProfiles";
 import NetworkDiagram from "./NetworkDiagram";
 import TreeDropdown from "./TreeDropdown";
-// import CharacterMetrics from "./CharacterMetrics";
 import ProfileInsights from "./ProfileInsights";
 import TextAnalysis from "./TextAnalysis";
 import TextAnalysisHeatMap from "./TextAnalysisHeatMap";
@@ -13,7 +11,6 @@ import CharacterNetworkDiagram from "./CharacterNetworkDiagram";
 import introImage from './assets/hero-image.jpeg';
 import pamMichael from './InsightsImages/pamMichael.png';
 import stressRelief from './InsightsImages/DwightSchruteFaceMask.png';
-import goodbyeMichael from './InsightsImages/goodbyeMichael.jpg';
 import declinedRatings from './InsightsImages/declinedRatings.png';
 
 function App() {

@@ -132,7 +132,7 @@ const gradientLineWidth = 10; // Width of the gradient line
 
 // Add a group for the gradient line
 const gradientGroup = svg.append("g")
-  .attr("transform", `translate(${width-5}, 15)`); // Adjust position to the left of the heatmap
+  .attr("transform", `translate(${width}, 15)`); // Adjust position to the left of the heatmap
 
 // Define the gradient
 const defs = svg.append("defs");
@@ -162,17 +162,17 @@ gradientGroup.append("rect")
 
 // Add labels
 gradientGroup.append("text")
-  .attr("x", 0) // Adjust position to the left of the gradient
+  .attr("x", 10) // Adjust position to the left of the gradient
   .attr("y", -5) // Slight offset from the top
-  .attr("text-anchor", "middle")
+  .attr("text-anchor", "end")
   .style("font-size", "8px")
   .style("fill", "white") // Label color
   .text("Max %");
 
 gradientGroup.append("text")
-  .attr("x", 0) // Adjust position to the left of the gradient
+  .attr("x", 10) // Adjust position to the left of the gradient
   .attr("y", gradientLineHeight + 10) // Slight offset from the bottom
-  .attr("text-anchor", "middle")
+  .attr("text-anchor", "end")
   .style("font-size", "8px")
   .style("fill", "white") // Label color
   .text("Min %");
