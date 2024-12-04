@@ -19,8 +19,7 @@ const TreeDropdown = ({ onSelect }) => {
                         treeStructure[seasonKey] = {};
                     }
                     Object.keys(edge.episode_mentions).forEach(epKey => {
-                        const epSeason = epKey.split("-")[1];
-                        const epEpisode = epKey.split("-")[3];
+                        const [_, epSeason, __, epEpisode] = epKey.split("-");
                         if (epSeason === season) {
                             const episodeKey = `season-${epSeason}-episode-${epEpisode}`;
                             treeStructure[seasonKey][episodeKey] = true;
@@ -29,18 +28,23 @@ const TreeDropdown = ({ onSelect }) => {
                 });
             });
 
+            // Sort the seasons and episodes
             const dropdownData = [
                 {
                     label: "Entire Show",
                     value: "all",
-                    children: Object.keys(treeStructure).map(seasonKey => ({
-                        label: seasonKey.replace("season-", "Season "),
-                        value: seasonKey,
-                        children: Object.keys(treeStructure[seasonKey]).map(epKey => ({
-                            label: epKey.replace("season-", "Season ").replace("-episode-", " Episode "),
-                            value: epKey
+                    children: Object.keys(treeStructure)
+                        .sort((a, b) => parseInt(a.split("-")[1]) - parseInt(b.split("-")[1])) // Sort seasons numerically
+                        .map(seasonKey => ({
+                            label: seasonKey.replace("season-", "Season "),
+                            value: seasonKey,
+                            children: Object.keys(treeStructure[seasonKey])
+                                .sort((a, b) => parseInt(a.split("-")[3]) - parseInt(b.split("-")[3])) // Sort episodes numerically
+                                .map(epKey => ({
+                                    label: epKey.replace("season-", "Season ").replace("-episode-", " Episode "),
+                                    value: epKey
+                                }))
                         }))
-                    }))
                 }
             ];
 
@@ -60,10 +64,6 @@ const TreeDropdown = ({ onSelect }) => {
             onSelect("all"); // Default to 'all' on deselect
         }
     };
-
-    // const handleToggle = (state) => {
-    //     setExpanded(state); // Update expanded state
-    // };
 
     return (
         <div 

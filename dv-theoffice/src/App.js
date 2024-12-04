@@ -52,7 +52,7 @@ function App() {
       <br /><br />
       <div class="container">
         <div class="text">
-          <p>The TV show The Office has gained widespread popularity, and many characters from the show have become cultural icons.
+          <p>The TV show <strong><i>The Office</i></strong> has gained widespread popularity, and many characters from the show have become cultural icons.
             The show which aired from 2005 to 2013 still holds an important place in pop culture history.
             Considering this, there hasn’t been an extensive quantitative analysis that explores the correlation between a
             character's on-screen presence and their contribution to the show's success.
@@ -68,7 +68,7 @@ function App() {
         </div>
       </div>
       <div className="intro-text">
-      <p>'The Office' isn't just a sitcom; it's a cultural phenomenon that perfectly balances humor, heartfelt moments, 
+      <p><strong><i>The Office</i></strong> isn't just a sitcom; it's a cultural phenomenon that perfectly balances humor, heartfelt moments, 
         and an unforgettable cast of characters. It’s a show that has remained relevant years after it first aired, 
         capturing the intricacies of everyday office life while delivering a unique brand of comedy that appeals to 
         viewers of all ages. Whether you’re here as a long-time fan or a newcomer, there’s something for everyone to enjoy.</p>
@@ -86,20 +86,11 @@ function App() {
           <img src={meme3}></img>
           <img src={meme4}></img>
           <img src={meme5}></img>
-
           </div>
       </div>
-
-     
-      {/* <div className="linebarchart-container"> */}
-      <TextAnalysis />
-      {/* <div className="linebarchart-container"> */}
-      <TextAnalysisHeatMap />
-      {/* </div> */}
-      {/* <div className="linebarchart-container"> */}
-      <div className="container">
+      <div className="container" style={{paddingBottom: "0px"}}>
         <div className="text">
-          <h1>Line Chart with Stacked Bars</h1>
+          <h1>Lining Up the Episodes: </h1>
           <h3>Best and Worst Episodes/Seasons</h3>
           <p>Explore which episodes were the most loved or hated, either across all time or by season, and see which ones drew the highest viewership. Did some episodes live up to the hype, while others fell short? Were there any surprising fan favorites?</p>
           <h3>View based on: </h3>
@@ -126,9 +117,6 @@ function App() {
           </div>
           <br /><br />
         </div>
-
-
-        {/* <span style={{ alignSelf: "center", justifySelf: "center", color: "white", fontWeight: "bold" }}>per Episode in Each Season</span> */}
         <LineXStackedBarChart
           csvFilePath={"/DataVis-TheOffice/data/the_office_episodes_processed.csv"}
           dataKey={dataKey}
@@ -158,9 +146,15 @@ function App() {
           <img src={declinedRatings} alt="Declined Ratings" style={{ display: "block", margin: "0 auto", marginTop: "45px", marginBottom: "45px", height: "350px", width: "600px" }}></img>
         </div>
       </div>
+      {/* <div className="linebarchart-container"> */}
+      <TextAnalysis />
+      {/* <div className="linebarchart-container"> */}
+      <TextAnalysisHeatMap />
+      {/* </div> */}
+      {/* <div className="linebarchart-container"> */}
       <div className="container">
         <div className="text">
-          <h1>Network Diagram</h1>
+          <h1>Networking in The Office</h1>
           <h3>Who interacted with whom?</h3>
           <p>Discover how often different characters interacted throughout the show! Explore the network by timeline or focus on a specific character to dive deeper into their connections.</p>
           <h3>See interactions based on: </h3>

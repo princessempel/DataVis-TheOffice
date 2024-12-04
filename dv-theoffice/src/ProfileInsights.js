@@ -116,7 +116,7 @@ const ProfileInsights = () => {
             <section className="profile-insights">
                 <div className="insights-stacked-section">
                     <header>
-                        <h2 style={{ paddingLeft: "40px" }}>Insights from Profile Graphs</h2>
+                        <h2 style={{ textAlign: "center"}}>Insights from Profile Graphs</h2>
                     </header>
 
                     {/* Insight 1 */}
