@@ -72,9 +72,11 @@ function App() {
             Then proceed to the network diagram to understand the dynamics between the Dunder Mifflin employees.
           </p>
           <p>If you're a fan of the show like us, you can start with the dialog analysis to learn cool insights about your favorite characters (or Toby). 
-            Explore our network diagram, and find out how characters' relationships change over the course of the show. 
-
+           See how your favorite episode ranks with our line chart, and explore our network diagram to find out how characters' relationships change over the course of the show. 
+           Finally, take a look at our sentiment analysis of each character and read their profiles that visualize their contribution to the show.
           </p>
+          <p>We're so excited for you to explore our website! </p>
+          
       </div>
 
      
