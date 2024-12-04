@@ -39,7 +39,7 @@ function App() {
       <div className="hero">
         <div className="hero-content">
           <h1>Analyzing the Antics</h1>
-          <h2>Return to <i>The Office</i>(RTO)</h2>
+          <h2>Return to <i>The Office</i> (RTO)</h2>
           <p>(CS 6730) Data Visualization Project</p>
           <p>Group 17: Sanjana Date, Princess Empel, Aditi Patel, Arya Tadepalli</p>
         </div>
