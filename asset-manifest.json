@@ -1,8 +1,10 @@
 {
   "files": {
     "main.css": "/DataVis-TheOffice/static/css/main.95145610.css",
-    "main.js": "/DataVis-TheOffice/static/js/main.c0168ef6.js",
+    "main.js": "/DataVis-TheOffice/static/js/main.354f520d.js",
     "static/js/453.801de079.chunk.js": "/DataVis-TheOffice/static/js/453.801de079.chunk.js",
+    "static/media/giphy.gif": "/DataVis-TheOffice/static/media/giphy.596a950677f9748a957c.gif",
+    "static/media/giphy2.gif": "/DataVis-TheOffice/static/media/giphy2.59d17ca5d81b407343eb.gif",
     "static/media/ErinHannon.png": "/DataVis-TheOffice/static/media/ErinHannon.74016dbd1bcacf9cd265.png",
     "static/media/PhyllisVance.png": "/DataVis-TheOffice/static/media/PhyllisVance.f7478dbb0f2b622c347b.png",
     "static/media/AngelaMartin.png": "/DataVis-TheOffice/static/media/AngelaMartin.7c47a0738c1e530c990d.png",
@@ -32,22 +34,21 @@
     "static/media/meredithLines.png": "/DataVis-TheOffice/static/media/meredithLines.16e02577168e637db4d0.png",
     "static/media/StanleyHudson.png": "/DataVis-TheOffice/static/media/StanleyHudson.09e9b06dd10d7657dc89.png",
     "static/media/KevinMalone.png": "/DataVis-TheOffice/static/media/KevinMalone.7cb20b4a07e8712eda45.png",
-    "static/media/meme5.png": "/DataVis-TheOffice/static/media/meme5.8f5fefe541787456293c.png",
+    "static/media/meme5.png": "/DataVis-TheOffice/static/media/meme5.2d14007238b8a687fa76.png",
     "static/media/h-image.jpeg": "/DataVis-TheOffice/static/media/h-image.ab37290634cc500803b9.jpeg",
     "static/media/dwightLines.png": "/DataVis-TheOffice/static/media/dwightLines.0eb813af6efce184c643.png",
     "static/media/CreedBratton.png": "/DataVis-TheOffice/static/media/CreedBratton.f98d3cb39b79ec423b7b.png",
     "static/media/andyLines.png": "/DataVis-TheOffice/static/media/andyLines.c58602de0aed3d0aa3b3.png",
-    "static/media/meme1.png": "/DataVis-TheOffice/static/media/meme1.5f4b6f69089e717ff2d5.png",
-    "static/media/meme3.png": "/DataVis-TheOffice/static/media/meme3.f85582754d3bbc68af99.png",
-    "static/media/meme2.png": "/DataVis-TheOffice/static/media/meme2.a6fcf8532ba05f5347ea.png",
-    "static/media/meme4.png": "/DataVis-TheOffice/static/media/meme4.dd4b86a79cbfdf5d7779.png",
+    "static/media/meme3.png": "/DataVis-TheOffice/static/media/meme3.17a131a8de8e373fc578.png",
+    "static/media/meme1.png": "/DataVis-TheOffice/static/media/meme1.4d2dd9e257ae9bb37f20.png",
+    "static/media/meme4.png": "/DataVis-TheOffice/static/media/meme4.f065e1d22c36ab5e2d35.png",
     "index.html": "/DataVis-TheOffice/index.html",
     "main.95145610.css.map": "/DataVis-TheOffice/static/css/main.95145610.css.map",
-    "main.c0168ef6.js.map": "/DataVis-TheOffice/static/js/main.c0168ef6.js.map",
+    "main.354f520d.js.map": "/DataVis-TheOffice/static/js/main.354f520d.js.map",
     "453.801de079.chunk.js.map": "/DataVis-TheOffice/static/js/453.801de079.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95145610.css",
-    "static/js/main.c0168ef6.js"
+    "static/js/main.354f520d.js"
   ]
 }
