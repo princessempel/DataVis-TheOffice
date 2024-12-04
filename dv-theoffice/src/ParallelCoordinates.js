@@ -38,10 +38,12 @@ const ParallelCoordinates = ({ data }) => {
       .attr("width", width + margin.left + margin.top)
       .attr("height", height + margin.top + margin.bottom*2)
       .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+      .attr("transform", `translate(${margin.left},${margin.top+40})`);
 
     // Extract dimensions (keys) of the data
     const dimensions = Object.keys(data[0]).filter(d => (d !== "Character" && d !== "Photo"));
+    const names = {"Avg Word Length": "Avg word \nlength", "Syllables per Word":"Syllables \nper word", 
+    "Avg Sentence Length":"Avg sentence \nlength","Hapax Legomena":"Hapax\n legomena"}
 
     // Create a scale for each dimension
     const yScales = {};
@@ -65,9 +67,7 @@ const ParallelCoordinates = ({ data }) => {
       .data(data)
       .enter().append("path")
       .attr("class", function(d) { return `line-${d.Character}`; })  // Assign a unique class for each character
-      .attr("d", d => 
-        line(dimensions.map(dim => [xScale(dim), yScales[dim](d[dim])]))
-      )
+      .attr("d", d => line(dimensions.map(dim => [xScale(dim), yScales[dim](d[dim])])))
       .style("stroke", "steelblue")
       .style("stroke-width", 1)
       .style("fill", "none");
@@ -81,12 +81,18 @@ const ParallelCoordinates = ({ data }) => {
       svg
         .append("text")
         .attr("x", xScale(dim))
-        .attr("y", -15)
+        .attr("y", -30)
         .attr("text-anchor", "middle")
         .attr("fill","white")
         .style("font-size", "12px")
         .style("font-weight", "bold")
-        .text(dim);
+        .selectAll("tspan")
+        .data(names[dim].split("\n")) // Split the text into lines
+        .enter()
+        .append("tspan")
+        .attr("x", xScale(dim)) // Align each line to the same x position
+        .attr("dy", (d, i) => i * 14) // Adjust spacing between lines
+        .text(d => d);
     });
 
     const tooltip = d3
