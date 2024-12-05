@@ -174,7 +174,7 @@ const ProfileInsights = () => {
 
                     {/* Insight 4 */}
                     <div className="insight-item">
-                        <h3>Best Episodes: Stress Relief and Goodbye Michael</h3>
+                        <h3>Best Episodes from the Ensemble: Stress Relief and Goodbye Michael</h3>
                         <p>
                             Two of the best episodes in the series, Season 5, Episode 14,
                             "Stress Relief", and Season 7, Episode 22, "Goodbye Michael", have

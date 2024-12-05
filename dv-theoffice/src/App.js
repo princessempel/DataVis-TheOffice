@@ -19,6 +19,25 @@ import meme5 from './assets/meme5.png';
 import gif from './assets/giphy.gif';
 import gif2 from './assets/giphy2.gif';
 
+const getLabelFromValue = (value) => {
+  if (value === "all") {
+      return "Entire Show";
+  }
+
+  // Extract season and episode numbers using a regex
+  const match = value.match(/season-(\d+)(?:-episode-(\d+))?/);
+
+  if (match) {
+      const season = match[1];
+      const episode = match[2];
+      return episode
+          ? `Season ${season} Episode ${episode}`
+          : `Season ${season}`;
+  }
+
+  return ""; // Return null if the value doesn't match the expected format
+};
+
 function App() {
   const [dataKey, setDataKey] = useState("ratings");
   const [filter, setFilter] = useState("all");
@@ -127,7 +146,7 @@ function App() {
       <h2 style={{ paddingLeft: "40px" }}>Chart Insights</h2>
       <div className="container" style={{ paddingTop: "0px", paddingBottom: "0px" }}>
         <div className="insight-item" >
-          <h3>Why is there a peak in the viewship graph?</h3>
+          <h3>Why is there a peak in the viewership graph?</h3>
           <h4>Stress Relief (Season 5, Episode 77)</h4>
           <p>
             Has the highest viewership with 22.91 million and is generally one of the highly rated episodes of the entire show.
@@ -139,7 +158,7 @@ function App() {
           <img src={stressRelief} style={{ display: "block", margin: "0 auto" }} alt="Stress Relief Episode"></img>
         </div>
         <div className="insight-item" >
-          <h3>Why did the viewership decline towards the end?</h3>
+          <h3>Why did viewership and ratings generally decline towards the end?</h3>
           <h4>Goodbye, Michael (Season 7, Episode 137)</h4>
           <p>
             Aside from the series finale, this episode has the highest ratings with a 9.8. For many fans, his farewell was not just the end of his character’s journey but also the end of the show’s original essence. It marked a significant turning point for <i>The Office</i> as Michael was the heart of the show, bringing a unique mix of humor, awkwardness, and heartfelt moments. His exit left a void that no subsequent character or storyline fully filled, fundamentally changing the dynamic of the series.
@@ -179,6 +198,7 @@ function App() {
         {viewOption === "seasons" && (
           <div style={{ flex: 1.25 }}>
             <TreeDropdown onSelect={setFilter} />
+            <p style={{textAlign: "center"}}>{getLabelFromValue(filter)}</p>
             <NetworkDiagram filter={filter} />
           </div>
         )}
